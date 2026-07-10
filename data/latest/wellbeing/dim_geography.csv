@@ -1,0 +1,599 @@
+sgc_code,geo_name,geo_level,county,csd_type
+3549093,"Naiscoutaing 17A, Indian reserve (IRI)",Census subdivision,,
+3552037,"Point Grondine 3, Indian reserve (IRI)",Census subdivision,,
+3552056,"Chapleau Cree Fox Lake, Indian reserve (IRI)",Census subdivision,,
+3557092,"Obadjiwan 15E, Indian reserve (IRI)",Census subdivision,,
+3558074,"Sand Point First Nation, Indian reserve (IRI)",Census subdivision,,
+3558092,"Red Rock 53, Indian reserve (IRI)",Census subdivision,,
+3559046,"Assabaska, Indian reserve (IRI)",Census subdivision,,
+3559089,"Sturgeon Falls 23, Indian reserve (IRI)",Census subdivision,,
+3541056,Chief's Point No. 28,,,
+3559030,Long Sault 12,,,
+3552036,Killarney,,Sudbury,Municipality
+3558077,Lake Nipigon,,Thunder Bay,Indian reserve
+3551027,Gordon/Barrie Island,,Manitoulin,Municipality
+3501005,South Glengarry,,"Stormont, Dundas and Glengarry",Township
+3501007,Akwesasne (Part) 59,,"Stormont, Dundas and Glengarry",Indian reserve
+3501011,South Stormont,,"Stormont, Dundas and Glengarry",Township
+3501012,Cornwall,,"Stormont, Dundas and Glengarry",City
+3501020,South Dundas,,"Stormont, Dundas and Glengarry",Township
+3501030,North Dundas,,"Stormont, Dundas and Glengarry",Township
+3501042,North Stormont,,"Stormont, Dundas and Glengarry",Township
+3501050,North Glengarry,,"Stormont, Dundas and Glengarry",Township
+3502001,East Hawkesbury,,Prescott and Russell,Township
+3502008,Hawkesbury,,Prescott and Russell,Town
+3502010,Champlain,,Prescott and Russell,Township
+3502023,Alfred and Plantagenet,,Prescott and Russell,Township
+3502025,The Nation / La Nation,,Prescott and Russell,Municipality
+3502036,Clarence-Rockland,,Prescott and Russell,City
+3502044,Casselman,,Prescott and Russell,Village
+3502048,Russell,,Prescott and Russell,Township
+3506008,Ottawa,,Ottawa,City
+3507004,Edwardsburgh/Cardinal,,Leeds and Grenville,Township
+3507006,Augusta,,Leeds and Grenville,Township
+3507008,Prescott,,Leeds and Grenville,Town
+3507014,Elizabethtown-Kitley,,Leeds and Grenville,Township
+3507015,Brockville,,Leeds and Grenville,City
+3507017,Front of Yonge,,Leeds and Grenville,Township
+3507021,Leeds and the Thousand Islands,,Leeds and Grenville,Township
+3507024,Gananoque,,Leeds and Grenville,Town
+3507033,Westport,,Leeds and Grenville,Village
+3507040,Rideau Lakes,,Leeds and Grenville,Township
+3507042,Athens,,Leeds and Grenville,Township
+3507052,Merrickville-Wolford,,Leeds and Grenville,Village
+3507065,North Grenville,,Leeds and Grenville,Municipality
+3509001,Montague,,Lanark,Township
+3509004,Smiths Falls,,Lanark,Town
+3509010,Drummond/North Elmsley,,Lanark,Township
+3509015,Tay Valley,,Lanark,Township
+3509021,Perth,,Lanark,Town
+3509024,Beckwith,,Lanark,Township
+3509028,Carleton Place,,Lanark,Town
+3509030,Mississippi Mills,,Lanark,Town
+3509039,Lanark Highlands,,Lanark,Township
+3510005,Frontenac Islands,,Frontenac,Township
+3510010,Kingston,,Frontenac,City
+3510020,South Frontenac,,Frontenac,Township
+3510035,Central Frontenac,,Frontenac,Township
+3510045,North Frontenac,,Frontenac,Township
+3511005,Loyalist,,Lennox and Addington,Township
+3511015,Greater Napanee,,Lennox and Addington,Town
+3511030,Stone Mills,,Lennox and Addington,Township
+3511035,Addington Highlands,,Lennox and Addington,Township
+3512001,Tyendinaga,,Hastings,Township
+3512002,Deseronto,,Hastings,Town
+3512004,Tyendinaga Mohawk Territory,,Hastings,Indian reserve
+3512005,Belleville,,Hastings,City
+3512015,Quinte West,,Hastings,City
+3512020,Stirling-Rawdon,,Hastings,Township
+3512026,Centre Hastings,,Hastings,Municipality
+3512030,Tweed,,Hastings,Municipality
+3512036,Madoc,,Hastings,Township
+3512046,Marmora and Lake,,Hastings,Municipality
+3512048,Tudor and Cashel,,Hastings,Township
+3512051,Limerick,,Hastings,Township
+3512054,Wollaston,,Hastings,Township
+3512058,Faraday,,Hastings,Township
+3512061,Bancroft,,Hastings,Town
+3512065,Carlow/Mayo,,Hastings,Township
+3512076,Hastings Highlands,,Hastings,Municipality
+3513020,Prince Edward,,Prince Edward,City
+3514004,Brighton,,Northumberland,Municipality
+3514014,Cramahe,,Northumberland,Township
+3514019,Hamilton,,Northumberland,Township
+3514020,Port Hope,,Northumberland,Municipality
+3514021,Cobourg,,Northumberland,Town
+3514024,Alnwick/Haldimand,,Northumberland,Township
+3514027,Alderville First Nation,,Northumberland,Indian reserve
+3514045,Trent Hills,,Northumberland,Municipality
+3515003,Asphodel-Norwood,,Peterborough,Township
+3515005,Otonabee-South Monaghan,,Peterborough,Township
+3515008,Hiawatha First Nation,,Peterborough,Indian reserve
+3515013,Cavan-Millbrook-North Monaghan,,Peterborough,Township
+3515014,Peterborough,,Peterborough,City
+3515015,Smith-Ennismore-Lakefield,,Peterborough,Township
+3515019,Curve Lake First Nation 35,,Peterborough,Indian reserve
+3515023,Douro-Dummer,,Peterborough,Township
+3515030,Havelock-Belmont-Methuen,,Peterborough,Township
+3515037,North Kawartha,,Peterborough,Township
+3515044,Galway-Cavendish and Harvey,,Peterborough,Township
+3516010,Kawartha Lakes,,Kawartha Lakes,City
+3518001,Pickering,,Durham,City
+3518005,Ajax,,Durham,Town
+3518009,Whitby,,Durham,Town
+3518013,Oshawa,,Durham,City
+3518017,Clarington,,Durham,Municipality
+3518020,Scugog,,Durham,Township
+3518022,Mississaugas of Scugog Island,,Durham,Indian reserve
+3518029,Uxbridge,,Durham,Township
+3518039,Brock,,Durham,Township
+3519028,Vaughan,,York,City
+3519036,Markham,,York,Town
+3519038,Richmond Hill,,York,Town
+3519044,Whitchurch-Stouffville,,York,Town
+3519046,Aurora,,York,Town
+3519048,Newmarket,,York,Town
+3519049,King,,York,Township
+3519054,East Gwillimbury,,York,Town
+3519070,Georgina,,York,Town
+3519076,Chippewas of Georgina Island First Nation,,York,Indian reserve
+3520005,Toronto,,Toronto,City
+3521005,Mississauga,,Peel,City
+3521010,Brampton,,Peel,City
+3521024,Caledon,,Peel,Town
+3522001,East Garafraxa,,Dufferin,Township
+3522008,Amaranth,,Dufferin,Township
+3522010,East Luther Grand Valley,,Dufferin,Township
+3522012,Mono,,Dufferin,Town
+3522014,Orangeville,,Dufferin,Town
+3522016,Mulmur,,Dufferin,Township
+3522019,Melancthon,,Dufferin,Township
+3522021,Shelburne,,Dufferin,Town
+3523001,Puslinch,,Wellington,Township
+3523008,Guelph,,Wellington,City
+3523009,Guelph/Eramosa,,Wellington,Township
+3523017,Erin,,Wellington,Town
+3523025,Centre Wellington,,Wellington,Township
+3523033,Mapleton,,Wellington,Township
+3523043,Minto,,Wellington,Town
+3523050,Wellington North,,Wellington,Township
+3524001,Oakville,,Halton,Town
+3524002,Burlington,,Halton,City
+3524009,Milton,,Halton,Town
+3524015,Halton Hills,,Halton,Town
+3525005,Hamilton,,Hamilton,City
+3526003,Fort Erie,,Niagara,Town
+3526011,Port Colborne,,Niagara,City
+3526014,Wainfleet,,Niagara,Township
+3526021,West Lincoln,,Niagara,Township
+3526028,Pelham,,Niagara,Town
+3526032,Welland,,Niagara,City
+3526037,Thorold,,Niagara,City
+3526043,Niagara Falls,,Niagara,City
+3526047,Niagara-on-the-Lake,,Niagara,Town
+3526053,St. Catharines,,Niagara,City
+3526057,Lincoln,,Niagara,Town
+3526065,Grimsby,,Niagara,Town
+3528018,Haldimand County,,Haldimand-Norfolk,City
+3528035,New Credit (Part) 40A,,Haldimand-Norfolk,Indian reserve
+3528037,Six Nations (Part) 40,,Haldimand-Norfolk,Indian reserve
+3528052,Norfolk County,,Haldimand-Norfolk,City
+3529005,Brant,,Brant,City
+3529006,Brantford,,Brant,City
+3529020,Six Nations (Part) 40,,Brant,Indian reserve
+3529021,New Credit (Part) 40A,,Brant,Indian reserve
+3530004,North Dumfries,,Waterloo,Township
+3530010,Cambridge,,Waterloo,City
+3530013,Kitchener,,Waterloo,City
+3530016,Waterloo,,Waterloo,City
+3530020,Wilmot,,Waterloo,Township
+3530027,Wellesley,,Waterloo,Township
+3530035,Woolwich,,Waterloo,Township
+3531011,Stratford,,Perth,City
+3531013,Perth South,,Perth,Township
+3531016,St. Marys,,Perth,Town
+3531025,West Perth,,Perth,Municipality
+3531030,Perth East,,Perth,Township
+3531040,North Perth,,Perth,Municipality
+3532002,Norwich,,Oxford,Township
+3532004,Tillsonburg,,Oxford,Town
+3532012,South-West Oxford,,Oxford,Township
+3532018,Ingersoll,,Oxford,Town
+3532027,Zorra,,Oxford,Township
+3532038,East Zorra-Tavistock,,Oxford,Township
+3532042,Woodstock,,Oxford,City
+3532045,Blandford-Blenheim,,Oxford,Township
+3534005,Bayham,,Elgin,Municipality
+3534010,Malahide,,Elgin,Township
+3534011,Aylmer,,Elgin,Town
+3534020,Central Elgin,,Elgin,Municipality
+3534021,St. Thomas,,Elgin,City
+3534024,Southwold,,Elgin,Township
+3534030,Dutton/Dunwich,,Elgin,Municipality
+3534042,West Elgin,,Elgin,Municipality
+3536020,Chatham-Kent,,Chatham-Kent,Municipality
+3536029,Moravian 47,,Chatham-Kent,Indian reserve
+3537001,Pelee,,Essex,Township
+3537003,Leamington,,Essex,Municipality
+3537013,Kingsville,,Essex,Town
+3537016,Essex,,Essex,Town
+3537028,Amherstburg,,Essex,Town
+3537034,LaSalle,,Essex,Town
+3537039,Windsor,,Essex,City
+3537048,Tecumseh,,Essex,Town
+3537064,Lakeshore,,Essex,Town
+3538003,St. Clair,,Lambton,Township
+3538004,Walpole Island 46,,Lambton,Indian reserve
+3538007,Dawn-Euphemia,,Lambton,Township
+3538015,Brooke-Alvinston,,Lambton,Municipality
+3538016,Enniskillen,,Lambton,Township
+3538018,Oil Springs,,Lambton,Village
+3538019,Petrolia,,Lambton,Town
+3538025,Sarnia 45,,Lambton,Indian reserve
+3538030,Sarnia,,Lambton,City
+3538031,Point Edward,,Lambton,Village
+3538035,Plympton-Wyoming,,Lambton,Town
+3538040,Lambton Shores,,Lambton,Municipality
+3538043,Warwick,,Lambton,Township
+3538056,Kettle Point 44,,Lambton,Indian reserve
+3539002,Newbury,,Middlesex,Village
+3539005,Southwest Middlesex,,Middlesex,Municipality
+3539015,Strathroy-Caradoc,,Middlesex,Township
+3539017,Chippewas of the Thames First Nation 42,,Middlesex,Indian reserve
+3539018,Munsee-Delaware Nation 1,,Middlesex,Indian reserve
+3539021,Oneida 41,,Middlesex,Indian reserve
+3539027,Thames Centre,,Middlesex,Municipality
+3539033,Middlesex Centre,,Middlesex,Township
+3539036,London,,Middlesex,City
+3539041,North Middlesex,,Middlesex,Municipality
+3539047,Adelaide Metcalfe,,Middlesex,Township
+3539060,Lucan Biddulph,,Middlesex,Township
+3540005,South Huron,,Huron,Municipality
+3540010,Bluewater,,Huron,Municipality
+3540025,Central Huron,,Huron,Municipality
+3540028,Goderich,,Huron,Town
+3540040,Huron East,,Huron,Municipality
+3540046,Howick,,Huron,Township
+3540050,Morris-Turnberry,,Huron,Municipality
+3540055,North Huron,,Huron,Township
+3540063,Ashfield-Colborne-Wawanosh,,Huron,Township
+3541004,South Bruce,,Bruce,Municipality
+3541015,Huron-Kinloss,,Bruce,Township
+3541024,Kincardine,,Bruce,Municipality
+3541032,Brockton,,Bruce,Municipality
+3541043,Arran-Elderslie,,Bruce,Municipality
+3541045,Saugeen Shores,,Bruce,Town
+3541055,South Bruce Peninsula,,Bruce,Town
+3541057,Saugeen 29,,Bruce,Indian reserve
+3541060,Neyaashiinigmiing 27,,Bruce,Indian reserve
+3541069,Northern Bruce Peninsula,,Bruce,Municipality
+3542004,West Grey,,Grey,Municipality
+3542005,Southgate,,Grey,Township
+3542015,Grey Highlands,,Grey,Municipality
+3542029,Hanover,,Grey,Town
+3542037,Chatsworth,,Grey,Township
+3542045,Blue Mountains,,Grey,Town
+3542047,Meaford,,Grey,Municipality
+3542053,Georgian Bluffs,,Grey,Township
+3542059,Owen Sound,,Grey,City
+3543003,Adjala-Tosorontio,,Simcoe,Township
+3543005,Clearview,,Simcoe,Township
+3543007,New Tecumseth,,Simcoe,Town
+3543009,Springwater,,Simcoe,Township
+3543014,Bradford West Gwillimbury,,Simcoe,Town
+3543015,Severn,,Simcoe,Township
+3543017,Innisfil,,Simcoe,Town
+3543019,Ramara,,Simcoe,Township
+3543021,Essa,,Simcoe,Township
+3543023,Oro-Medonte,,Simcoe,Township
+3543031,Collingwood,,Simcoe,Town
+3543042,Barrie,,Simcoe,City
+3543050,Mnjikaning First Nation 32 (Rama First Nation 32),,Simcoe,Indian reserve
+3543052,Orillia,,Simcoe,City
+3543064,Wasaga Beach,,Simcoe,Town
+3543068,Tiny,,Simcoe,Township
+3543069,Christian Island 30,,Simcoe,Indian reserve
+3543070,Christian Island 30A,,Simcoe,Indian reserve
+3543071,Tay,,Simcoe,Township
+3543072,Penetanguishene,,Simcoe,Town
+3543074,Midland,,Simcoe,Town
+3544002,Gravenhurst,,Muskoka,Town
+3544018,Bracebridge,,Muskoka,Town
+3544027,Lake of Bays,,Muskoka,Township
+3544042,Huntsville,,Muskoka,Town
+3544053,Muskoka Lakes,,Muskoka,Township
+3544065,Georgian Bay,,Muskoka,Township
+3544071,Wahta Mohawk Territory,,Muskoka,Indian reserve
+3544073,Moose Point 79,,Muskoka,Indian reserve
+3546005,Highlands East,,Haliburton,Municipality
+3546015,Minden Hills,,Haliburton,Township
+3546018,Algonquin Highlands,,Haliburton,Township
+3546024,Dysart and Others,,Haliburton,Township
+3547002,Arnprior,,Renfrew,Town
+3547003,McNab/Braeside,,Renfrew,Township
+3547008,Greater Madawaska,,Renfrew,Township
+3547020,"Brudenell, Lyndoch and Raglan",,Renfrew,Township
+3547030,Madawaska Valley,,Renfrew,Township
+3547033,"Killaloe, Hagarty and Richards",,Renfrew,Township
+3547035,Bonnechere Valley,,Renfrew,Township
+3547037,Pikwakanagan (Golden Lake 39),,Renfrew,Indian reserve
+3547043,Admaston/Bromley,,Renfrew,Township
+3547046,Horton,,Renfrew,Township
+3547048,Renfrew,,Renfrew,Town
+3547056,Whitewater Region,,Renfrew,Township
+3547064,Pembroke,,Renfrew,City
+3547070,North Algona Wilberforce,,Renfrew,Township
+3547075,Laurentian Valley,,Renfrew,Township
+3547076,Petawawa,,Renfrew,Town
+3547090,Laurentian Hills,,Renfrew,Town
+3547096,Deep River,,Renfrew,Town
+3547098,"Head, Clara and Maria",,Renfrew,Township
+3548001,South Algonquin,,Nipissing,Township
+3548013,Papineau-Cameron,,Nipissing,Township
+3548019,Mattawan,,Nipissing,Township
+3548021,Mattawa,,Nipissing,Town
+3548022,Calvin,,Nipissing,Township
+3548027,Bonfield,,Nipissing,Township
+3548031,Chisholm,,Nipissing,Township
+3548034,East Ferris,,Nipissing,Township
+3548044,North Bay,,Nipissing,City
+3548055,West Nipissing / Nipissing Ouest,,Nipissing,Municipality
+3548069,Temagami,,Nipissing,Municipality
+3548072,Bear Island 1,,Nipissing,Indian reserve
+3548073,Nipissing 10,,Nipissing,Indian reserve
+3548091,"Nipissing, Unorganized, South Part",,Nipissing,Unorganized
+3548094,"Nipissing, Unorganized, North Part",,Nipissing,Unorganized
+3549003,Seguin,,Parry Sound,Township
+3549005,The Archipelago,,Parry Sound,Township
+3549012,McMurrich/Monteith,,Parry Sound,Township
+3549014,Perry,,Parry Sound,Township
+3549018,Kearney,,Parry Sound,Town
+3549019,Armour,,Parry Sound,Township
+3549022,Burk's Falls,,Parry Sound,Village
+3549024,Ryerson,,Parry Sound,Township
+3549028,McKellar,,Parry Sound,Township
+3549031,McDougall,,Parry Sound,Municipality
+3549032,Parry Sound,,Parry Sound,Town
+3549036,Carling,,Parry Sound,Township
+3549039,Whitestone,,Parry Sound,Municipality
+3549043,Magnetawan,,Parry Sound,Municipality
+3549046,Strong,,Parry Sound,Township
+3549048,Sundridge,,Parry Sound,Village
+3549051,Joly,,Parry Sound,Township
+3549054,Machar,,Parry Sound,Township
+3549056,South River,,Parry Sound,Village
+3549060,Powassan,,Parry Sound,Municipality
+3549066,Callander,,Parry Sound,Municipality
+3549071,Nipissing,,Parry Sound,Township
+3549072,Shawanaga 17,,Parry Sound,Indian reserve
+3549073,Parry Island First Nation,,Parry Sound,Indian reserve
+3549075,Henvey Inlet 2,,Parry Sound,Indian reserve
+3549076,French River 13,,Parry Sound,Indian reserve
+3549077,Dokis 9,,Parry Sound,Indian reserve
+3549078,Magnetewan 1,,Parry Sound,Indian reserve
+3549079,Naiscoutaing 17A,,Parry Sound,Indian reserve
+3549095,"Parry Sound, Unorganized, North East Part",,Parry Sound,Unorganized
+3549096,"Parry Sound, Unorganized, Centre Part",,Parry Sound,Unorganized
+3551001,Tehkummah,,Manitoulin,Township
+3551006,Central Manitoulin,,Manitoulin,Township
+3551011,Assiginack,,Manitoulin,Township
+3551017,Northeastern Manitoulin and the Islands,,Manitoulin,Town
+3551021,Billings,,Manitoulin,Township
+3551024,Gordon,,Manitoulin,Township
+3551026,Gore Bay,,Manitoulin,Town
+3551028,Burpee and Mills,,Manitoulin,Township
+3551031,Barrie Island,,Manitoulin,Township
+3551034,Cockburn Island,,Manitoulin,Township
+3551035,Zhiibaahaasing 19 (Cockburn Island 19),,Manitoulin,Indian reserve
+3551036,Killarney,,Manitoulin,Municipality
+3551040,Whitefish River (Part) 4,,Manitoulin,Indian reserve
+3551041,Sucker Creek 23,,Manitoulin,Indian reserve
+3551042,Sheguiandah 24,,Manitoulin,Indian reserve
+3551043,Wikwemikong Unceded,,Manitoulin,Indian reserve
+3551044,Sheshegwaning 20,,Manitoulin,Indian reserve
+3551045,M'Chigeeng 22 (West Bay 22),,Manitoulin,Indian reserve
+3551091,"Manitoulin, Unorganized, Mainland",,Manitoulin,Unorganized
+3551094,"Manitoulin, Unorganized, West Part",,Manitoulin,Unorganized
+3551100,Zhiibaahaasing 19A (Cockburn Island 19A),,Manitoulin,Indian reserve
+3552001,French River / Rivière des Français,,Sudbury,Municipality
+3552004,St.-Charles,,Sudbury,Municipality
+3552013,Markstay-Warren,,Sudbury,Municipality
+3552017,Whitefish River (Part) 4,,Sudbury,Indian reserve
+3552023,Sables-Spanish Rivers,,Sudbury,Township
+3552026,Espanola,,Sudbury,Town
+3552028,Baldwin,,Sudbury,Township
+3552031,Nairn and Hyman,,Sudbury,Township
+3552051,Whitefish Lake 6,,Sudbury,Indian reserve
+3552052,Mattagami 71,,Sudbury,Indian reserve
+3552053,Chapleau 74A,,Sudbury,Indian reserve
+3552054,Duck Lake 76B,,Sudbury,Indian reserve
+3552055,Mountbatten 76A,,Sudbury,Indian reserve
+3552058,Chapleau 75,,Sudbury,Indian reserve
+3552092,Chapleau,,Sudbury,Township
+3552093,"Sudbury, Unorganized, North Part",,Sudbury,Unorganized
+3553005,Greater Sudbury / Grand Sudbury,,Greater Sudbury / Grand Sudbury,City
+3553040,Wahnapitei 11,,Greater Sudbury / Grand Sudbury,Indian reserve
+3554001,Coleman,,Timiskaming,Township
+3554006,Latchford,,Timiskaming,Town
+3554008,Cobalt,,Timiskaming,Town
+3554014,Harris,,Timiskaming,Township
+3554020,Temiskaming Shores,,Timiskaming,City
+3554021,Hudson,,Timiskaming,Township
+3554024,Kerns,,Timiskaming,Township
+3554026,Harley,,Timiskaming,Township
+3554029,Casey,,Timiskaming,Township
+3554032,Brethour,,Timiskaming,Township
+3554034,Hilliard,,Timiskaming,Township
+3554036,Armstrong,,Timiskaming,Township
+3554038,Thornloe,,Timiskaming,Village
+3554042,James,,Timiskaming,Township
+3554044,Charlton and Dack,,Timiskaming,Municipality
+3554049,Evanturel,,Timiskaming,Township
+3554052,Englehart,,Timiskaming,Town
+3554054,Chamberlain,,Timiskaming,Township
+3554056,Matachewan,,Timiskaming,Township
+3554057,Matachewan 72,,Timiskaming,Indian reserve
+3554058,McGarry,,Timiskaming,Township
+3554062,Larder Lake,,Timiskaming,Township
+3554066,Gauthier,,Timiskaming,Township
+3554068,Kirkland Lake,,Timiskaming,Town
+3554091,"Timiskaming, Unorganized, East Part",,Timiskaming,Unorganized
+3554094,"Timiskaming, Unorganized, West Part",,Timiskaming,Unorganized
+3556014,Black River-Matheson,,Cochrane,Township
+3556027,Timmins,,Cochrane,City
+3556031,Iroquois Falls,,Cochrane,Town
+3556033,Abitibi 70,,Cochrane,Indian reserve
+3556042,Cochrane,,Cochrane,Town
+3556048,Smooth Rock Falls,,Cochrane,Town
+3556052,Fauquier-Strickland,,Cochrane,Township
+3556056,Moonbeam,,Cochrane,Township
+3556066,Kapuskasing,,Cochrane,Town
+3556070,Val Rita-Harty,,Cochrane,Township
+3556073,Opasatika,,Cochrane,Township
+3556076,Hearst,,Cochrane,Town
+3556077,Mattice-Val Côté,,Cochrane,Township
+3556091,"Cochrane, Unorganized, South West Part",,Cochrane,Unorganized
+3556092,"Cochrane, Unorganized, North Part",,Cochrane,Unorganized
+3556093,Fort Albany (Part) 67,,Cochrane,Indian reserve
+3556094,Factory Island 1,,Cochrane,Indian reserve
+3556095,Constance Lake 92,,Cochrane,Indian reserve
+3556096,Moose Factory 68,,Cochrane,Indian reserve
+3556098,"Cochrane, Unorganized, South East Part",,Cochrane,Unorganized
+3556100,Flying Post 73,,Cochrane,Indian reserve
+3556102,New Post 69A,,Cochrane,Indian reserve
+3556104,New Post 69,,Cochrane,Indian reserve
+3556106,Moosonee,,Cochrane,Town
+3557001,Jocelyn,,Algoma,Township
+3557004,Hilton,,Algoma,Township
+3557006,Hilton Beach,,Algoma,Village
+3557008,St. Joseph,,Algoma,Township
+3557011,Laird,,Algoma,Township
+3557014,Tarbutt and Tarbutt Additional,,Algoma,Township
+3557016,Johnson,,Algoma,Township
+3557019,Plummer Additional,,Algoma,Township
+3557021,Bruce Mines,,Algoma,Town
+3557026,Thessalon 12,,Algoma,Indian reserve
+3557028,Thessalon,,Algoma,Town
+3557035,Huron Shores,,Algoma,Municipality
+3557038,Blind River,,Algoma,Town
+3557039,Spanish,,Algoma,Town
+3557040,North Shore,,Algoma,Township
+3557041,Elliot Lake,,Algoma,City
+3557051,"Macdonald, Meredith and Aberdeen Additional",,Algoma,Township
+3557061,Sault Ste. Marie,,Algoma,City
+3557066,Prince,,Algoma,Township
+3557071,Sagamok,,Algoma,Indian reserve
+3557072,Serpent River 7,,Algoma,Indian reserve
+3557073,Mississagi River 8,,Algoma,Indian reserve
+3557074,Garden River 14,,Algoma,Indian reserve
+3557075,Rankin Location 15D,,Algoma,Indian reserve
+3557076,Michipicoten,,Algoma,Township
+3557077,Goulais Bay 15A,,Algoma,Indian reserve
+3557078,Gros Cap 49,,Algoma,Indian reserve
+3557079,Dubreuilville,,Algoma,Township
+3557082,Missanabie 62,,Algoma,Indian reserve
+3557091,White River,,Algoma,Township
+3557094,"Algoma, Unorganized, South East Part",,Algoma,Unorganized
+3557095,"Algoma, Unorganized, North Part",,Algoma,Unorganized
+3557096,Hornepayne,,Algoma,Township
+3558001,Neebing,,Thunder Bay,Municipality
+3558003,Fort William 52,,Thunder Bay,Indian reserve
+3558004,Thunder Bay,,Thunder Bay,City
+3558011,Oliver Paipoonge,,Thunder Bay,Municipality
+3558012,Gillies,,Thunder Bay,Township
+3558016,O'Connor,,Thunder Bay,Township
+3558019,Conmee,,Thunder Bay,Township
+3558028,Shuniah,,Thunder Bay,Township
+3558034,Dorion,,Thunder Bay,Township
+3558041,Red Rock,,Thunder Bay,Township
+3558044,Nipigon,,Thunder Bay,Township
+3558051,Schreiber,,Thunder Bay,Township
+3558054,Terrace Bay,,Thunder Bay,Township
+3558059,Marathon,,Thunder Bay,Town
+3558060,Pic Mobert North,,Thunder Bay,Indian reserve
+3558061,Pic Mobert South,,Thunder Bay,Indian reserve
+3558062,Pic River 50,,Thunder Bay,Indian reserve
+3558063,Pays Plat 51,,Thunder Bay,Indian reserve
+3558064,Lake Helen 53A,,Thunder Bay,Indian reserve
+3558065,Gull River 55,,Thunder Bay,Indian reserve
+3558066,Manitouwadge,,Thunder Bay,Township
+3558067,Ginoogaming First Nation,,Thunder Bay,Indian reserve
+3558068,Long Lake 58,,Thunder Bay,Indian reserve
+3558069,Rocky Bay 1,,Thunder Bay,Indian reserve
+3558075,Greenstone,,Thunder Bay,Municipality
+3558076,Aroland 83,,Thunder Bay,Indian reserve
+3558080,Ojibway Nation of Saugeen (Savant Lake),,Thunder Bay,Indian reserve
+3558085,Osnaburgh 63A,,Thunder Bay,Indian reserve
+3558090,"Thunder Bay, Unorganized",,Thunder Bay,Unorganized
+3558095,Seine River 22A2,,Thunder Bay,Indian reserve
+3558097,Whitesand,,Thunder Bay,Indian reserve
+3558100,Lac des Mille Lacs 22A1,,Thunder Bay,Indian reserve
+3559001,Atikokan,,Rainy River,Township
+3559011,Alberton,,Rainy River,Township
+3559012,Fort Frances,,Rainy River,Town
+3559016,La Vallee,,Rainy River,Township
+3559019,Emo,,Rainy River,Township
+3559024,Chapple,,Rainy River,Township
+3559026,Manitou Rapids 11,,Rainy River,Indian reserve
+3559031,Morley,,Rainy River,Township
+3559040,Dawson,,Rainy River,Township
+3559042,Rainy River,,Rainy River,Town
+3559047,Lake of the Woods,,Rainy River,Township
+3559048,Sabaskong Bay (Part) 35C,,Rainy River,Indian reserve
+3559051,Big Grassy River 35G,,Rainy River,Indian reserve
+3559052,Big Island Mainland 93,,Rainy River,Indian reserve
+3559053,Saug-a-Gaw-Sing 1,,Rainy River,Indian reserve
+3559060,Neguaguon Lake 25D,,Rainy River,Indian reserve
+3559061,Rainy Lake 18C,,Rainy River,Indian reserve
+3559062,Agency 1,,Rainy River,Indian reserve
+3559063,Couchiching 16A,,Rainy River,Indian reserve
+3559064,Rainy Lake 26A,,Rainy River,Indian reserve
+3559065,Seine River 23B,,Rainy River,Indian reserve
+3559066,Seine River 23A,,Rainy River,Indian reserve
+3559068,Rainy Lake 17A,,Rainy River,Indian reserve
+3559069,Rainy Lake 17B,,Rainy River,Indian reserve
+3559090,"Rainy River, Unorganized",,Rainy River,Unorganized
+3559092,Long Sault 12,,Rainy River,Indian reserve
+3560001,Ignace,,Kenora,Township
+3560004,Whitefish Bay 32A,,Kenora,Indian reserve
+3560005,Whitefish Bay 33A,,Kenora,Indian reserve
+3560007,Sabaskong Bay (Part) 35C,,Kenora,Indian reserve
+3560008,Sioux Narrows - Nestor Falls,,Kenora,Township
+3560010,Kenora,,Kenora,City
+3560021,Machin,,Kenora,Township
+3560024,Eagle Lake 27,,Kenora,Indian reserve
+3560027,Dryden,,Kenora,City
+3560032,Ear Falls,,Kenora,Township
+3560034,Sioux Lookout,,Kenora,Municipality
+3560042,Red Lake,,Kenora,Municipality
+3560046,Slate Falls,,Kenora,Indian settlement
+3560049,Pickle Lake,,Kenora,Township
+3560050,Fort Albany (Part) 67,,Kenora,Indian reserve
+3560051,Attawapiskat 91A,,Kenora,Indian reserve
+3560052,Marten Falls 65,,Kenora,Indian reserve
+3560053,Fort Hope 64,,Kenora,Indian reserve
+3560054,Cat Lake 63C,,Kenora,Indian reserve
+3560055,Osnaburgh 63B,,Kenora,Indian reserve
+3560056,Lac Seul 28,,Kenora,Indian reserve
+3560057,Wabigoon Lake 27,,Kenora,Indian reserve
+3560058,English River 21,,Kenora,Indian reserve
+3560059,Weagamow Lake 87,,Kenora,Indian reserve
+3560060,Northwest Angle 33B,,Kenora,Indian reserve
+3560061,Wabaseemoong,,Kenora,Indian reserve
+3560062,Lake Of The Woods 31G,,Kenora,Indian reserve
+3560063,Sabaskong Bay 35D,,Kenora,Indian reserve
+3560064,Shoal Lake 34B2,,Kenora,Indian reserve
+3560065,Lake Of The Woods 37,,Kenora,Indian reserve
+3560066,Kenora 38B,,Kenora,Indian reserve
+3560067,Poplar Hill,,Kenora,Indian reserve
+3560068,Shoal Lake (Part) 39A,,Kenora,Indian reserve
+3560069,Rat Portage 38A,,Kenora,Indian reserve
+3560070,Deer Lake,,Kenora,Indian reserve
+3560071,Sandy Lake 88,,Kenora,Indian reserve
+3560072,Wunnumin 2,,Kenora,Indian reserve
+3560074,Wapekeka 1,,Kenora,Indian reserve
+3560075,Kitchenuhmaykoosib Aaki 84 (Big Trout Lake),,Kenora,Indian reserve
+3560076,Sachigo Lake 1,,Kenora,Indian reserve
+3560077,Pikangikum 14,,Kenora,Indian reserve
+3560078,Fort Severn 89,,Kenora,Indian reserve
+3560079,Webequie,,Kenora,Indian reserve
+3560080,North Spirit Lake,,Kenora,Indian reserve
+3560081,Lansdowne House,,Kenora,Indian settlement
+3560082,Shoal Lake (Part) 40,,Kenora,Indian reserve
+3560083,Whitefish Bay 34A,,Kenora,Indian reserve
+3560084,Wabauskang 21,,Kenora,Indian reserve
+3560085,Wunnumin 1,,Kenora,Indian reserve
+3560086,Summer Beaver,,Kenora,Indian settlement
+3560087,Sachigo Lake 2,,Kenora,Indian reserve
+3560088,Wapekeka 2,,Kenora,Indian reserve
+3560089,The Dalles 38C,,Kenora,Indian reserve
+3560090,"Kenora, Unorganized",,Kenora,Unorganized
+3560091,Peawanuck,,Kenora,Indian settlement
+3560093,Neskantaga,,Kenora,Indian reserve
+3560095,Bearskin Lake,,Kenora,Indian reserve
+3560096,Kasabonika Lake,,Kenora,Indian reserve
+3560097,Muskrat Dam Lake,,Kenora,Indian reserve
+3560098,Kingfisher Lake 1,,Kenora,Indian reserve
+3560100,Wawakapewin (Long Dog Lake),,Kenora,Indian reserve
+3560102,MacDowell Lake,,Kenora,Indian settlement
+3560104,Kee-Way-Win,,Kenora,Indian reserve

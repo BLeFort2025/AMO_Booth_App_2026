@@ -1,0 +1,256 @@
+from __future__ import annotations
+
+import math
+import sys
+from pathlib import Path
+
+import altair as alt
+import pandas as pd
+import streamlit as st
+
+# Ensure imports work the same way as app/streamlit_app.py
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+APP_DIR = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+if str(APP_DIR) not in sys.path:
+    sys.path.insert(0, str(APP_DIR))
+
+from scripts.io_multipliers_engine import (
+    available_geographies,
+    available_years,
+    industries_for_basket,
+    compute_impacts,
+)
+
+BASKET_OPTIONS = {
+    "Single industry (no basket)": None,
+    "Primary agriculture": "primary_agriculture",
+    "Food & Beverage manufacturing": "food_beverage_manufacturing",
+}
+
+SCOPE_LABELS = {
+    "direct": "Direct",
+    "direct_indirect": "Direct + Indirect (default)",
+    "direct_indirect_induced": "Direct + Indirect + Induced (opt-in)",
+}
+
+st.set_page_config(page_title="Economic Impact Multipliers", layout="wide")
+
+st.title("Economic Impact Multipliers")
+st.caption("Statistics Canada supply-use / input-output multipliers for industry-level economic context (not farm-level ROI).")
+
+st.info(
+    "These results are **industry-level**, **geography-specific**, and **year-specific** averages derived from "
+    "Statistics Canada supply-use / input-output accounts. They are **not forecasts** and do **not** represent "
+    "impacts for an individual farm."
+)
+
+# -------------------------
+# Sidebar controls
+# -------------------------
+with st.sidebar:
+    st.header("Scenario inputs")
+
+    basket_label = st.selectbox("Industry basket", list(BASKET_OPTIONS.keys()), index=0)
+    basket_key = BASKET_OPTIONS[basket_label]
+
+    geos = available_geographies()
+    geo = st.selectbox("Geography", geos, index=0 if "Canada" in geos else 0)
+
+    years = available_years(geo)
+    if not years:
+        st.error("No years available for selected geography.")
+        st.stop()
+    year = st.selectbox("Reference year", years, index=len(years) - 1)
+
+    shock = st.number_input(
+        "Shock: change in final demand ($)",
+        min_value=-1e12,
+        max_value=1e12,
+        value=10_000_000.0,
+        step=1_000_000.0,
+        format="%.0f",
+        help="Exogenous change in final demand for the selected industry's output.",
+    )
+
+    st.subheader("Impact scope")
+
+    # Three explicit checkboxes, mutually exclusive (radio-like behavior)
+    col1, col2, col3 = st.columns(3)
+    if "io_scope" not in st.session_state:
+        st.session_state.io_scope = "direct_indirect"
+
+    def set_scope(val: str) -> None:
+        st.session_state.io_scope = val
+
+    with col1:
+        direct_checked = st.checkbox("Direct", value=(st.session_state.io_scope == "direct"), on_change=set_scope, args=("direct",))
+    with col2:
+        di_checked = st.checkbox(
+            "Direct + Indirect",
+            value=(st.session_state.io_scope == "direct_indirect"),
+            on_change=set_scope,
+            args=("direct_indirect",),
+        )
+    with col3:
+        dii_checked = st.checkbox(
+            "Direct + Indirect + Induced",
+            value=(st.session_state.io_scope == "direct_indirect_induced"),
+            on_change=set_scope,
+            args=("direct_indirect_induced",),
+            help="Induced effects are opt-in and depend on household spending assumptions.",
+        )
+
+    scope = st.session_state.io_scope
+
+# -------------------------
+# Industry selection + weights
+# -------------------------
+st.subheader("Industry selection")
+
+inds_df = industries_for_basket(basket_key)
+inds_df = inds_df.sort_values(["industry_name", "industry_code"]).reset_index(drop=True)
+
+if basket_key is None:
+    # Single industry mode
+    chosen = st.selectbox(
+        "Industry",
+        inds_df["industry_code"].tolist(),
+        format_func=lambda c: f"{inds_df.loc[inds_df['industry_code']==c,'industry_name'].iloc[0]} [{c}]",
+    )
+    industries = [chosen]
+    weights = [1.0]
+else:
+    st.caption("Basket industries (editable weights). Shock will be allocated across industries by weight.")
+    w = pd.DataFrame(
+        {
+            "industry_code": inds_df["industry_code"],
+            "industry_name": inds_df["industry_name"],
+            "weight": 1.0,
+        }
+    )
+    edited = st.data_editor(
+        w,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "weight": st.column_config.NumberColumn("Weight", min_value=0.0, step=0.1),
+        },
+    )
+    edited["weight"] = pd.to_numeric(edited["weight"], errors="coerce").fillna(0.0)
+    if edited["weight"].sum() == 0:
+        st.warning("All weights are zero. Set at least one positive weight to compute impacts.")
+        st.stop()
+
+    # Normalize weights
+    edited["weight"] = edited["weight"] / edited["weight"].sum()
+    industries = edited["industry_code"].tolist()
+    weights = edited["weight"].tolist()
+
+    # Required note per your instruction
+    if basket_key == "primary_agriculture":
+        st.info("Primary agriculture basket includes **support activities for crop and animal production** (explicitly included by design).")
+
+# -------------------------
+# Compute impacts
+# -------------------------
+st.subheader("Results")
+
+try:
+    summary, per_industry = compute_impacts(
+        shock_final_demand_dollars=float(shock),
+        geo=str(geo),
+        year=int(year),
+        scope=scope,
+        industries=industries,
+        weights=weights,
+    )
+except Exception as e:
+    st.error(f"Unable to compute impacts: {e}")
+    st.stop()
+
+# Pretty formatting
+def fmt_currency(x: float) -> str:
+    if x is None or (isinstance(x, float) and math.isnan(x)):
+        return ""
+    return f"${x:,.0f}"
+
+def fmt_jobs(x: float) -> str:
+    if x is None or (isinstance(x, float) and math.isnan(x)):
+        return ""
+    return f"{x:,.0f}"
+
+summary_disp = summary.copy()
+summary_disp["Impact"] = summary_disp.apply(
+    lambda r: fmt_jobs(r["impact"]) if r["metric"] == "Jobs impact" else fmt_currency(r["impact"]),
+    axis=1,
+)
+# Ensure multiplier_weighted exists for display (older engine versions may omit it)
+if "multiplier_weighted" not in summary_disp.columns:
+    if {"metric", "multiplier", "weight"}.issubset(per_industry.columns):
+        _wm = (
+            per_industry.dropna(subset=["metric", "multiplier", "weight"])
+            .assign(_wmult=lambda d: d["multiplier"].astype(float) * d["weight"].astype(float))
+            .groupby("metric")["_wmult"]
+            .sum()
+        )
+        summary_disp["multiplier_weighted"] = summary_disp["metric"].map(_wm)
+    else:
+        summary_disp["multiplier_weighted"] = pd.NA
+
+
+def _fmt_mult(v):
+    if pd.isna(v):
+        return ""
+    try:
+        return f"{float(v):.3f}"
+    except (TypeError, ValueError):
+        return ""
+
+
+summary_disp["Weighted multiplier"] = summary_disp["multiplier_weighted"].map(_fmt_mult)
+
+out_table = summary_disp[["metric", "Weighted multiplier", "Impact"]].rename(columns={"metric": "Metric"})
+st.dataframe(out_table, use_container_width=True, hide_index=True)
+
+# Optional simple chart
+chart_df = summary_disp[["metric", "impact"]].copy()
+chart_df = chart_df[chart_df["metric"] != "Imports / leakage"]  # keep chart cleaner
+chart = (
+    alt.Chart(chart_df)
+    .mark_bar()
+    .encode(
+        x=alt.X("metric:N", title="Metric", sort=None),
+        y=alt.Y("impact:Q", title="Impact (mixed units)"),
+        tooltip=["metric", "impact"],
+    )
+)
+st.altair_chart(chart, use_container_width=True)
+
+# -------------------------
+# Methodology + metadata
+# -------------------------
+with st.expander("Methodology & Assumptions", expanded=False):
+    st.markdown(
+        """
+**What this is**
+- Input-output multipliers estimate average economy-wide ripple effects from a **change in final demand** for a given industry’s output.
+- They are **not forecasts** and should not be interpreted as farm-level profitability or ROI.
+
+**Scope definitions**
+- **Direct**: activity in the shocked industry.
+- **Direct + Indirect**: adds supply-chain effects.
+- **Direct + Indirect + Induced**: adds household spending effects; opt-in and more assumption-sensitive.
+
+**Important limitations**
+- Impacts are **year-specific** and **geography-specific** (multipliers differ across provinces/territories and over time).
+- Results are **industry averages**, not project-specific engineering estimates.
+"""
+    )
+
+st.caption(
+    "Sources: Statistics Canada tables 36-10-0594-01 (Canada multipliers), 36-10-0595-01 (PT multipliers), "
+    "and 36-10-0438-01 (Supply-use summary for IO context). "
+    "Scope shown matches Direct / Direct+Indirect / Direct+Indirect+Induced definitions."
+)

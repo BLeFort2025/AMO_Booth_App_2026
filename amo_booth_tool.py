@@ -1,0 +1,463 @@
+import sys
+from pathlib import Path
+
+# Add project root to sys.path so 'app' imports work
+project_root = str(Path(__file__).parent.absolute())
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+app_dir = str(Path(__file__).parent.absolute() / "app")
+if app_dir not in sys.path:
+    sys.path.insert(0, app_dir)
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+from app.smart_read import smart_read
+from app.utils import inject_theme_css, global_footer
+from app.farm_tax.farm_tax_report import calculate_ratio_direct
+
+try:
+    import pydeck as pdk
+    HAS_PYDECK = True
+except ImportError:
+    HAS_PYDECK = False
+
+st.set_page_config(
+    page_title="AMO 2026 Interactive Tool",
+    page_icon="🏛️",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+inject_theme_css()
+
+# Hide Streamlit header/footer for standalone appearance
+st.markdown("""
+<style>
+    header[data-testid="stHeader"] {display: none;}
+    footer {display: none;}
+</style>
+""", unsafe_allow_html=True)
+
+
+@st.cache_data(max_entries=1, ttl=1800)
+def load_fir_data():
+    try:
+        return smart_read("data/derived/fir_indicators.csv", low_memory=False)
+    except FileNotFoundError:
+        return pd.DataFrame()
+
+@st.cache_data(max_entries=1, ttl=1800)
+def load_geo_data():
+    try:
+        return smart_read("data/latest/wellbeing/dim_geography.csv")
+    except FileNotFoundError:
+        return pd.DataFrame()
+
+@st.cache_data(max_entries=1, ttl=1800)
+def load_boundaries():
+    try:
+        import geopandas as gpd
+        gdf = gpd.read_file("data/latest/wellbeing/ontario_csd_boundaries.geojson")
+        gdf["sgc_code"] = gdf["sgc_code"].astype(str).str.zfill(7)
+        return gdf
+    except Exception:
+        return None
+
+@st.cache_data(max_entries=1, ttl=1800)
+def load_fam_rscm_data():
+    """Load the 2016 FAM/RSCM dataset from the Ministry of Finance."""
+    try:
+        fam_path = Path(__file__).parent.absolute() / "data" / "derived" / "ompf_fam_rscm_2016.xlsx"
+        fam_df = pd.read_excel(fam_path, skiprows=5)
+        fam_df = fam_df.rename(columns={
+            "MunId": "fir_code",
+            "Rural and Small Community Measure (RSCM)*": "RSCM",
+            "Farm Area Measure (FAM)**": "FAM",
+        })
+        fam_df["FAM"] = pd.to_numeric(fam_df["FAM"], errors='coerce').fillna(0.0)
+        fam_df["RSCM"] = pd.to_numeric(fam_df["RSCM"], errors='coerce').fillna(0.0)
+        return fam_df
+    except Exception:
+        return pd.DataFrame()
+
+
+fir_df = load_fir_data()
+geo_df = load_geo_data()
+boundaries = load_boundaries()
+fam_rscm_df = load_fam_rscm_data()
+
+if fir_df.empty or geo_df.empty:
+    st.error("Data missing. Please run ETL pipelines.")
+    st.stop()
+
+# Ensure SGC codes are strings
+fir_df["sgc_code"] = fir_df["sgc_code"].astype(str).str.zfill(7)
+geo_df["sgc_code"] = geo_df["sgc_code"].astype(str).str.zfill(7)
+
+# Build FAM/RSCM lookups
+rscm_lookup = {}
+fam_lookup = {}
+region_lookup = {}
+if not fam_rscm_df.empty:
+    rscm_lookup = dict(zip(fam_rscm_df["fir_code"], fam_rscm_df["RSCM"]))
+    fam_lookup = dict(zip(fam_rscm_df["fir_code"], fam_rscm_df["FAM"]))
+    region_lookup = dict(zip(fam_rscm_df["fir_code"], fam_rscm_df["Region"]))
+
+def is_eligible(fir_code):
+    """Apply the 3-Gate eligibility test."""
+    rscm = rscm_lookup.get(fir_code, 0.0)
+    fam = fam_lookup.get(fir_code, 0.0)
+    region = region_lookup.get(fir_code, "")
+    is_northern = region in ["Northeast", "Northwest"]
+    return is_northern or rscm >= 0.25 or fam > 0.05
+
+# Precalculate OMPF $1B Scenario denominators
+latest_ompf_df = fir_df[fir_df['tier'] != 'upper'].sort_values('year').drop_duplicates('sgc_code', keep='last').copy()
+latest_ompf_df['ompf_grant'] = latest_ompf_df['ompf_grant'].fillna(0.0)
+TOTAL_CURRENT_OMPF = latest_ompf_df['ompf_grant'].sum()  # ~$497M
+SCENARIO_OMPF_TOTAL = 1_000_000_000
+
+# Calculate the "rural-only" pool for the gated scenario
+RURAL_CURRENT_OMPF = 0.0
+URBAN_LEAKAGE_OMPF = 0.0
+for _, row in latest_ompf_df.iterrows():
+    grant = float(row.get("ompf_grant", 0.0))
+    if is_eligible(row["fir_code"]):
+        RURAL_CURRENT_OMPF += grant
+    else:
+        URBAN_LEAKAGE_OMPF += grant
+
+# Create municipality lookups
+community_lookup = {}
+for _, row in geo_df.iterrows():
+    name = row.get("geo_name", "")
+    county = row.get("county", "")
+    label = f"{name} ({county})" if pd.notna(county) and county else name
+    community_lookup[row["sgc_code"]] = label
+
+reverse_lookup = {v: k for k, v in community_lookup.items()}
+available_sgcs = sorted(fir_df["sgc_code"].unique())
+available_names = sorted([community_lookup.get(c, c) for c in available_sgcs if c in community_lookup])
+
+with st.sidebar:
+    st.image("https://ofa.on.ca/wp-content/uploads/2020/01/ofa-logo-stacked.png", width=150)
+    st.markdown("## 🏛️ AMO 2026")
+    st.markdown("**Interactive Analysis Tool**")
+    
+    default_idx = available_names.index("Zorra (Oxford)") if "Zorra (Oxford)" in available_names else 0
+    selected_name = st.selectbox("Select Municipality", options=available_names, index=default_idx)
+    selected_sgc = reverse_lookup[selected_name]
+    
+    st.markdown("---")
+    st.metric("Municipalities Tracked", len(available_names))
+    st.caption("Data source: Ontario Financial Information Return (FIR) 2010-2024")
+
+st.markdown(f"## Fair Farm Taxes & Fully Funded Municipalities")
+st.markdown(f"### Key Fiscal Metrics for **{selected_name}**")
+
+# Get data for selected municipality
+muni_df = fir_df[fir_df["sgc_code"] == selected_sgc].sort_values("year")
+latest_year = muni_df["year"].max()
+latest_row = muni_df[muni_df["year"] == latest_year].iloc[0]
+fir_code = latest_row["fir_code"]
+
+# --- Eligibility Banner ---
+muni_rscm = rscm_lookup.get(fir_code, 0.0)
+muni_fam = fam_lookup.get(fir_code, 0.0)
+muni_region = region_lookup.get(fir_code, "")
+muni_eligible = is_eligible(fir_code)
+
+if muni_eligible:
+    reasons = []
+    if muni_region in ["Northeast", "Northwest"]:
+        reasons.append(f"Northern Ontario ({muni_region})")
+    if muni_rscm >= 0.25:
+        reasons.append(f"RSCM ≥ 25% ({muni_rscm:.1%})")
+    if muni_fam > 0.05:
+        reasons.append(f"FAM > 5% ({muni_fam:.1%})")
+    st.success(f"✅ **{selected_name}** qualifies under the proposed Rural OMPF Guidelines — {', '.join(reasons)}")
+else:
+    st.error(f"🚫 **{selected_name}** would NOT qualify under the proposed Rural OMPF Guidelines (RSCM: {muni_rscm:.1%} | FAM: {muni_fam:.1%} | Region: {muni_region or 'N/A'})")
+
+# --- Section 1: Map ---
+if HAS_PYDECK and boundaries is not None:
+    with st.container():
+        # Copy to avoid warnings
+        map_df = latest_ompf_df.copy()
+        
+        # Merge with boundaries
+        map_geo = boundaries.merge(map_df[["sgc_code", "farmland_tax_ratio", "fir_code"]], on="sgc_code", how="left")
+        map_geo["display_name"] = map_geo["sgc_code"].map(lambda c: community_lookup.get(c, c))
+        
+        # Colors: Green for eligible, red for filtered, dark green for selected
+        def get_color(row):
+            if row["sgc_code"] == selected_sgc:
+                return [46, 125, 50, 255]  # Dark Green - selected
+            elif pd.notna(row.get("fir_code")) and is_eligible(row.get("fir_code", 0)):
+                return [200, 230, 200, 160]  # Light Green - eligible
+            elif pd.notna(row.get("farmland_tax_ratio")) and row.get("farmland_tax_ratio", 0) > 0:
+                return [255, 200, 200, 160]  # Light Red - filtered but has farmland
+            else:
+                return [220, 220, 220, 80]  # Grey
+
+        def get_line_color(row):
+            if row["sgc_code"] == selected_sgc:
+                return [255, 165, 0, 255]  # Orange highlight
+            return [255, 255, 255, 100]
+
+        map_geo["fill_color"] = map_geo.apply(get_color, axis=1)
+        map_geo["line_color"] = map_geo.apply(get_line_color, axis=1)
+        
+        # Remove geometry from tooltip variables
+        export_geo = map_geo[["geometry", "fill_color", "line_color", "display_name", "sgc_code"]].copy()
+        
+        # Check if selected feature has centroid
+        selected_feature = export_geo[export_geo["sgc_code"] == selected_sgc]
+        if not selected_feature.empty:
+            centroid = selected_feature.geometry.centroid.iloc[0]
+            lat, lon = centroid.y, centroid.x
+        else:
+            lat, lon = 44.0, -80.0
+            
+        view_state = pdk.ViewState(latitude=lat, longitude=lon, zoom=7.5, pitch=0)
+        layer = pdk.Layer(
+            "GeoJsonLayer",
+            data=export_geo.__geo_interface__,
+            pickable=True,
+            stroked=True,
+            filled=True,
+            get_fill_color="properties.fill_color",
+            get_line_color="properties.line_color",
+            get_line_width=200,
+            line_width_min_pixels=1,
+            auto_highlight=True,
+            highlight_color=[255, 200, 0, 150]
+        )
+        tooltip = {
+            "html": "<b>{display_name}</b>",
+            "style": {"backgroundColor": "#1b5e20", "color": "white", "font-family": "sans-serif"}
+        }
+        deck = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip=tooltip, map_style="mapbox://styles/mapbox/light-v11")
+        st.pydeck_chart(deck, height=350)
+
+# --- Calculations ---
+TARGET_RATIO = 0.15
+current_ratio = latest_row.get("farmland_tax_ratio", 0)
+if pd.isna(current_ratio): current_ratio = 0
+
+is_below_or_equal = (current_ratio <= TARGET_RATIO and current_ratio > 0)
+
+def safe_val(v): return float(v) if pd.notna(v) else 0.0
+
+res = None
+if not is_below_or_equal and current_ratio > 0:
+    res = calculate_ratio_direct(
+        chosen_ratio=TARGET_RATIO,
+        farm_cva=safe_val(latest_row.get("farmland_cva")),
+        res_cva=safe_val(latest_row.get("residential_cva")),
+        com_cva=safe_val(latest_row.get("commercial_cva")),
+        ind_cva=safe_val(latest_row.get("industrial_cva")),
+        ft_ratio=current_ratio,
+        ct_ratio=safe_val(latest_row.get("commercial_tax_ratio")),
+        it_ratio=safe_val(latest_row.get("industrial_tax_ratio")),
+        total_muni_taxes=safe_val(latest_row.get("total_muni_taxes")),
+        current_res_taxes=safe_val(latest_row.get("residential_muni_taxes")),
+        current_burden=safe_val(latest_row.get("farmland_share_of_taxes")),
+        total_households=safe_val(latest_row.get("total_households"))
+    )
+    if res:
+        redistribution_amount = res.farm_savings_total
+    else:
+        redistribution_amount = 0
+else:
+    redistribution_amount = 0
+
+# OMPF Calc — Scenario A: $1B Unfettered (current formula)
+ompf_grant = safe_val(latest_row.get("ompf_grant"))
+total_rev = safe_val(latest_row.get("total_revenue"))
+current_share = ompf_grant / TOTAL_CURRENT_OMPF if TOTAL_CURRENT_OMPF > 0 else 0
+scenario_grant_unfettered = current_share * SCENARIO_OMPF_TOTAL
+additional_ompf_unfettered = scenario_grant_unfettered - ompf_grant
+
+# OMPF Calc — Scenario B: $1B Gated (rural-only formula)
+if muni_eligible and RURAL_CURRENT_OMPF > 0:
+    gated_share = ompf_grant / RURAL_CURRENT_OMPF
+    scenario_grant_gated = gated_share * SCENARIO_OMPF_TOTAL
+    additional_ompf_gated = scenario_grant_gated - ompf_grant
+else:
+    scenario_grant_gated = 0.0
+    additional_ompf_gated = -ompf_grant  # They lose their current grant
+
+current_provincial_support_share = ompf_grant / total_rev if total_rev > 0 else 0
+
+# --- Section 2: KPIs ---
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.markdown("### 🌾 Track 1: Farm Tax Burden")
+    if current_ratio == 0:
+        st.info("No farm tax data available for this municipality.")
+    elif is_below_or_equal:
+        st.success(f"🎉 **{selected_name}** is already at or below OFA's proposed {TARGET_RATIO:.2f} maximum farm tax ratio (Current: {current_ratio:.4f}). Thank you for your leadership on fair farm taxation!")
+    else:
+        st.markdown(f"Under OFA's proposed **{TARGET_RATIO:.2f}** maximum ratio, the revenue-neutral redistribution to other classes would be:")
+        st.metric("Farm Tax Redistribution", f"${redistribution_amount:,.0f}")
+        st.caption(f"Current farm tax ratio is **{current_ratio:.4f}** ({latest_year} data).")
+
+with col2:
+    st.markdown("### 📊 Track 2: OMPF ($1B Current Formula)")
+    st.markdown(f"If the OMPF is restored to **$1 Billion** under the **current formula**:")
+    st.metric("Additional Annual OMPF", f"${additional_ompf_unfettered:,.0f}")
+    st.caption(f"Current ({latest_year}): **${ompf_grant:,.0f}** → Scenario: **${scenario_grant_unfettered:,.0f}**")
+
+with col3:
+    st.markdown("### 🛡️ Track 3: OMPF ($1B Rural-Only)")
+    if muni_eligible:
+        bonus = additional_ompf_gated - additional_ompf_unfettered
+        st.markdown(f"If the OMPF is restored to **$1 Billion** with **rural-only eligibility**:")
+        st.metric("Additional Annual OMPF (Gated)", f"${additional_ompf_gated:,.0f}", delta=f"+${bonus:,.0f} vs current formula")
+        st.caption(f"Gated Scenario: **${scenario_grant_gated:,.0f}**. Rural gate redirects ${URBAN_LEAKAGE_OMPF:,.0f} from urban centres.")
+    else:
+        st.metric("OMPF Under Gated Model", "$0", delta=f"-${ompf_grant:,.0f}")
+        st.caption("This municipality does not meet the RSCM, FAM, or Northern eligibility gates.")
+
+# --- Section 3: Track 1 Charts ---
+with st.expander("📈 Track 1: Farm Tax Burden Details", expanded=True):
+    if not muni_df.empty:
+        c1, c2 = st.columns(2)
+        with c1:
+            # Indexed CVA growth
+            base_year = muni_df["year"].min()
+            cva_df = muni_df[["year", "farmland_cva", "residential_cva"]].copy().dropna(subset=["farmland_cva"])
+            if not cva_df.empty:
+                base_farm = cva_df.iloc[0]["farmland_cva"]
+                base_res = cva_df.iloc[0]["residential_cva"]
+                cva_df["Farm CVA Growth"] = (cva_df["farmland_cva"] / base_farm) * 100 if base_farm > 0 else 100
+                cva_df["Res CVA Growth"] = (cva_df["residential_cva"] / base_res) * 100 if base_res > 0 else 100
+                
+                fig = px.line(cva_df, x="year", y=["Farm CVA Growth", "Res CVA Growth"], 
+                              title=f"Assessment Growth Since {base_year} (Index=100)",
+                              color_discrete_map={"Farm CVA Growth": "#2E7D32", "Res CVA Growth": "#1565C0"})
+                fig.update_layout(yaxis_title="Index Value", xaxis_title="Year", legend_title=None, 
+                                  legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1))
+                st.plotly_chart(fig, use_container_width=True)
+                
+        with c2:
+            # Tax share over time
+            share_df = muni_df[["year", "farmland_share_of_taxes"]].dropna()
+            if not share_df.empty:
+                share_df["Farm Tax Share (%)"] = share_df["farmland_share_of_taxes"] * 100
+                fig2 = px.area(share_df, x="year", y="Farm Tax Share (%)", 
+                               title="Farmland Share of Total Municipal Taxes",
+                               color_discrete_sequence=["#2E7D32"])
+                fig2.update_layout(yaxis_title="Share of Tax Levy (%)", xaxis_title="Year")
+                st.plotly_chart(fig2, use_container_width=True)
+                
+        if res:
+            st.markdown("#### Revenue-Neutral Redistribution Breakdown")
+            breakdown = pd.DataFrame([
+                {"Property Class": "Residential", "Impact": res.res_increase_total},
+                {"Property Class": "Commercial", "Impact": res.com_increase_total},
+                {"Property Class": "Industrial", "Impact": res.ind_increase_total},
+                {"Property Class": "All Other Classes", "Impact": res.other_increase_total},
+            ])
+            st.dataframe(breakdown.style.format({"Impact": "${:,.0f}"}), hide_index=True)
+
+# --- Section 4: Track 2 & 3 Charts ---
+with st.expander("📉 Track 2 & 3: OMPF Funding Details", expanded=True):
+    if not muni_df.empty:
+        c1, c2 = st.columns(2)
+        with c1:
+            ompf_df = muni_df[["year", "ompf_grant"]].dropna()
+            if not ompf_df.empty:
+                fig3 = px.bar(ompf_df, x="year", y="ompf_grant", title="OMPF Grant Allocation Over Time",
+                              color_discrete_sequence=["#D32F2F"])
+                fig3.update_layout(yaxis_title="Grant Amount ($)", xaxis_title="Year")
+                st.plotly_chart(fig3, use_container_width=True)
+                
+        with c2:
+            dep_df = muni_df[["year", "ompf_dependency"]].dropna()
+            if not dep_df.empty:
+                dep_df["Provincial Support Share (%)"] = dep_df["ompf_dependency"] * 100
+                fig4 = px.line(dep_df, x="year", y="Provincial Support Share (%)", 
+                               title="Provincial Support Share of Total Revenue",
+                               color_discrete_sequence=["#D32F2F"])
+                fig4.update_layout(yaxis_title="Share of Total Revenue (%)", xaxis_title="Year")
+                st.plotly_chart(fig4, use_container_width=True)
+
+        # Comparison bar chart: Current vs $1B Unfettered vs $1B Gated
+        st.markdown("#### 💰 OMPF Scenario Comparison")
+        
+        scenario_data = pd.DataFrame([
+            {"Scenario": f"Current ({latest_year})", "OMPF Amount": ompf_grant},
+            {"Scenario": "$1B (Current Formula)", "OMPF Amount": scenario_grant_unfettered},
+            {"Scenario": "$1B (Rural-Only Gate)", "OMPF Amount": scenario_grant_gated},
+        ])
+        
+        colors = ["#D32F2F", "#FF8F00", "#2E7D32"]
+        fig5 = go.Figure(data=[
+            go.Bar(
+                x=scenario_data["Scenario"],
+                y=scenario_data["OMPF Amount"],
+                marker_color=colors,
+                text=[f"${v:,.0f}" for v in scenario_data["OMPF Amount"]],
+                textposition="outside"
+            )
+        ])
+        fig5.update_layout(
+            yaxis_title="OMPF Grant Amount ($)",
+            yaxis_tickformat="$,.0f",
+            showlegend=False,
+            height=400
+        )
+        st.plotly_chart(fig5, use_container_width=True)
+
+        st.markdown(f"""
+        **Key Insight:** Under OFA's proposed gated model, the **${URBAN_LEAKAGE_OMPF:,.0f}** currently flowing to 73 urban centres
+        would be redirected to qualifying rural and northern municipalities. {'This municipality benefits from that redistribution.' if muni_eligible else 'This municipality would no longer qualify for core OMPF grants.'}
+        """)
+
+# --- Section 5: Eligibility Details ---
+with st.expander("🔍 Rural Eligibility Gate Details", expanded=False):
+    st.markdown("#### Proposed 3-Gate Eligibility Model")
+    st.markdown("""
+    Under OFA's proposed OMPF guideline reform, a municipality must meet **at least one** of the following criteria to qualify for core OMPF grants:
+    
+    | Gate | Metric | Threshold | Source |
+    |------|--------|-----------|--------|
+    | 🏔️ Northern | Located in Northern Ontario | Northeast or Northwest district | Ministry of Finance |
+    | 🏘️ RSCM | Rural and Small Community Measure | ≥ 25% | Statistics Canada |
+    | 🌾 FAM | Farm Area Measure | > 5% | MPAC Assessment Data |
+    """)
+    
+    st.markdown(f"#### {selected_name} — Eligibility Breakdown")
+    
+    gate_data = pd.DataFrame([
+        {"Gate": "🏔️ Northern Ontario", "Value": muni_region if muni_region else "N/A", "Threshold": "Northeast or Northwest", "Pass": "✅" if muni_region in ["Northeast", "Northwest"] else "❌"},
+        {"Gate": "🏘️ RSCM", "Value": f"{muni_rscm:.1%}", "Threshold": "≥ 25%", "Pass": "✅" if muni_rscm >= 0.25 else "❌"},
+        {"Gate": "🌾 FAM", "Value": f"{muni_fam:.1%}", "Threshold": "> 5%", "Pass": "✅" if muni_fam > 0.05 else "❌"},
+    ])
+    st.dataframe(gate_data, hide_index=True, use_container_width=True)
+    
+    if muni_eligible:
+        st.success(f"**Result:** {selected_name} **passes** the eligibility gate and would continue receiving OMPF funding under the proposed reform.")
+    else:
+        st.error(f"**Result:** {selected_name} **fails** all three gates and would be classified as urban, losing access to core OMPF grants.")
+
+    # Summary stats
+    st.markdown("---")
+    st.markdown("#### Province-Wide Impact Summary")
+    
+    # Count eligible vs filtered
+    eligible_count = sum(1 for _, r in latest_ompf_df.iterrows() if is_eligible(r["fir_code"]))
+    filtered_count = len(latest_ompf_df) - eligible_count
+    
+    m1, m2, m3 = st.columns(3)
+    m1.metric("Eligible Municipalities", eligible_count)
+    m2.metric("Filtered Out (Urban)", filtered_count)
+    m3.metric("Urban Leakage", f"${URBAN_LEAKAGE_OMPF:,.0f}")
+
+global_footer()
