@@ -38,6 +38,9 @@ st.markdown("""
 <style>
     header[data-testid="stHeader"] {display: none;}
     footer {display: none;}
+    [data-testid="stSidebar"] {background: linear-gradient(180deg, #f0f7f0 0%, #e8f5e9 100%);}
+    .stApp h1, .stApp h2 {color: #1b5e20 !important;}
+    .stApp h3 {color: #2E7D32 !important;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -143,7 +146,11 @@ available_sgcs = sorted(fir_df["sgc_code"].unique())
 available_names = sorted([community_lookup.get(c, c) for c in available_sgcs if c in community_lookup])
 
 with st.sidebar:
-    st.image("https://ofa.on.ca/wp-content/uploads/2020/01/ofa-logo-stacked.png", width=150)
+    logo_path = Path(__file__).parent / "app" / "data" / "OFA_logo.png"
+    if logo_path.exists():
+        st.image(str(logo_path), width=150)
+    else:
+        st.markdown("### 🌾 OFA")
     st.markdown("## 🏛️ AMO 2026")
     st.markdown("**Interactive Analysis Tool**")
     
@@ -242,6 +249,7 @@ if HAS_PYDECK and boundaries is not None:
         }
         deck = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip=tooltip, map_style="mapbox://styles/mapbox/light-v11")
         st.pydeck_chart(deck, height=350)
+        st.caption("🟢 Selected Municipality  ·  🟩 Eligible (Rural/Northern)  ·  🟥 Filtered Out (Urban)  ·  ⬜ No Data")
 
 # --- Calculations ---
 TARGET_RATIO = 0.15
@@ -297,24 +305,27 @@ current_provincial_support_share = ompf_grant / total_rev if total_rev > 0 else 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("### 🌾 Track 1: Farm Tax Burden")
+    st.markdown("### 🌾 Fair Farm Taxes")
     if current_ratio == 0:
         st.info("No farm tax data available for this municipality.")
     elif is_below_or_equal:
         st.success(f"🎉 **{selected_name}** is already at or below OFA's proposed {TARGET_RATIO:.2f} maximum farm tax ratio (Current: {current_ratio:.4f}). Thank you for your leadership on fair farm taxation!")
     else:
-        st.markdown(f"Under OFA's proposed **{TARGET_RATIO:.2f}** maximum ratio, the revenue-neutral redistribution to other classes would be:")
-        st.metric("Farm Tax Redistribution", f"${redistribution_amount:,.0f}")
-        st.caption(f"Current farm tax ratio is **{current_ratio:.4f}** ({latest_year} data).")
+        st.markdown(f"Under OFA's proposed **{TARGET_RATIO:.2f}** maximum ratio, the revenue-neutral shift across all property classes:")
+        st.metric("Farm Tax Relief", f"${redistribution_amount:,.0f}")
+        if res and res.res_increase_per_household_month:
+            st.caption(f"Impact to average household: **${res.res_increase_per_household_month:,.2f}/month** · Current ratio: {current_ratio:.4f}")
+        else:
+            st.caption(f"Current farm tax ratio: **{current_ratio:.4f}** ({latest_year} data).")
 
 with col2:
-    st.markdown("### 📊 Track 2: OMPF ($1B Current Formula)")
+    st.markdown("### 📊 Restored Provincial Funding")
     st.markdown(f"If the OMPF is restored to **$1 Billion** under the **current formula**:")
     st.metric("Additional Annual OMPF", f"${additional_ompf_unfettered:,.0f}")
     st.caption(f"Current ({latest_year}): **${ompf_grant:,.0f}** → Scenario: **${scenario_grant_unfettered:,.0f}**")
 
 with col3:
-    st.markdown("### 🛡️ Track 3: OMPF ($1B Rural-Only)")
+    st.markdown("### 🛡️ Rural-Targeted Funding")
     if muni_eligible:
         bonus = additional_ompf_gated - additional_ompf_unfettered
         st.markdown(f"If the OMPF is restored to **$1 Billion** with **rural-only eligibility**:")
@@ -324,8 +335,20 @@ with col3:
         st.metric("OMPF Under Gated Model", "$0", delta=f"-${ompf_grant:,.0f}")
         st.caption("This municipality does not meet the RSCM, FAM, or Northern eligibility gates.")
 
-# --- Section 3: Track 1 Charts ---
-with st.expander("📈 Track 1: Farm Tax Burden Details", expanded=True):
+# --- Bottom Line Callout ---
+if muni_eligible and redistribution_amount > 0:
+    net_position = additional_ompf_gated - redistribution_amount
+    if net_position >= 0:
+        st.success(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **${additional_ompf_gated:,.0f}** in new annual OMPF funding — more than covering the **${redistribution_amount:,.0f}** farm tax shift. **Net gain: ${net_position:,.0f}/year.**")
+    else:
+        gap = abs(net_position)
+        coverage_pct = (additional_ompf_gated / redistribution_amount) * 100 if redistribution_amount > 0 else 0
+        st.info(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **${additional_ompf_gated:,.0f}** in new OMPF funding, covering **{coverage_pct:.0f}%** of the **${redistribution_amount:,.0f}** farm tax shift. Remaining gap: **${gap:,.0f}/year.**")
+elif muni_eligible and is_below_or_equal:
+    st.success(f"💡 **{selected_name}** already meets OFA's farm tax target and would receive **${additional_ompf_gated:,.0f}** in additional annual OMPF funding under the rural-only model.")
+
+# --- Section 3: Fair Farm Taxes Details ---
+with st.expander("📈 Fair Farm Taxes — Details", expanded=True):
     if not muni_df.empty:
         c1, c2 = st.columns(2)
         with c1:
@@ -367,7 +390,7 @@ with st.expander("📈 Track 1: Farm Tax Burden Details", expanded=True):
             st.dataframe(breakdown.style.format({"Impact": "${:,.0f}"}), hide_index=True)
 
 # --- Section 4: Track 2 & 3 Charts ---
-with st.expander("📉 Track 2 & 3: OMPF Funding Details", expanded=True):
+with st.expander("📉 OMPF Funding Details", expanded=True):
     if not muni_df.empty:
         c1, c2 = st.columns(2)
         with c1:
@@ -381,11 +404,11 @@ with st.expander("📉 Track 2 & 3: OMPF Funding Details", expanded=True):
         with c2:
             dep_df = muni_df[["year", "ompf_dependency"]].dropna()
             if not dep_df.empty:
-                dep_df["Provincial Support Share (%)"] = dep_df["ompf_dependency"] * 100
-                fig4 = px.line(dep_df, x="year", y="Provincial Support Share (%)", 
-                               title="Provincial Support Share of Total Revenue",
+                dep_df["OMPF Share (%)"] = dep_df["ompf_dependency"] * 100
+                fig4 = px.line(dep_df, x="year", y="OMPF Share (%)", 
+                               title="OMPF Share of Total Revenue",
                                color_discrete_sequence=["#D32F2F"])
-                fig4.update_layout(yaxis_title="Share of Total Revenue (%)", xaxis_title="Year")
+                fig4.update_layout(yaxis_title="OMPF Share of Total Revenue (%)", xaxis_title="Year")
                 st.plotly_chart(fig4, use_container_width=True)
 
         # Comparison bar chart: Current vs $1B Unfettered vs $1B Gated
@@ -397,7 +420,7 @@ with st.expander("📉 Track 2 & 3: OMPF Funding Details", expanded=True):
             {"Scenario": "$1B (Rural-Only Gate)", "OMPF Amount": scenario_grant_gated},
         ])
         
-        colors = ["#D32F2F", "#FF8F00", "#2E7D32"]
+        colors = ["#9E9E9E", "#FF8F00", "#2E7D32"]
         fig5 = go.Figure(data=[
             go.Bar(
                 x=scenario_data["Scenario"],
