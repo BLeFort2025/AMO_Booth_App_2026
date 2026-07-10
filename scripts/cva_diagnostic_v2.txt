@@ -1,0 +1,263 @@
+====================================================================================================
+CVA GROWTH N/A ANALYSIS ù Root Cause: Zero/Missing CVA in First Available Year
+====================================================================================================
+
+Total municipalities affected: 92 / 444
+
+By tier:
+  lower: 88
+  upper: 4
+
+====================================================================================================
+AFFECTED MUNICIPALITIES WITH ZERO CVA IN FIRST YEAR
+====================================================================================================
+  FIR 1134  | Addington Highlands Tp              | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:1,640,600); Residential(first_yr=0.0, first_good=2011:373,739,567); Commercial(first_yr=0.0, first_good=2011:9,961,433); Industrial(first_yr=0.0, first_good=2011:270,500)
+  FIR 4621  | Algonquin Highlands Tp              | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:134,110)
+  FIR 4103  | Arran-Elderslie M                   | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:178,272,700); Residential(first_yr=0.0, first_good=2012:403,893,931); Commercial(first_yr=0.0, first_good=2012:26,248,215); Industrial(first_yr=0.0, first_good=2012:6,710,379)
+  FIR 5901  | Atikokan Tp                         | lower    | yr 2010û2023 | Residential(first_yr=0.0, first_good=2011:82,904,930); Commercial(first_yr=0.0, first_good=2011:9,288,937); Industrial(first_yr=0.0, first_good=2011:24,877,033)
+  FIR 706   | Augusta Tp                          | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:23,146,010); Residential(first_yr=0.0, first_good=2011:586,466,783); Commercial(first_yr=0.0, first_good=2011:18,004,323); Industrial(first_yr=0.0, first_good=2011:25,635,356)
+  FIR 4342  | Barrie C                            | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:22,394,900); Residential(first_yr=0.0, first_good=2011:11,473,333,583); Commercial(first_yr=0.0, first_good=2011:2,437,081,170); Industrial(first_yr=0.0, first_good=2011:350,953,800)
+  FIR 3401  | Bayham M                            | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:148,477,060); Residential(first_yr=0.0, first_good=2011:382,118,925); Commercial(first_yr=0.0, first_good=2011:15,392,570); Industrial(first_yr=0.0, first_good=2011:8,859,845)
+  FIR 1208  | Belleville C                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:42,422,670); Residential(first_yr=0.0, first_good=2012:3,101,170,633); Commercial(first_yr=0.0, first_good=2012:846,862,265); Industrial(first_yr=0.0, first_good=2012:124,407,099)
+  FIR 4020  | Bluewater M                         | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:391,165,297); Residential(first_yr=0.0, first_good=2012:1,106,027,525); Commercial(first_yr=0.0, first_good=2012:52,383,789); Industrial(first_yr=0.0, first_good=2012:15,624,925)
+  FIR 5432  | Brethour Tp                         | lower    | yr 2010û2024 | Industrial(first_yr=0.0, first_good=2019:26,100)
+  FIR 3815  | Brooke-Alvinston M                  | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:241,682,000); Residential(first_yr=0.0, first_good=2012:125,149,400); Commercial(first_yr=0.0, first_good=2012:4,343,800); Industrial(first_yr=0.0, first_good=2012:2,365,100)
+  FIR 2402  | Burlington C                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:88,599,250); Residential(first_yr=0.0, first_good=2011:21,624,974,783); Commercial(first_yr=0.0, first_good=2011:3,955,313,061); Industrial(first_yr=0.0, first_good=2011:1,000,194,734)
+  FIR 5128  | Burpee and Mills Tp                 | lower    | yr 2010û2024 | Industrial(first_yr=0.0, first_good=2013:20,500)
+  FIR 5454  | Chamberlain Tp                      | lower    | yr 2010û2024 | Industrial(first_yr=0.0, first_good=2018:54,400)
+  FIR 5292  | Chapleau Tp                         | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2013:62,100)
+  FIR 3650  | Chatham-Kent M                      | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:2,205,651,120); Residential(first_yr=0.0, first_good=2011:5,380,594,074); Commercial(first_yr=0.0, first_good=2011:840,595,683); Industrial(first_yr=0.0, first_good=2011:183,106,505)
+  FIR 4831  | Chisholm Tp                         | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2012:5,450,500); Residential(first_yr=0.0, first_good=2012:94,798,910); Commercial(first_yr=0.0, first_good=2012:381,970); Industrial(first_yr=0.0, first_good=2012:317,820)
+  FIR 5408  | Cobalt T                            | lower    | yr 2010û2024 | Industrial(first_yr=0.0, first_good=2022:7,000)
+  FIR 1421  | Cobourg T                           | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2011:1,373,500); Residential(first_yr=0.0, first_good=2011:1,586,054,175); Commercial(first_yr=0.0, first_good=2011:276,214,251); Industrial(first_yr=0.0, first_good=2011:47,612,484)
+  FIR 5819  | Conmee Tp                           | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2013:482,800); Residential(first_yr=0.0, first_good=2013:42,571,600); Commercial(first_yr=0.0, first_good=2013:630,900); Industrial(first_yr=0.0, first_good=2013:46,300)
+  FIR 1411  | Cramahe Tp                          | lower    | yr 2010û2022 | Farmland(first_yr=0.0, first_good=2012:41,931,100); Residential(first_yr=0.0, first_good=2012:513,350,123); Commercial(first_yr=0.0, first_good=2012:26,469,325); Industrial(first_yr=0.0, first_good=2012:13,777,772)
+  FIR 5834  | Dorion Tp                           | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:813,600); Residential(first_yr=0.0, first_good=2012:16,470,000); Commercial(first_yr=0.0, first_good=2012:984,300); Industrial(first_yr=0.0, first_good=2012:161,500)
+  FIR 5449  | Evanturel Tp                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:5,762,200); Residential(first_yr=0.0, first_good=2012:19,892,600); Commercial(first_yr=0.0, first_good=2012:2,049,500); Industrial(first_yr=0.0, first_good=2012:16,500)
+  FIR 5652  | Fauquier-Strickland Tp              | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2015:24,000)
+  FIR 5912  | Fort Frances T                      | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2013:36,100); Residential(first_yr=0.0, first_good=2013:411,229,560); Commercial(first_yr=0.0, first_good=2013:70,209,715); Industrial(first_yr=0.0, first_good=2013:28,559,253)
+  FIR 1001  | Frontenac Islands Tp                | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2014:39,443,200); Residential(first_yr=0.0, first_good=2014:492,475,500); Commercial(first_yr=0.0, first_good=2014:5,088,500); Industrial(first_yr=0.0, first_good=2014:8,479,800)
+  FIR 4203  | Georgian Bluffs Tp                  | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:96,743,400); Residential(first_yr=0.0, first_good=2011:1,167,757,319); Commercial(first_yr=0.0, first_good=2011:72,795,828); Industrial(first_yr=0.0, first_good=2011:11,789,677)
+  FIR 4028  | Goderich T                          | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2014:1,085,600)
+  FIR 1121  | Greater Napanee T                   | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2012:68,187,500); Residential(first_yr=0.0, first_good=2012:1,147,639,830); Commercial(first_yr=0.0, first_good=2012:145,919,487); Industrial(first_yr=0.0, first_good=2012:89,464,601)
+  FIR 5307  | Greater Sudbury C                   | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:11,920,700); Residential(first_yr=0.0, first_good=2012:10,556,928,002); Commercial(first_yr=0.0, first_good=2012:1,539,609,115); Industrial(first_yr=0.0, first_good=2012:424,829,656)
+  FIR 5876  | Greenstone M                        | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2012:169,338,150); Commercial(first_yr=0.0, first_good=2012:79,141,959); Industrial(first_yr=0.0, first_good=2012:10,937,441)
+  FIR 1290  | Hastings Highlands M                | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:2,318,982); Residential(first_yr=0.0, first_good=2011:756,423,303); Commercial(first_yr=0.0, first_good=2011:13,677,060); Industrial(first_yr=0.0, first_good=2011:3,033,005)
+  FIR 208   | Hawkesbury T                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2014:46,000)
+  FIR 5676  | Hearst T                            | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:929,700); Residential(first_yr=0.0, first_good=2011:220,478,790); Commercial(first_yr=0.0, first_good=2011:61,966,390); Industrial(first_yr=0.0, first_good=2011:7,688,750)
+  FIR 5434  | Hilliard Tp                         | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:7,986,100); Residential(first_yr=0.0, first_good=2012:7,701,100); Commercial(first_yr=0.0, first_good=2012:6,200); Industrial(first_yr=0.0, first_good=2012:500)
+  FIR 5796  | Hornepayne Tp                       | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2023:12,400)
+  FIR 4046  | Howick Tp                           | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:181,986,100); Residential(first_yr=0.0, first_good=2012:189,613,665); Commercial(first_yr=0.0, first_good=2012:10,068,930); Industrial(first_yr=0.0, first_good=2012:2,315,330)
+  FIR 4442  | Huntsville T                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:1,996,900); Residential(first_yr=0.0, first_good=2011:2,862,219,767); Commercial(first_yr=0.0, first_good=2011:383,277,061); Industrial(first_yr=0.0, first_good=2011:44,230,632)
+  FIR 4000  | Huron Co                            | upper    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:2,551,581,177); Residential(first_yr=0.0, first_good=2011:4,678,583,025); Commercial(first_yr=0.0, first_good=2011:416,043,409); Industrial(first_yr=0.0, first_good=2011:131,557,994)
+  FIR 4040  | Huron East M                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:644,355,070); Residential(first_yr=0.0, first_good=2011:530,877,166); Commercial(first_yr=0.0, first_good=2011:37,955,165); Industrial(first_yr=0.0, first_good=2011:18,383,799)
+  FIR 4107  | Huron-Kinloss Tp                    | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:250,915,200); Residential(first_yr=0.0, first_good=2012:945,359,732); Commercial(first_yr=0.0, first_good=2012:18,034,045); Industrial(first_yr=0.0, first_good=2012:9,905,118)
+  FIR 4951  | Joly Tp                             | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:47,275); Residential(first_yr=0.0, first_good=2011:38,258,067); Commercial(first_yr=0.0, first_good=2011:128,598); Industrial(first_yr=0.0, first_good=2011:54,844)
+  FIR 1651  | Kawartha Lakes C                    | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:616,181,505); Residential(first_yr=0.0, first_good=2012:8,628,386,690); Commercial(first_yr=0.0, first_good=2012:488,783,190); Industrial(first_yr=0.0, first_good=2012:62,115,165)
+  FIR 4918  | Kearney T                           | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2011:314,272,915)
+  FIR 5424  | Kerns Tp                            | lower    | yr 2010û2024 | Industrial(first_yr=0.0, first_good=2019:34,000)
+  FIR 4731  | Killaloe, Hagarty and Richards Tp   | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:3,991,100); Residential(first_yr=0.0, first_good=2012:269,197,007); Commercial(first_yr=0.0, first_good=2012:4,925,553); Industrial(first_yr=0.0, first_good=2012:79,285)
+  FIR 5916  | La Vallee Tp                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2013:7,627,600); Residential(first_yr=0.0, first_good=2013:54,077,900); Commercial(first_yr=0.0, first_good=2013:1,001,200); Industrial(first_yr=0.0, first_good=2013:493,000)
+  FIR 5946  | Lake of The Woods Tp                | lower    | yr 2010û2024 | Industrial(first_yr=0.0, first_good=2021:1,300)
+  FIR 5406  | Latchford T                         | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2011:18,447,060); Commercial(first_yr=0.0, first_good=2011:581,218); Industrial(first_yr=0.0, first_good=2011:11,100)
+  FIR 3706  | Leamington M                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:496,693,844); Residential(first_yr=0.0, first_good=2011:1,561,266,259); Commercial(first_yr=0.0, first_good=2011:261,716,144); Industrial(first_yr=0.0, first_good=2011:51,770,826)
+  FIR 1251  | Limerick Tp                         | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:6,070)
+  FIR 2622  | Lincoln T                           | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:285,562,790); Residential(first_yr=0.0, first_good=2011:2,116,764,326); Commercial(first_yr=0.0, first_good=2011:155,653,400); Industrial(first_yr=0.0, first_good=2011:76,273,139)
+  FIR 5859  | Marathon T                          | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2012:78,943,365); Commercial(first_yr=0.0, first_good=2012:22,992,297); Industrial(first_yr=0.0, first_good=2012:27,532,162)
+  FIR 4821  | Mattawa T                           | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2020:16,786,200)
+  FIR 4819  | Mattawan Tp                         | lower    | yr 2010û2018 | Residential(first_yr=0.0, first_good=2011:17,857,903); Commercial(first_yr=0.0, first_good=2011:88,575); Industrial(first_yr=0.0, first_good=2013:11,700)
+  FIR 5677  | Mattice - Val Cote Tp               | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2012:20,699,300); Commercial(first_yr=0.0, first_good=2012:16,183,500); Industrial(first_yr=0.0, first_good=2012:140,800)
+  FIR 4931  | McDougall Tp                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:579,437); Residential(first_yr=0.0, first_good=2011:573,283,531); Commercial(first_yr=0.0, first_good=2011:7,137,090); Industrial(first_yr=0.0, first_good=2011:1,615,390)
+  FIR 4400  | Muskoka D                           | upper    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:11,004,500); Residential(first_yr=0.0, first_good=2012:21,185,632,111); Commercial(first_yr=0.0, first_good=2012:1,146,239,965); Industrial(first_yr=0.0, first_good=2012:87,907,707)
+  FIR 4453  | Muskoka Lakes Tp                    | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:4,812,900); Residential(first_yr=0.0, first_good=2011:8,339,360,668); Commercial(first_yr=0.0, first_good=2011:262,568,651); Industrial(first_yr=0.0, first_good=2011:3,851,646)
+  FIR 5844  | Nipigon Tp                          | lower    | yr 2010û2021 | Residential(first_yr=0.0, first_good=2012:52,190,690); Commercial(first_yr=0.0, first_good=2012:9,481,700); Industrial(first_yr=0.0, first_good=2012:258,960)
+  FIR 3310  | Norfolk County                      | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:935,326,073); Residential(first_yr=0.0, first_good=2012:5,161,953,150); Commercial(first_yr=0.0, first_good=2012:410,013,869); Industrial(first_yr=0.0, first_good=2012:98,925,094)
+  FIR 3954  | North Middlesex M                   | lower    | yr 2010û2022 | Farmland(first_yr=0.0, first_good=2012:534,378,500); Residential(first_yr=0.0, first_good=2012:404,040,535); Commercial(first_yr=0.0, first_good=2012:20,832,710); Industrial(first_yr=0.0, first_good=2012:5,475,505)
+  FIR 4109  | Northern Bruce Peninsula M          | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:34,787,500); Residential(first_yr=0.0, first_good=2012:1,165,171,908); Commercial(first_yr=0.0, first_good=2012:31,696,595); Industrial(first_yr=0.0, first_good=2012:2,437,107)
+  FIR 1400  | Northumberland Co                   | upper    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:490,095,478); Residential(first_yr=0.0, first_good=2011:7,443,852,341); Commercial(first_yr=0.0, first_good=2011:608,244,822); Industrial(first_yr=0.0, first_good=2011:133,363,920)
+  FIR 3202  | Norwich Tp                          | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:443,210,100); Residential(first_yr=0.0, first_good=2012:743,181,599); Commercial(first_yr=0.0, first_good=2012:38,292,000); Industrial(first_yr=0.0, first_good=2012:13,426,601)
+  FIR 5808  | Oliver Paipoonge M                  | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2013:37,484,200); Residential(first_yr=0.0, first_good=2013:467,163,700); Commercial(first_yr=0.0, first_good=2013:25,735,900); Industrial(first_yr=0.0, first_good=2013:11,135,000)
+  FIR 5673  | Opasatika Tp                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2022:105,500)
+  FIR 4932  | Parry Sound T                       | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2013:585,100); Residential(first_yr=0.0, first_good=2013:522,290,540); Commercial(first_yr=0.0, first_good=2013:152,173,500); Industrial(first_yr=0.0, first_good=2013:8,541,800)
+  FIR 4764  | Pembroke C                          | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:110,800); Residential(first_yr=0.0, first_good=2012:727,042,203); Commercial(first_yr=0.0, first_good=2012:147,677,856); Industrial(first_yr=0.0, first_good=2012:8,467,761)
+  FIR 5719  | Plummer Additional Tp               | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2013:6,197,520); Residential(first_yr=0.0, first_good=2013:62,211,276); Commercial(first_yr=0.0, first_good=2013:501,175); Industrial(first_yr=0.0, first_good=2013:54,782)
+  FIR 3831  | Point Edward V                      | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2012:184,651,760); Commercial(first_yr=0.0, first_good=2012:80,123,020); Industrial(first_yr=0.0, first_good=2012:875,420)
+  FIR 2711  | Port Colborne C                     | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:30,594,750); Residential(first_yr=0.0, first_good=2011:1,320,177,031); Commercial(first_yr=0.0, first_good=2011:95,827,681); Industrial(first_yr=0.0, first_good=2011:61,517,213)
+  FIR 1423  | Port Hope M                         | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:123,572,200); Residential(first_yr=0.0, first_good=2012:1,346,897,433); Commercial(first_yr=0.0, first_good=2012:145,770,631); Industrial(first_yr=0.0, first_good=2012:44,300,216)
+  FIR 1204  | Quinte West C                       | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:94,872,595); Residential(first_yr=0.0, first_good=2012:2,718,026,917); Commercial(first_yr=0.0, first_good=2012:298,645,104); Industrial(first_yr=0.0, first_good=2012:66,339,150)
+  FIR 6041  | Red Lake M                          | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2012:242,652,690); Commercial(first_yr=0.0, first_good=2012:44,254,900); Industrial(first_yr=0.0, first_good=2012:40,356,383)
+  FIR 5851  | Schreiber Tp                        | lower    | yr 2010û2022 | Residential(first_yr=0.0, first_good=2013:22,998,100); Commercial(first_yr=0.0, first_good=2013:4,620,700); Industrial(first_yr=0.0, first_good=2014:19,000)
+  FIR 4300  | Simcoe Co                           | upper    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:1,963,377,619); Residential(first_yr=0.0, first_good=2011:35,119,627,541); Commercial(first_yr=0.0, first_good=2011:2,374,909,636); Industrial(first_yr=0.0, first_good=2011:566,448,098)
+  FIR 904   | Smiths Falls ST                     | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2018:116,700)
+  FIR 5648  | Smooth Rock Falls T                 | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2022:78,700)
+  FIR 506   | South Dundas Tp                     | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:157,089,800); Residential(first_yr=0.0, first_good=2012:721,865,392); Commercial(first_yr=0.0, first_good=2012:65,592,889); Industrial(first_yr=0.0, first_good=2012:10,263,009)
+  FIR 406   | South Stormont Tp                   | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:49,722,800); Residential(first_yr=0.0, first_good=2012:848,596,917); Commercial(first_yr=0.0, first_good=2012:41,455,133); Industrial(first_yr=0.0, first_good=2012:12,270,434)
+  FIR 4341  | Springwater Tp                      | lower    | yr 2010û2022 | Farmland(first_yr=0.0, first_good=2011:210,561,905); Residential(first_yr=0.0, first_good=2011:2,125,261,601); Commercial(first_yr=0.0, first_good=2011:88,972,080); Industrial(first_yr=0.0, first_good=2011:24,804,814)
+  FIR 3805  | St Clair Tp                         | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:337,794,700); Residential(first_yr=0.0, first_good=2012:1,114,528,591); Commercial(first_yr=0.0, first_good=2012:111,613,248); Industrial(first_yr=0.0, first_good=2012:150,986,156)
+  FIR 5204  | St-Charles M                        | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2012:2,791,800); Residential(first_yr=0.0, first_good=2012:106,443,337); Commercial(first_yr=0.0, first_good=2012:5,896,363)
+  FIR 1220  | Stirling-Rawdon Tp                  | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2012:53,792,700); Residential(first_yr=0.0, first_good=2012:298,552,500); Commercial(first_yr=0.0, first_good=2012:20,661,420); Industrial(first_yr=0.0, first_good=2012:2,332,980)
+  FIR 1124  | Stone Mills Tp                      | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:50,779,100); Residential(first_yr=0.0, first_good=2012:607,667,591); Commercial(first_yr=0.0, first_good=2012:8,766,168); Industrial(first_yr=0.0, first_good=2012:11,147,962)
+  FIR 3916  | Strathroy-Caradoc Tp                | lower    | yr 2010û2015 | Farmland(first_yr=0.0, first_good=2011:226,594,973); Residential(first_yr=0.0, first_good=2011:1,321,329,040); Commercial(first_yr=0.0, first_good=2011:160,829,105); Industrial(first_yr=0.0, first_good=2011:61,817,781)
+  FIR 4869  | Temagami M                          | lower    | yr 2010û2024 | Residential(first_yr=0.0, first_good=2011:276,911,441); Commercial(first_yr=0.0, first_good=2011:25,761,116); Industrial(first_yr=0.0, first_good=2011:53,475)
+  FIR 1231  | Tweed M                             | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:28,308,400); Residential(first_yr=0.0, first_good=2012:430,040,333); Commercial(first_yr=0.0, first_good=2012:31,647,432); Industrial(first_yr=0.0, first_good=2012:2,208,585)
+  FIR 2714  | Wainfleet Tp                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2011:98,691,300); Residential(first_yr=0.0, first_good=2011:687,019,255); Commercial(first_yr=0.0, first_good=2011:13,898,605); Industrial(first_yr=0.0, first_good=2011:4,076,500)
+  FIR 4758  | Whitewater Region Tp                | lower    | yr 2010û2023 | Farmland(first_yr=0.0, first_good=2012:75,474,200); Residential(first_yr=0.0, first_good=2012:545,419,388); Commercial(first_yr=0.0, first_good=2012:25,809,243); Industrial(first_yr=0.0, first_good=2012:6,025,629)
+  FIR 1254  | Wollaston Tp                        | lower    | yr 2010û2024 | Farmland(first_yr=0.0, first_good=2012:1,427,800); Residential(first_yr=0.0, first_good=2012:153,221,900); Commercial(first_yr=0.0, first_good=2012:1,156,400); Industrial(first_yr=0.0, first_good=2012:154,700)
+
+====================================================================================================
+IMPACT ON CVA GROWTH DISPLAY (# of N/A metrics per class)
+====================================================================================================
+  Farmland: 120 municipalities would show N/A growth
+  Residential: 76 municipalities would show N/A growth
+  Commercial: 77 municipalities would show N/A growth
+  Industrial: 84 municipalities would show N/A growth
+
+====================================================================================================
+DATA QUALITY: CVA=0 rows (not null, but explicitly zero)
+====================================================================================================
+  farmland_cva: 939 zeros, 13 nulls
+  residential_cva: 189 zeros, 13 nulls
+  commercial_cva: 217 zeros, 13 nulls
+  industrial_cva: 336 zeros, 13 nulls
+
+====================================================================================================
+ZERO CVA BY YEAR (farmland_cva)
+====================================================================================================
+  2010: 119 zeros, 0 nulls (out of 437)
+  2011: 125 zeros, 0 nulls (out of 444)
+  2012: 64 zeros, 0 nulls (out of 444)
+  2013: 58 zeros, 0 nulls (out of 444)
+  2014: 56 zeros, 0 nulls (out of 444)
+  2015: 57 zeros, 0 nulls (out of 440)
+  2016: 53 zeros, 0 nulls (out of 442)
+  2017: 58 zeros, 0 nulls (out of 444)
+  2018: 54 zeros, 1 nulls (out of 441)
+  2019: 52 zeros, 0 nulls (out of 444)
+  2020: 50 zeros, 7 nulls (out of 443)
+  2021: 54 zeros, 4 nulls (out of 443)
+  2022: 49 zeros, 1 nulls (out of 442)
+  2023: 49 zeros, 0 nulls (out of 430)
+  2024: 41 zeros, 0 nulls (out of 374)
+
+====================================================================================================
+MUNICIPALITIES WITH farmland_cva=0 IN 2010
+====================================================================================================
+  FIR 208   | Hawkesbury T                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 406   | South Stormont Tp                   | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 506   | South Dundas Tp                     | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 706   | Augusta Tp                          | lower    | 2010 CVA=0, 2011 CVA=23146010.0
+  FIR 708   | Prescott ST                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 904   | Smiths Falls ST                     | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1001  | Frontenac Islands Tp                | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1121  | Greater Napanee T                   | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1124  | Stone Mills Tp                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1134  | Addington Highlands Tp              | lower    | 2010 CVA=0, 2011 CVA=1640600.0
+  FIR 1204  | Quinte West C                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1208  | Belleville C                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1220  | Stirling-Rawdon Tp                  | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1231  | Tweed M                             | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1251  | Limerick Tp                         | lower    | 2010 CVA=0, 2011 CVA=6070.0
+  FIR 1254  | Wollaston Tp                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1290  | Hastings Highlands M                | lower    | 2010 CVA=0, 2011 CVA=2318982.0
+  FIR 1400  | Northumberland Co                   | upper    | 2010 CVA=0, 2011 CVA=490095478.0
+  FIR 1411  | Cramahe Tp                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1421  | Cobourg T                           | lower    | 2010 CVA=0, 2011 CVA=1373500.0
+  FIR 1423  | Port Hope M                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 1651  | Kawartha Lakes C                    | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 2402  | Burlington C                        | lower    | 2010 CVA=0, 2011 CVA=88599250.0
+  FIR 2622  | Lincoln T                           | lower    | 2010 CVA=0, 2011 CVA=285562790.0
+  FIR 2711  | Port Colborne C                     | lower    | 2010 CVA=0, 2011 CVA=30594750.0
+  FIR 2714  | Wainfleet Tp                        | lower    | 2010 CVA=0, 2011 CVA=98691300.0
+  FIR 3202  | Norwich Tp                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 3310  | Norfolk County                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 3401  | Bayham M                            | lower    | 2010 CVA=0, 2011 CVA=148477060.0
+  FIR 3650  | Chatham-Kent M                      | lower    | 2010 CVA=0, 2011 CVA=2205651120.0
+  FIR 3706  | Leamington M                        | lower    | 2010 CVA=0, 2011 CVA=496693844.0
+  FIR 3805  | St Clair Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 3815  | Brooke-Alvinston M                  | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 3831  | Point Edward V                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 3916  | Strathroy-Caradoc Tp                | lower    | 2010 CVA=0, 2011 CVA=226594973.0
+  FIR 3954  | North Middlesex M                   | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4000  | Huron Co                            | upper    | 2010 CVA=0, 2011 CVA=2551581177.0
+  FIR 4020  | Bluewater M                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4028  | Goderich T                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4040  | Huron East M                        | lower    | 2010 CVA=0, 2011 CVA=644355070.0
+  FIR 4046  | Howick Tp                           | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4103  | Arran-Elderslie M                   | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4107  | Huron-Kinloss Tp                    | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4109  | Northern Bruce Peninsula M          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4203  | Georgian Bluffs Tp                  | lower    | 2010 CVA=0, 2011 CVA=96743400.0
+  FIR 4300  | Simcoe Co                           | upper    | 2010 CVA=0, 2011 CVA=1963377619.0
+  FIR 4341  | Springwater Tp                      | lower    | 2010 CVA=0, 2011 CVA=210561905.0
+  FIR 4342  | Barrie C                            | lower    | 2010 CVA=0, 2011 CVA=22394900.0
+  FIR 4400  | Muskoka D                           | upper    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4442  | Huntsville T                        | lower    | 2010 CVA=0, 2011 CVA=1996900.0
+  FIR 4453  | Muskoka Lakes Tp                    | lower    | 2010 CVA=0, 2011 CVA=4812900.0
+  FIR 4465  | Georgian Bay Tp                     | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4621  | Algonquin Highlands Tp              | lower    | 2010 CVA=0, 2011 CVA=134110.0
+  FIR 4731  | Killaloe, Hagarty and Richards Tp   | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4758  | Whitewater Region Tp                | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4764  | Pembroke C                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4798  | Head, Clara and Maria Tp            | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4819  | Mattawan Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4821  | Mattawa T                           | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4831  | Chisholm Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4834  | East Ferris Tp                      | lower    | 2010 CVA=0, 2011 CVA=636700.0
+  FIR 4869  | Temagami M                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4912  | McMurrich-Monteith Tp               | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4922  | Burk's Falls V                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4931  | McDougall Tp                        | lower    | 2010 CVA=0, 2011 CVA=579437.0
+  FIR 4932  | Parry Sound T                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4948  | Sundridge V                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 4951  | Joly Tp                             | lower    | 2010 CVA=0, 2011 CVA=47275.0
+  FIR 4956  | South River V                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5134  | Cockburn Island Tp                  | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5136  | Killarney M                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5204  | St-Charles M                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5231  | Nairn and Hyman Tp                  | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5292  | Chapleau Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5307  | Greater Sudbury C                   | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5401  | Coleman Tp                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5406  | Latchford T                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5408  | Cobalt T                            | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5434  | Hilliard Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5449  | Evanturel Tp                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5452  | Englehart T                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5456  | Matachewan Tp                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5458  | McGarry Tp                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5462  | Larder Lake Tp                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5466  | Gauthier Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5648  | Smooth Rock Falls T                 | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5652  | Fauquier-Strickland Tp              | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5665  | Moosonee T                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5673  | Opasatika Tp                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5676  | Hearst T                            | lower    | 2010 CVA=0, 2011 CVA=929700.0
+  FIR 5677  | Mattice - Val Cote Tp               | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5706  | Hilton Beach V                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5719  | Plummer Additional Tp               | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5721  | Bruce Mines T                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5739  | Spanish T                           | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5740  | The North Shore Tp                  | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5741  | Elliot Lake C                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5779  | Dubreuilville Tp                    | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5791  | White River Tp                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5796  | Hornepayne Tp                       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5808  | Oliver Paipoonge M                  | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5819  | Conmee Tp                           | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5834  | Dorion Tp                           | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5841  | Red Rock Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5844  | Nipigon Tp                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5851  | Schreiber Tp                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5854  | Terrace Bay Tp                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5859  | Marathon T                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5866  | Manitouwadge Tp                     | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5876  | Greenstone M                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5901  | Atikokan Tp                         | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5912  | Fort Frances T                      | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 5916  | La Vallee Tp                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 6001  | Ignace Tp                           | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 6008  | Sioux Narrows-Nestor Falls Tp       | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 6034  | Sioux Lookout M                     | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 6041  | Red Lake M                          | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 6042  | Ear Falls Tp                        | lower    | 2010 CVA=0, 2011 CVA=0.0
+  FIR 6049  | Pickle Lake Tp                      | lower    | 2010 CVA=0, 2011 CVA=0.0

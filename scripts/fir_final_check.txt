@@ -1,0 +1,132 @@
+Shape: (2132, 58)
+Municipality codes: 444
+Years: [np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023), np.int64(2024)]
+Records per year:
+  2020: 443 records
+  2021: 443 records
+  2022: 442 records
+  2023: 430 records
+  2024: 374 records
+
+=== Non-null counts ===
+  fir_code                               2132/2132 (100.0%)
+  municipality_name                      2132/2132 (100.0%)
+  year                                   2132/2132 (100.0%)
+  accumulated_surplus                    1328/2132 ( 62.3%)
+  ag_land_hectares                        642/2132 ( 30.1%)
+  cash                                   1328/2132 ( 62.3%)
+  commercial_cva                         2131/2132 (100.0%)
+  commercial_muni_taxes                  2131/2132 (100.0%)
+  commercial_tax_rate                    2103/2132 ( 98.6%)
+  commercial_taxes                       2131/2132 (100.0%)
+  environmental                          2132/2132 (100.0%)
+  farmland_cva                           2120/2132 ( 99.4%)
+  farmland_muni_taxes                    2120/2132 ( 99.4%)
+  farmland_tax_rate                      1659/2132 ( 77.8%)
+  farmland_tax_ratio                     1514/2132 ( 71.0%)
+  farmland_taxes                         2120/2132 ( 99.4%)
+  general_govt                           2132/2132 (100.0%)
+  health                                 2132/2132 (100.0%)
+  industrial_cva                         2131/2132 (100.0%)
+  industrial_muni_taxes                  2131/2132 (100.0%)
+  industrial_tax_rate                      32/2132 (  1.5%)
+  industrial_taxes                       2131/2132 (100.0%)
+  multi_residential_cva                  2131/2132 (100.0%)
+  multi_residential_taxes                2131/2132 (100.0%)
+  net_financial_assets                   1328/2132 ( 62.3%)
+  ont_grants_conditional                 1328/2132 ( 62.3%)
+  ont_grants_unconditional               1328/2132 ( 62.3%)
+  own_purpose_tax_rev                    1328/2132 ( 62.3%)
+  paved_road_km                          1206/2132 ( 56.6%)
+  pil_rev                                1328/2132 ( 62.3%)
+  planning_development                   2132/2132 (100.0%)
+  protection                             2132/2132 (100.0%)
+  recreation_culture                     2132/2132 (100.0%)
+  res_building_permits_count                0/2132 (  0.0%)
+  res_building_permits_value                0/2132 (  0.0%)
+  residential_cva                        2120/2132 ( 99.4%)
+  residential_muni_taxes                 2120/2132 ( 99.4%)
+  residential_tax_rate                   2118/2132 ( 99.3%)
+  residential_taxes                      2120/2132 ( 99.4%)
+  social_family                          2132/2132 (100.0%)
+  solid_waste_tonnes                      698/2132 ( 32.7%)
+  taxes_receivable                       1328/2132 ( 62.3%)
+  total_expenses                         2132/2132 (100.0%)
+  total_financial_assets                 1328/2132 ( 62.3%)
+  total_liabilities                      1328/2132 ( 62.3%)
+  total_revenue                          1328/2132 ( 62.3%)
+  total_road_km                          1243/2132 ( 58.3%)
+  total_taxable_cva                      2120/2132 ( 99.4%)
+  total_taxes                            2120/2132 ( 99.4%)
+  transportation                         2132/2132 (100.0%)
+  unpaved_road_km                        1183/2132 ( 55.5%)
+  waste_diversion_rate                    644/2132 ( 30.2%)
+  waste_diverted_tonnes                   801/2132 ( 37.6%)
+  wastewater_km                           797/2132 ( 37.4%)
+  wastewater_ml_treated                   725/2132 ( 34.0%)
+  water_km                                836/2132 ( 39.2%)
+  water_ml_treated                        779/2132 ( 36.5%)
+  winter_road_km                         1209/2132 ( 56.7%)
+
+=== Sample: Toronto 2024 ===
+  (Toronto not found in 2024)
+
+=== Sample: Stormont, Dundas and Glengarry UCo 2024 ===
+  fir_code                             = 100
+  municipality_name                    = Stormont, Dundas and Glengarry UCo
+  year                                 = 2024
+  accumulated_surplus                  = NULL
+  ag_land_hectares                     = NULL
+  cash                                 = NULL
+  commercial_cva                       =         40,312,800
+  commercial_muni_taxes                = 0.0
+  commercial_tax_rate                  = 0.0
+  commercial_taxes                     =            410,650
+  environmental                        = 0.0
+  farmland_cva                         =         72,840,500
+  farmland_muni_taxes                  = 0.0
+  farmland_tax_rate                    = 0.0
+  farmland_tax_ratio                   = NULL
+  farmland_taxes                       =            464,292
+  general_govt                         =          1,350,118
+  health                               =             36,775
+  industrial_cva                       = 0.0
+  industrial_muni_taxes                = 0.0
+  industrial_tax_rate                  = NULL
+  industrial_taxes                     = 0.0
+  multi_residential_cva                =         10,124,600
+  multi_residential_taxes              =             64,535
+  net_financial_assets                 = NULL
+  ont_grants_conditional               = NULL
+  ont_grants_unconditional             = NULL
+  own_purpose_tax_rev                  = NULL
+  paved_road_km                        = NULL
+  pil_rev                              = NULL
+  planning_development                 =             40,190
+  protection                           =         10,103,829
+  recreation_culture                   = 0.0
+  res_building_permits_count           = NULL
+  res_building_permits_value           = NULL
+  residential_cva                      =      6,646,742,491
+  residential_muni_taxes               = 0.0
+  residential_tax_rate                 = 0.0
+  residential_taxes                    =         42,365,063
+  social_family                        = 0.0
+  solid_waste_tonnes                   = NULL
+  taxes_receivable                     = NULL
+  total_expenses                       =         11,789,183
+  total_financial_assets               = NULL
+  total_liabilities                    = NULL
+  total_revenue                        = NULL
+  total_road_km                        = NULL
+  total_taxable_cva                    =     11,336,244,003
+  total_taxes                          =         58,602,276
+  transportation                       =             41,545
+  unpaved_road_km                      = NULL
+  waste_diversion_rate                 = NULL
+  waste_diverted_tonnes                = NULL
+  wastewater_km                        = NULL
+  wastewater_ml_treated                = NULL
+  water_km                             = NULL
+  water_ml_treated                     = NULL
+  winter_road_km                       = NULL

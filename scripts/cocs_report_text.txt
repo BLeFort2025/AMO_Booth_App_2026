@@ -1,0 +1,344 @@
+Executive Summary
+This study evaluates the fiscal impact of farmland on municipal budgets in Ontario, emphasizing the role of farmland in generating municipal revenue while demanding minimal services. 
+Study Objective and Methodology
+The primary objective of this study is to assess the relationship between the share of farmland in a municipality and its fiscal health. Using Seemingly Unrelated Regressions (SUR), the study estimates how farmland affects total revenue and expenses in municipalities, while accounting for interconnected budget components. 
+Key findings:
+A 1% increase in farmland share correlates with a 0.55% increase in revenue and a 0.51% increase in expenses. 
+For every 1% loss in relative farm share, municipalities see their surplus (deficit) decrease (increase) by $242,140.
+Farmland significantly contributes to property tax revenue while having negligible impacts on most expenditure categories, except for transportation services.
+Municipalities with higher farmland shares benefit indirectly from increased commercial and industrial activity linked to agricultural operations.
+Policy Recommendations
+The findings highlight the fiscal benefits of farmland preservation and reinforce its importance for municipal and provincial policy. Recommendations include:
+Prioritizing Farmland Preservation: Municipalities should enforce strict adherence to the Provincial Policy Statement (PPS), restrict settlement boundary expansions, and prevent undersized lot creation to curb both "literal" and "virtual" farmland loss.
+Development Charge Reforms: Exempt farm buildings from development charges to discourage converting farmland to other uses while ensuring charges on residential and commercial developments reflect true growth-related costs.
+Tax Ratio Adjustments: Municipalities should reassess farm tax ratios to balance the increasing tax burden on farmland with its minimal service demands and substantial fiscal contributions.
+Increased Provincial Support: The Ontario Municipal Partnership Fund (OMPF) should be restored to its inflation-adjusted 2005 funding level of $985 million to alleviate financial constraints on rural municipalities.
+Investing in Rural Infrastructure: The provincial government should allocate $1.5 billion to rural infrastructure, including transportation, broadband, and social services, to support the economic sustainability of agriculture.
+This study confirms that farmland is a fiscal net positive to municipalities, contributing to stable revenues while minimizing demand on services. Protecting Ontario’s agricultural land base is not only critical for food security and economic resilience but also serves as a prudent fiscal strategy for local governments. Policies aligned with preserving farmland will ensure long-term municipal fiscal health and strengthen Ontario's agri-food sector.
+Introduction
+Land use decisions significantly impact the fiscal sustainability of municipalities. In Ontario, the interplay between farmland preservation and urban development is a critical area of focus, particularly as municipalities strive to balance budgets and meet growing service demands. Farmland, often undervalued in urban planning debates, provides more than just agricultural output; it contributes positively to municipal budgets by generating property tax revenues while demanding minimal public services.
+The Ontario Federation of Agriculture (OFA) has actively analyzed these dynamics, advocating for policies that recognize farmland's fiscal benefits. Research and case studies, such as Cost of Community Services (COCS) analyses, have been instrumental in quantifying these benefits. However, while COCS studies reveal valuable trends—like farmland's net fiscal positive—they are often criticized for methodological shortcomings, prompting calls for more robust, data-driven approaches.
+Overview of COCS studies 
+The American Farmland Trust developed the first Cost of Community Service (COCS) studies in the mid 1980’s. Within the broad field of municipal finance analysis, COCS studies measure the net fiscal impact of existing municipal land uses. COCS studies have accurately been described as a “snapshot in time” of the net impact different land uses have on a municipality’s budget. Specifically, this “snapshot” exhibits the total revenues and expenses associated with each type of land use. The COCS ratio is the standard measure of the net fiscal impact a land use has on a municipal government for one year. 
+The COCS ratio is derived by calculating the total dollar amount of municipal services received by a land use and dividing by the total revenue the municipality collects associated with that land use. A ratio greater than one suggests that the land use receives more in municipal services then revenue it generates for the municipality. Put simply, if a land use has a ratio greater than one, that land use has a negative net-impact on a municipality’s budget. Conversely, a COCS ratio less than one would imply a land use receives less in municipal services than it contributes in revenue to municipal budgets.
+For example, if the residential category has a ratio of 1.20, then one dollar and twenty cents worth of municipal services are received by the residential properties for every dollar of revenue the municipality collects from the residential properties. 
+COCS studies typically categorize a municipality’s land base into three or four different land uses: commercial, industrial, residential, and working land (farm and forest). In rural municipalities, where there is often little commercial and industrial activity, these land uses are combined into one category (commercial/industrial).
+Every COCS study is guided by four essential steps.
+Define land use categories.
+Collect data on local revenue and expenditures.
+Allocate revenue and expenditures to each defined land use category. 
+Analyze the data and calculate an expense/revenue ratio for each defined land use category. 
+COCS studies completed in Ontario have used the following three land use categories:
+Residential 
+All single and multifamily residences and apartment buildings, including farmhouses, residences attached to other kinds of businesses and rental units; all town owned property used for active recreation or social functions.  
+Commercial/Industrial  
+All privately owned buildings and land associated with business purposes, the manufacturing of goods or the provision of services, excluding agricultural and forestry purposes. 
+Farm & Forest
+All privately owned land and buildings associated with farming and forestry, i.e., land classified under the farmland tax code (FT) and the managed forest tax code (TT). 
+It is important to note that farmhouses are included in the residential category. As a result, the farm category refers only to the working land and outbuildings. Because farmhouses in Ontario are placed in the residential property assessment class and pay the full residential tax rate, they are included in the residential category for this study. 
+Results of COCS studies completed in Ontario
+In Ontario, the Ontario Federation of Agriculture (OFA) has adopted the COCS methodology to examine fiscal impacts on rural municipalities, focusing on two primary objectives: gathering Ontario-specific data and identifying areas where the provincial government should play a larger funding role. OFA’s COCS studies have been conducted at various municipal levels and aim to counter misconceptions—such as the idea that lower farm tax rates imply residents subsidize farmers. Instead, these studies demonstrate that farmland consistently consumes less in services relative to its revenue contribution, underscoring the importance of a reduced farm tax rate.
+As shown above, farm properties consistently had the lowest expense-over-revenue ratios, indicating that farms are a significant net positive to municipal budgets. 
+These findings align with the U.S. studies and support OFA’s stance on protecting farmland and discouraging urban sprawl. This adds weight to broader policy discussions, including the need to address farmland loss and enhance infrastructure funding for rural municipalities. They also provide evidence that the current assessment system which relies on market value has led to an over taxation of farmland relative to the services they demand from municipalities. 
+Given that these case studies only imply results for one municipality in one year, the plan was to continue completing as many studies as possible to gather more evidence over time. 
+In addition, to the challenges facing future COCS studies in Ontario, it is important to consider the limitations of the methodology: 
+Average vs. Marginal Impacts: COCS studies focus on average costs and revenues across land use categories, failing to capture how incremental changes in land use affect municipal budgets. For example, COCS studies fail to answer the question “if an acre of farmland is taken out of production for residential development, will it have a positive or negative impact on municipal budgets. 
+Subjective Cost Allocations: COCS methodologies often rely on interviews and default assumptions to allocate costs and revenues, introducing potential biases—real or perceived.
+Static Analysis: COCS studies are a snapshot in time. That means a case study in municipality A in the year 2025 cannot be used to infer results for municipality B in the year 2025 or in municipality A in 2026. This poses a significant challenge for provincial policy advocacy as numerous studies over multiple years would be needed to make definitive statements about the fiscal impacts of farmland on Ontario municipalities. COCS also neglect how land use impacts evolve or generate indirect fiscal effects.
+A new approach to evaluating the fiscal impacts of land use 
+In response to these critiques, Clapp, Freeland, Ihlanfeldt, and Willardsen (2023) present a novel approach in their analysis of Florida’s counties. Using a detailed nine-year panel dataset of Florida counties, they improve upon traditional COCS methodologies by incorporating Geographic Information System (GIS) tools and econometric modeling.
+Key methodological advancements include:
+Marginal Cost Analysis: The study examines how incremental changes in land use impact municipal budgets, providing a more precise measure of fiscal effects. It can answer the question of whether taking an acre of farmland out of production is a fiscal gain or loss to the municipality. 
+Detailed Land Use Categories: By disaggregating land uses (e.g., single-family housing, retirement communities, and commercial offices), the study reveals significant variations obscured by COCS studies.
+Dynamic Analysis: The inclusion of data at the county level of a nine-year period allows the researchers to draw more definitive conclusions about the fiscal impacts of different land uses in Florida. 
+No subjective allocations: The researchers do not make allocations of budget items themselves but examine how the revenues and expenditures of municipalities change based on the presence of different land use types. 
+Their findings largely align with traditional COCS conclusions that farmland is a net positive on municipal budgets while addressing many of the primary criticism about COCS case studies. 
+For example, they found that converting farmland to residential use is associated with fiscal deficits due to increased demands for social services. While shifts to commercial uses generate surpluses, driven by higher revenues. Importantly, the study highlights the indirect benefits of farmland, such as the influx of commercial businesses that provide inputs to farms. This indirect benefit is overlooked in traditional COCS case studies.
+By addressing the limitations of COCS studies, this research offers a more comprehensive understanding of the fiscal dynamics of land use, reinforcing the value of farmland in maintaining municipal fiscal health.
+Adapting this methodology for Ontario
+When OFA first started conducting COCS case studies in Ontario, OFA was aware that while the studies in the U.S. showed farmland as a net positive on municipal budgets, we could not simply assume that is true for Ontario as municipal financial rules in the U.S. and Ontario are very different. 
+For that same reason, we can not simply assume that the results of the Florida study translate to Ontario. 
+In this study we aim to replicate the research conducted by Clapp et al. There is one major difference to note: While the Florida study focused primarily on the impacts of residential, commercial, and industrial land uses on municipal finances, our study concentrates on the specific impact of the agricultural sector, represented by "farm share" or the proportion of land devoted to farming. 
+The Florida study used every land use except farmland to examine the impact of farmland and how the impact of losing farmland to certain types of development impacted municipal budgets. In our study we use farm share to directly examine the impact of farmland on municipal budgets. 
+The primary reason for this is data access. There is not a publicly available dataset that would provide the necessary detailed information about different land use categories like residential, commercial and industrial. That information is likely held by MPAC and only available at a significant financial cost. 
+While it would be useful to better understand the fiscal dynamics of converting farmland into residential vs commercial development, OFA’s primary concern is the fiscal impact of farmland on municipal budgets in Ontario. Using the farm share variable allows us to measure that. 
+Overview of Data and Methodology 
+In our analysis of how the relative share of farmland in a county affects the county finances, we used a method called Seemingly Unrelated Regressions (SUR). This method helps us account for the fact that different parts of a budget—like revenue, expenses—are connected. Instead of looking at each part separately, SUR allows us to study them all together, recognizing that changes in one area might be related to changes in another. By doing this, we can get more accurate and reliable results than if we had analyzed each part on its own. 
+The reason we get more accurate and reliable results by using SUR is because it accounts for the fact that the different parts of a municipal budget—like revenue, expenses,—are likely influenced by the same underlying factors. For example, a change in farm share might affect both revenue and expenses at the same time. If we were to analyze these separately, we would ignore these connections and potentially miss important insights. SUR recognizes these links and allows the error terms (or unexplained parts of the model) in each equation to be correlated, which helps provide a more complete picture of how farm share impacts the overall budget.
+Our work draws heavily on the methodology from the Florida study conducted by Clapp et al., which also utilized SUR to examine the fiscal impacts of different land uses on local governments. In their study, they examined how shifts from agricultural to residential and commercial land uses impacted local revenues and expenditures, analyzing subcategories of land use and their distinct fiscal impacts. They applied seemingly unrelated regression to account for correlations between revenue and expenditure equations, which is similar to our approach.
+However, there are a few differences. While the Florida study focused primarily on the impacts of residential, commercial, and industrial land uses on municipal finances, our study concentrates on the specific impact of the agricultural sector, represented by "farm share" or the proportion of land devoted to farming. The Florida study used every land use except farmland to examine the impact of farmland and how the impact of losing farmland to certain types of development impacted municipal budgets.
+Of significance, the Florida study found that losing farmland and gaining office buildings had a positive impact on municipal budgets while losing farmland and gaining residential units has a negative impact. 
+Since we do not have the land use data for commercial, residential, industrial freely available, we used the relative share of the total municipal land base used for farming (total farm acres ÷ total acres of land in the county boundary) 
+It should be noted that we did not include large urban single-tier municipalities and northern districts where the relative farm share was extremely insignificant in this study. Rather, this study focuses on upper tier municipalities or counties that have a farm share that covers more than 20% of the land in the municipal boundaries. 
+The following is a description of variables used in the analysis: 
+Farm relative share: The percentage of a counties total land mass that is used for farming.
+Population: Total population of the county in each period. 
+Unemployment rate: The unemployment rate in each county in each period.
+Household income: The average household income of each county in each period.
+Total revenue: The total revenues from the county operating budget in each period. 
+Total expense: The total expenses from the county operating budget in each period. 
+Given much of the data used comes from Census data, the periods included in this analysis were for the years 2011, 2016 and 2021 for each county. 
+Our Model 
+To examine the impact of farmland, share on municipal fiscal outcomes, a Seemingly Unrelated Regression (SUR) model was specified to jointly estimate the determinants of municipal revenue and expenditure. The two equations are specified as follows:
+Revenue Equation (1)
+Expenditure Equation (2) 
+Where:
+log_total_revenueit​: Natural logarithm of total municipal revenue for county i at time t.
+log_total_expensesit: Natural logarithm of total municipal expenditures for county 
+i at time t.
+farm_relative_shareit: Proportion of total land area in county 
+i at time 𝑡 designated as farmland.
+log_populationit: Natural logarithm of the population in county i at time t.
+log_household_incomeit: Natural logarithm of median household income in county i at time t.
+unemployment_rateit: Unemployment rate in county i at time t.
+yeart: Year fixed effects capturing time-variant influences common across all counties.
+              εit(1)​,εit(2)​: Error terms for the revenue and expenditure equations, respectively, which are correlated. 
+The SUR model simultaneously estimates the two equations, allowing the error terms (εit(1),εit(2)​) to be correlated. This accounts for the possibility that unobserved factors influencing revenues may also affect expenditures. By leveraging this correlation structure, the SUR approach produces more efficient parameter estimates than estimating the equations independently.
+Year fixed effects (​) are included to control for time-specific shocks that could influence all counties in the dataset, such as policy changes or macroeconomic trends. This approach ensures that the coefficients reflect the marginal impact of farmland share and other variables on municipal revenues and expenditures.
+It should also be noted that all financial figures in our dataset are adjusted for inflation and presented in real, 2016 dollars. 
+Results 
+Relative farm share impact on municipal revenues, expenditures and their differences 
+  Total Revenue (Equation 1):
+A 1% increase in farm share is associated with a 0.55% increase in total revenue (p = 0.054, marginally significant at 10% level).
+This result highlights the contribution of farmland to the municipal tax base and revenue streams, potentially reflecting higher property tax stability in areas with more farmland.
+Total Expenses (Equation 2):
+A 1% increase in farm share corresponds to a 0.51% increase in total expenses (p = 0.073, marginally significant at 10% level).
+From the coefficients of our SUR analysis, we can confirm that relative farm share is associated with both increased revenues and expenditures for the municipality, but that relative farm share has a greater impact on municipal revenues than expenditures. 
+Using the inflation adjusted, average total revenues and expenses for each county in the analysis we find that a 1% increase in the relative farm share is associated with the following dollar impacts on municipal budgets:
+Revenues increase by $1,366,715
+Expenses increase by $1,124,576
+Budget surpluses increase by $242,140
+However, it is important to frame these results in the correct way. In Ontario, the unfortunate reality is that we are losing farmland not gaining it. So, a more realistic way to interpret these results is that for counties in Ontario, for every 1% of their total land mass that comes out of agricultural production, their operating surplus (deficit) decreases (increases) by $242,140. 
+Relative farm share impact on revenue and expenditure subcategories
+We also ran the SUR model on each of the subcategories of revenue and expenditures summarized In Tables 1 and 2 below: 
+Table 1: Revenue 
+Table 2: Expenditure 
+Notes on Statistical Significance:
+***: Significant at the 0.001 level.
+**: Significant at the 0.01 level.
+*: Significant at the 0.05 level.
+. : Marginal significance at the 0.1 level.
+Blank: Not statistically significant.
+Interpretation of the Coefficients for Each Subcategory
+Revenues
+Property Tax
+A 1% increase in the relative share of farmland is associated with a 1.07% increase in property tax revenue. This significant positive relationship (p < 0.01) indicates that farmland contributes meaningfully to the stability and growth of municipal property tax revenues.
+Revenue from Other Municipalities
+A 1% increase in farmland share is associated with a 2.12% decrease in revenues from other municipalities. While this negative relationship is marginally significant (p < 0.1), it suggests that municipalities with more farmland may rely less on inter-municipal funding or shared service agreements.
+User Fees
+A 1% increase in farmland share is associated with a 1.81% increase in user fee revenues. This statistically significant relationship (p < 0.05) highlights farmland’s role in potentially contributing to user fee revenue, possibly reflecting fees associated with rural services.
+Other Revenue
+A 1% increase in farmland share correlates with a 0.59% increase in other revenue sources, such as licenses, permits, or fines. However, this result is not statistically significant (p = 0.404), indicating that farmland does not have a meaningful impact on this revenue category.
+Total Grants
+A 1% increase in farmland share is associated with a 0.96% increase in grant revenues. While the result is marginally significant (p < 0.1), it suggests that municipalities with higher farmland shares may have slightly higher access to grants, such as rural infrastructure funding and OMPF funding.
+Expenditures
+General Government
+A 1% increase in farmland share is associated with a 0.59% increase in expenditures on general government services. This result is not statistically significant (p = 0.29), indicating no meaningful relationship between farmland share and general government spending.
+Protection Services
+A 1% increase in farmland share is associated with a 2.06% increase in protection services spending, including policing, fire protection, and emergency services. This relationship is not statistically significant (p = 0.18), suggesting that farmland does not strongly influence protection service costs.
+Transportation Services
+A 1% increase in farmland share is associated with a 1.21% increase in transportation spending. This statistically significant relationship (p < 0.05) reflects the infrastructure costs of maintaining roadways and transportation networks in rural areas.
+Environmental Services
+A 1% increase in farmland share is associated with a 2.27% increase in environmental services spending. However, this result is not statistically significant (p = 0.34), indicating no robust relationship between farmland share and environmental service costs.
+Planning & Development
+A 1% increase in farmland share is associated with a 0.73% increase in planning and development spending. This result is not statistically significant (p = 0.16), suggesting that farmland does not have a meaningful effect on planning and development expenditures.
+Social Services
+The people services category is a summation of all social services line items, including health services, social and family services, social housing, and recreation and cultural services.
+A 1% increase in farmland share is associated with a 0.76% increase in social services expenditures. This relationship is marginally significant (p < 0.1), suggesting that municipalities with more farmland may experience slightly higher social services costs.
+Policy Discussion  
+The findings in this study support the past findings of the five Cost of Community Services (COCS) studies conducted by OFA in Ontario—that farmland more than pays its own way and is a net positive on municipal budgets. 
+These fiscal benefits are in addition to the immense economic and ecological benefits that farmland provides to local communities across the province. 
+Despite these benefits, 319 acres of agricultural land is lost in Ontario every day to non-agricultural uses like housing and commercial developments and aggregate extraction. Whatever the reason, Ontario cannot sustain this level of land loss and continue producing enough food, fiber and fuel.
+Only 5% of Ontario’s land base is suitable for agriculture. And since we have no way to make more soil, we need to hold on to all the productive land and soil we have. If the supply of available, productive agricultural land continues to dwindle, everyone will suffer.  
+All levels of government—municipal governments in particular—should take immediate action to preserve Ontario farmland. What follows are a number of policy recommendations to help preserve Ontario farmland. 
+At the same time, municipalities and rural communities in particular face a number of financial constraints and are being asked to deliver a host of ‘people services’ and only given property tax as a self-sustaining revenue tool. To protect farmland, farm businesses must be economically sustainable. An important component in the economically sustainability of farm businesses in Ontario is to have financially healthy municipalities   
+The following policy recommendations aim to incentivise the preservation of Ontario farmland and provide fiscal support to our rural municipalities. 
+Recommendation 1: Municipalities must prioritize farmland preservation
+Protecting Ontario’s Farmland from “Virtual” and “Literal” Loss
+Farmland is an irreplaceable resource that underpins Ontario’s agri-food economy, sustains rural communities, and strengthens the province’s food security. As we have shown in this report, municipalities have a financial interest in protecting farmland. Given the rising value of farmland, the few services required and the indirect benefits of additional commercial assessment, rural municipalities need to preserve farmland to not only increase employment but to balance their own budgets. 
+The risks to maintaining a robust agricultural land base extend beyond the direct conversion of farmland into non-agricultural uses. Municipal policies and planning decisions can also create conditions that effectively prohibit agricultural activity on otherwise arable land. It is crucial to recognize that farmland loss can take two distinct forms—“virtual” and “literal”—both of which can undermine the long-term vitality of Ontario’s agricultural sector.
+Virtual farmland loss
+“Virtual” farmland loss arises from policies and planning decisions that do not physically remove farmland, but nevertheless prevent or limit agricultural production. These constraints can stem from minor variances to Minimum Distance Separation (MDS), the creation of undersized lots, and restrictive land use provisions. While the land remains arable, regulatory barriers prevent farmers from expanding livestock operations, implementing On-Farm Diversified Uses (OFDUs), or maintaining viable farm operations. Over time, this effectively sidelines productive agricultural land from contributing to the local economy, reducing its capacity to generate food and revenue, and eroding the agricultural fabric of rural communities.
+Key drivers of “virtual” farmland loss include:
+Erosion of Minimum Distance Separation (MDS) Requirements: Increasing use of minor variances and zoning amendments to reduce MDS setbacks can limit the growth of existing livestock facilities and restrict productive agricultural activities on affected parcels. Although data on the scope of this issue is limited, anecdotal evidence suggests it is becoming more common.
+Undersized Lot Creation: Allowing the severance of farmland into parcels smaller than the minimum lot size stipulated by zoning by-laws can impose stringent restrictions on the types of agricultural activities permitted. Smaller lots may fail to meet the size criteria for OFDUs or even basic agricultural uses, effectively “freezing” farm businesses and placing them at a competitive disadvantage. This also increases the pressure for rural residential uses, further complicating adherence to MDS requirements.
+Permanent Policy Barriers: Once planning documents impose restrictions on agricultural use, these conditions are challenging and costly to reverse. Legal non-conforming uses may remain grandfathered, but restoring farmland’s full agricultural potential—even if policy conditions change—is often prohibitively expensive and complex, making this “virtual” loss effectively permanent.
+Literal farmland loss
+
+“Literal” farmland loss occurs when agricultural land is physically removed from production through permanent alterations—such as paving, development, or extraction activities—that leave the land no longer arable. The Provincial Policy Statement (PPS) is intended to protect Prime Agricultural Areas from non-agricultural development. However, instances persist where non-compliant lot creation and settlement area boundary expansions encroach upon prime farmland. Such conversions remove the option of returning these lands to agricultural use, undermining the province’s long-term capacity for food production.
+Key drivers of “literal” farmland loss include:
+Weak Enforcement of PPS Prime Agricultural Area Policies: Non-agricultural development within Prime Agricultural Areas is prohibited under the PPS. Nevertheless, some municipalities continue to approve non-agricultural lot creation contrary to these requirements. Ensuring stricter compliance with the PPS is essential to preventing the permanent removal of high-quality farmland.
+Settlement Area Boundary Expansions: Expansion of settlement boundaries into rural areas is a significant contributor to farmland conversion, as these expansions often pave over some of the province’s best agricultural soils. OFA has long advocated that settlement expansions should occur only after exhausting infill, brownfield, and greyfield development options and achieving minimum densities consistent with efficient land use. Findings from Ontario’s Housing Affordability Task Force (2022) support this stance, noting that Ontario’s housing challenges stem from inefficient land use, not a land shortage.
+Difficulty in Restoring Lost Farmland: High-quality farmland is a scarce and non-renewable resource. Prime agricultural soils develop over centuries, and restoring damaged soils to their former productivity is neither practical nor effective. Suggestions to offset losses in Southern Ontario by clearing land in Northern Ontario fail to recognize the fundamental differences in soil quality, climate, and infrastructure that cannot be readily substituted.
+Strengthening Agricultural Engagement and Knowledge in Planning
+
+As Ontario’s population grows and intensifies in urban areas, the rural voice can be marginalized in local decision-making processes. Establishing Agricultural Advisory Committees (AACs) can help ensure that policy decisions—from zoning amendments and minor variances to broader growth strategies—reflect the needs of farmers and the nuances of agricultural production. AACs provide a direct channel for ongoing dialogue between the agricultural community, municipal planners, and elected officials, fostering informed, balanced decisions that safeguard farmland.
+Recommendation 1: To maintain Ontario’s vital agricultural land base, the province and municipalities should:
+Ensure Strict Adherence to MDS Requirements: Discourage and limit minor variances and zoning by-law amendments that would reduce setbacks, thereby constraining agricultural operations and expanding “virtual” farmland loss.
+Prevent Undersized Lot Creation: Prohibit lot severances that result in parcels falling below the minimum size for agricultural and on-farm diversified uses, preserving long-term farm viability.
+Enforce the PPS Vigorously: Uphold and enforce the PPS Prime Agricultural Area policies to prevent non-agricultural development in these protected zones, halting “literal” farmland loss at its source.
+Restrict Settlement Area Boundary Expansions: Require municipalities to fully exploit infill and redevelopment opportunities before expanding settlement boundaries onto prime agricultural land.
+Establish Agricultural Advisory Committees (AACs): Encourage municipalities to form AACs to ensure farmers’ perspectives and technical expertise guide land use decisions, balancing community growth and agricultural preservation.
+Taken together, these measures will help protect both the functional and physical integrity of Ontario’s agricultural land base. By preventing virtual farmland loss through smarter planning decisions and curbing literal farmland loss by enforcing the PPS and controlling urban expansion, municipalities  can help secure the future of its agricultural sector, strengthen rural Ontario, and maintain a resilient food supply.
+Recommendation 2: Ensure Development charges cover the full cost of development and discourage urban sprawl 
+Exempting farm structures from Development Charges and maintaining them for all other types of development will increase the relative cost for developing agricultural land for other uses, creating a financial incentive to keep agricultural land in production. 
+In addition to creating financial incentives to preserve agricultural land, exempting farm structures from paying Development Charges makes sense given the purpose of these charges are “to pay for increased capital costs required because of increased needs for services arising from development”.
+New farm residences, with an MPAC unit classification of RU (residential unit) or FRU (farm residential unit) should be treated the same as other new residences with regards to DCs. Growth-related capital needs can be attributed to all new residences. 
+The construction of new farm buildings/structures, however, does not generate growth-related capital costs. Therefore, Development Charges should not apply to farm buildings/structures. If they do, farmers are bearing more than their share of the municipality's additional capital expenditures. As highlighted through this study, farms already cost the municipalities less in services than they pay in property tax.
+The majority of municipalities acknowledge that applying Development Charges to farm buildings is inappropriate. 74% of all municipalities with a Development Charge by-law already provide some form of exemption for agricultural buildings. 
+However, the Development Charges applied to farm buildings in the minority of municipalities creates regional imbalances and disincentives farmers from reinvesting back into their business. 
+Standardizing the application of DCs to agriculture through a province-wide exemption would prevent farmers from facing inequitable treatment in a minority of municipalities that have inadvertently not provided an exemption. 
+Recommendation 2: To support the ministry’s policy objective of protecting prime agricultural areas for the long-term use for agriculture and to ensure DCs are focused on development that will generate growth-related capital costs, the Development Charges Act should be amended to provide a statutory exemption to farm buildings/structures. 
+County and Single-Tier Municipalities should evaluate their tax ratio policy 
+There is often a perception among some rural municipalities that because eligible farmland is taxed at a lower tax rate than residential properties, that farmland is being “subsidized” by residential taxpayers. 
+However, focusing on tax rate alone is too narrow a view to make such a claim as property taxes are function of both assessment value and tax rates. Additionally, for one property class to subsidize the other, the expenses demanded by each property class must be taken into account. As we have shown in this study, farmland is a net positive on municipal budgets, therefore if there is any property class being subsidized, it is likely the residential tax class which demands the majority of municipal services.
+Municipalities with a relatively high share of their land based used in farming benefit fiscally in two ways:
+Direct benefits driven by increasing farm assessments and relatively low demand for services
+An increase in commercial and industrial tax base to support farm businesses. 
+Let’s start by reviewing the direct fiscal benefits of farmland through the substantial increase in property tax contributions driven by rising farmland assessment values and the relatively low demand for municipal services from active farmland.
+1. Dramatic Increase in Property Tax Contributions
+
+Farmland’s contribution to municipal revenues has surged dramatically due to sharp increases in farmland assessment values between 2012-2020. The Municipal Property Assessment Corporation (MPAC) determines property values every four years, phasing in increases over the following assessment cycle. Between 2012 and 2020, farmland values rose by an average of 64% across Ontario, far outpacing changes in residential, commercial, and industrial property values, which either remained flat or declined in rural areas.
+This increase has directly resulted in farmland taking on a growing share of the total municipal tax levy, particularly in counties with higher relative farm share. For example, Perth County's farm tax burden grew from 17.1% in 2012 to 28.4% in 2022. This means farmers now pay an additional 11.3% of the counties tax levy. Similarly, counties like Huron, Chatham-Kent, and Stormont have seen their farm tax burdens double over the decade. Despite calls from OFA to reduce farm tax ratios to ease this burden, many municipalities opted to maintain the maximum allowable farm tax ratio of 0.25, intensifying the fiscal reliance on farmland.
+This surge in farmland taxes highlights the growing fiscal importance of agriculture. However, it also raises concerns about whether municipalities are collecting an inappropriate amount of taxes from farmland.
+2. Farmland’s Minimal Demand for Municipal Services
+
+In contrast to its substantial tax contributions, farmland demands relatively few municipal services. Unlike residential properties, which place heavy demands on infrastructure, education, social services, and recreation, farmland requires limited support from municipal governments. 
+Roads and transportation infrastructure represent the largest expenditure category associated with agricultural activity, reflecting the need to maintain rural road networks to support farm operations. However, even here, costs are relatively modest compared to those generated by urban development.
+The findings of our analysis underscore this point: a 1% increase in the share of farmland is associated with significant increases in property tax revenues (1.07%) but has no statistically significant impact on most categories of expenditures, with the exception of transportation services (1.21%). This imbalance between revenues and service demands reinforces farmland’s role as a fiscal asset to municipalities, helping to stabilize budgets and fund essential services while minimizing the financial pressures often associated with other land uses.
+Farmland directly contributes positively to municipal fiscal health by providing a growing and stable source of property tax revenue while placing minimal demands on municipal services. This dual benefit not only underscores the economic value of agriculture but also highlights the need to address concerns about the rising farm tax burden to ensure the long-term sustainability of Ontario’s agricultural sector.
+Now, let’s discuss the ways in which municipal budgets indirectly benefit from farmland.
+A thriving local farm economy has an essential yet often overlooked benefit to municipal finances, which is that farmland supports a network of businesses providing inputs and services critical for agricultural operations. These commercial and industrial businesses can generate significant tax revenue and economic activity beyond the direct fiscal benefits provided by farms.
+Relative farm share and business CVA (commercial + industrial total assessment value) was found to be positively correlated. While the initial correlation was negligible, removing extreme outliers from the analysis revealed a correlation of approximately 0.22, indicating a moderate positive relationship. This suggests that as the relative share of farmland increases, commercial and industrial property assessments also tend to increase. Municipalities with more active farmland, tend to have more commercial and industrial assessment base. One possible explanation is that areas with a strong agricultural base attract businesses like feed suppliers, equipment dealers, processing facilities, and repair shops that support farming operations. These businesses are directly tied to the agricultural sector but contribute disproportionately to municipal budgets because of their higher assessed values and tax rates.
+The Florida study supports this conclusion by emphasizing that commercial land use often generates fiscal surpluses for municipalities. Businesses connected to agriculture tend to demand fewer public services compared to residential land use, while generating substantial tax revenue through property taxes. This creates an indirect fiscal benefit for municipalities with significant agricultural land. Therefore, the farm economy not only sustains farmers livelihoods but also supports economic activity that broadens the tax base for municipalities. 
+This direct and indirect impact of agriculture on municipal budgets highlights the importance of protecting farmland not only for its agricultural value but also for its role in maintaining a balanced and resilient municipal fiscal structure.
+Recommendation 3: Upper and single tier municipalities should review the increase in farm taxes since 2012 and consider reducing the farm tax ratio. 
+Increased funding to rural municipalities through the Ontario Municipal Partnership Fund (OMPF)
+The Ontario Municipal Partnership Fund (OMPF) is a critical source of grant funding from the province to small, rural and northern municipalities. The objective of the OMPF has always been to recognize the fiscal challenges of smaller municipalities. 
+However, the OMPF has seen consistent budget cuts since it was introduced in 2005. In 2005, it provided rural municipalities with $656 million in annual funding. In 2021, that funding has dropped to $500 million. Adjusted for inflation, the OMPF would need to provide rural municipalities with $985 million in annual funding to provide the same level of support it did in 2005.  
+One of the justifications for the cut in OMPF funding was the uploading of certain social services to the province, which include the Ontario Drug Benefit (ODB), the Ontario Disability Support Program (ODSP), Ontario Works (OW) and court security and prisoner transportation. These uploaded services were estimated to save municipalities approximately $2.1 billion throughout the province in 2018. 
+In aggregate, these changes represent a net benefit to municipalities. However, these changes have created “winners and losers”. Many small rural municipalities are negatively impacted by these changes, while larger municipalities in urban areas are coming out as winners. This becomes evident when you consider who benefits most from the uploading of social services and who is hurt by the OMPF phase-down. 
+Small, rural municipalities have not fared well under the current financial relationship between the province and municipalities. The province must do more to provide financial support to rural municipalities. 
+In the Ontario fall economic statement 2024, it was announced that the OMPF would see an additional $100 million in annual funding phased in over a two-year period. This would bring the total grant funding to $550 million in 2025 and $600 million in 2026. While this is a positive first step, after two decades of cuts to the program, additional funding is still required. 
+Recommendation 4: To provide the same level of funding as 2005, the province must increase funding under the OMPF program to $985 million per year and adjust funding levels to match inflation in subsequent years. 
+The Province should Invest $1.5 Billion in Rural and Social Infrastructure
+OFA is calling for a $1.5 billion investment in rural and social infrastructure to address the growing needs of Ontario’s agricultural sector and support the province’s Grow Ontario strategy. The Grow Ontario plan sets ambitious goals to increase food production, strengthen supply chain stability, and expand agri-food exports, all of which rely heavily on modern and efficient infrastructure. Rural municipalities, however, are constrained by aging transportation networks, limited access to broadband internet, and inadequate social infrastructure such as schools and healthcare services. Without significant provincial investment, the agri-food sector’s ability to meet these targets, and Ontario’s food security will be at risk.
+Transportation infrastructure plays a pivotal role in ensuring the success of Ontario’s agriculture sector. As highlighted in this study, one of the few significant impacts of farmland on municipal budgets is in the demand transportation infrastructure, reflecting the heavy reliance on roads and bridges for getting agricultural products to market. Ontario’s rural roads are critical for farmers to transport inputs, equipment, and produce, but these roads face significant wear and tear and lack sufficient funding for maintenance. Restoring and increasing rural infrastructure funding is essential to sustaining the economic contributions of Ontario’s farms.
+Investments in rural social infrastructure, such as schools, healthcare services, and broadband internet, are essential to attracting and retaining talent in rural communities—a key priority of the Grow Ontario strategy. Ontario’s agri-food sector depends on a skilled workforce, yet rural areas struggle to provide the services and amenities necessary to retain workers and their families. Addressing gaps in healthcare and education, alongside investments in modern digital infrastructure, will support rural communities and ensure that Ontario’s farmers can access the workforce they need to thrive.
+Recommendation 5: The Provincial government should Invest an additional $1.5 billion into rural infrastructure. 
+Considerations for future research 
+While the analysis presented in this report have contributed to a more robust understanding of farmland’s fiscal impact on Ontario municipalities, there are several areas that warrant further exploration. 
+First, improved data availability and granularity would strengthen future studies. Access to more detailed parcel-level information, including finer distinctions within non-agricultural land uses, is currently restricted by data licensing and cost barriers. Addressing this limitation—potentially through collaboration with MPAC—would allow for a more direct assessment of how farmland conversion to residential, commercial, or industrial uses influences municipal budgets.
+Second, future research would benefit from methodological approaches that move beyond correlational findings. Employing methodology designed to isolate causal effects would be a logical progression. 
+Finally, there is opportunity for researchers in other Canadian provinces to pursue similar research. This is the first study of this kind completed in Canada, and it would be valuable to know if similar results hold in other provinces which have different agricultural and municipal sectors. 
+Conclusion
+This report underscores the fiscal significance of farmland to Ontario municipalities and the urgent need for policy measures to preserve this indispensable resource. 
+Farmland consistently generates stable and growing property tax revenues while placing limited demands on municipal services. These benefits extend beyond the fields themselves, fostering business activity and indirectly strengthening local tax bases. Our analysis, drawing on advanced econometric methodologies adapted from Clapp et al, confirms many long-standing conclusions from COCS research while addressing recognized methodological shortcomings.
+By refining methodology and expanding our temporal and geographic focus, we have shown that municipalities with a high share of farmland enjoy higher budget surpluses. This evidence reinforces the need to preserve agricultural lands, not only to ensure long-term food security and economic benefits, but also to maintain the fiscal stability of local governments. Aligning policy —such as adhering strictly to the PPS Prime Agricultural Area protections, instituting development charge policies that discourage inappropriate sprawl, and reviewing tax ratios in counties with high farm tax burden—will ensure farmland remains a source of fiscal strength for rural municipalities.
+The provincial government can play an important role by strengthening rural infrastructure and providing increased support through programs like the Ontario Municipal Partnership Fund to help sustain the competitiveness and economic viability of farm businesses in Ontario. Encouraging municipalities to establish Agricultural Advisory Committees ensures that farmers’ voices and expertise inform land use decisions, bridging the gap between urban growth pressures and rural priorities.
+Preserving Ontario’s agricultural land base is both a practical and fiscal imperative. By embracing well-informed, forward-looking policies that keep farmland in production, municipalities can benefit financially, support a thriving agri-food sector, and secure a balanced and resilient future for all Ontarians.
+Appendix A: Diagnostic tests and Robust Standard Errors in Main Model 
+In our analysis, we modeled how farm share affects municipal finances by regressing log-transformed values of total revenue, expenses, and surplus on farm share and control variables like population, household income, and unemployment rate, relative share of property taxes and per capita spending. 
+  Total Revenue (Equation 1):
+A 1% increase in farm share is associated with a 0.55% increase in total revenue (p = 0.054, marginally significant at 10% level).
+This result highlights the contribution of farmland to the municipal tax base and revenue streams, potentially reflecting higher property tax stability in areas with more farmland.
+Total Expenses (Equation 2):
+A 1% increase in farm share corresponds to a 0.51% increase in total expenses (p = 0.073, marginally significant at 10% level).
+Diagnostic Testing and Adjustments in the Model
+In our updated analysis, we conducted several diagnostic tests to ensure the reliability and validity of our model examining the relationship between farm share and municipal financial outcomes. This section outlines the results of these tests, their implications, the adjustments made to address the identified issues, and the final results after applying robust standard errors.
+Diagnostic Testing and Adjustments in the Model
+In our updated analysis, we conducted several diagnostic tests to ensure the reliability and validity of our model examining the relationship between farm share and municipal financial outcomes. This section outlines the results of these tests, their implications, the adjustments made to address the identified issues, and the final results after applying robust standard errors.
+Diagnostic Tests and Results
+Autocorrelation (Durbin-Watson Test)
+Autocorrelation occurs when errors in the model are correlated across time, leading to underestimated standard errors and overstated significance levels.
+For both revenue and expenses equations, the Durbin-Watson test indicated significant autocorrelation:
+Revenue Equation: DW = 0.64, p-value < 0.001
+Expenses Equation: DW = 0.62, p-value < 0.001
+These results confirm the presence of positive autocorrelation, suggesting the need for adjustments to the standard errors to avoid spurious results.
+Heteroskedasticity (Breusch-Pagan Test)
+Heteroskedasticity arises when the variance of residuals is not constant across observations, which can lead to unreliable standard error estimates.
+The Breusch-Pagan test results for heteroskedasticity in both equations were:
+Revenue Equation: BP = 19.08, p-value = 0.008
+Expenses Equation: BP = 20.66, p-value = 0.004
+These results confirm that heteroskedasticity is present in the data, necessitating robust standard errors to account for varying residual spreads.
+Multicollinearity (Variance Inflation Factor - VIF)
+Multicollinearity occurs when independent variables are highly correlated, making it difficult to isolate the effects of each variable.
+VIF values for all variables in both equations were below 4, indicating no severe multicollinearity:
+Example: Unemployment Rate VIF = 2.02; Log Population VIF = 1.25.
+No further adjustments were required for multicollinearity.
+Normality of Residuals (Shapiro-Wilk Test)
+Non-normal residuals can affect the reliability of hypothesis tests.
+Results:
+Revenue Equation: W = 0.98, p-value = 0.035
+Expenses Equation: W = 0.97, p-value = 0.017
+The p-values indicate some deviation from normality, but given the sample size, this issue is less critical due to the Central Limit Theorem.
+Adjustments Made
+To address autocorrelation and heteroskedasticity, we applied White’s heteroskedasticity-robust covariance matrix while estimating the Seemingly Unrelated Regression (SUR) model. This adjustment, using weighted residual covariances, ensures reliable standard error estimates without altering the regression coefficients themselves.
+Results After Adjustments
+Revenue Equation
+Farm Share: A 1% increase in farm share is associated with a 0.55% increase in total revenue (p = 0.054, marginally significant at 10% level).
+Other significant variables:
+Log Population (p < 0.001)
+Log Household Income (p < 0.001)
+Unemployment Rate (p = 0.044)
+Expenses Equation
+Farm Share: A 1% increase in farm share is associated with a 0.51% increase in total expenses (p = 0.073, marginally significant at 10% level).
+Other significant variables:
+Log Population (p < 0.001)
+Log Household Income (p < 0.001)
+Unemployment Rate (p = 0.049)
+Surplus/Deficit Impact
+Farm share positively impacts municipal surpluses, as its coefficient on revenue (0.55) exceeds its coefficient on expenses (0.51). Although both results are marginally significant, this indicates that municipalities with higher farmland shares tend to have a net positive fiscal impact.
+The diagnostic tests identified critical issues of autocorrelation and heteroskedasticity in our data. Applying heteroskedasticity-robust standard errors addressed these concerns, resulting in more reliable inference. The updated results confirm that farm share contributes positively to municipal revenue and expenses, with a stronger relative effect on revenue, implying a net benefit to municipal surpluses. These findings underscore the fiscal importance of farmland in municipal budgets and align with insights from prior studies, such as Clapp et al., which also highlighted the value of agricultural land use in supporting local government finances.
+Appendix B: Diagnostic tests and Robust Standard Errors in Subcategory Models
+Diagnostic Testing—Revenue Subcategories
+To ensure the validity of our models for the revenue subcategories, we conducted a series of diagnostic tests addressing multicollinearity, heteroskedasticity, and autocorrelation.
+Multicollinearity: Variance Inflation Factor (VIF) was calculated for each equation to assess multicollinearity among the independent variables. Across all subcategory equations, the VIF values were very low, with the highest observed value being 1.221 for the population variable. This indicates no significant multicollinearity issues, as VIF values below 10 are considered acceptable.
+Heteroskedasticity: The Breusch-Pagan test was performed for each equation to detect heteroskedasticity. The results showed no significant evidence of heteroskedasticity for any equation (p-values > 0.05), indicating homoscedasticity in the residuals.
+Autocorrelation: The Durbin-Watson test was used to check for autocorrelation in the residuals. The results highlighted significant positive autocorrelation in most equations, with the Durbin-Watson statistic for the property tax equation being 1.079 (p-value < 0.001). Only the expense subcategories demonstrated minor autocorrelation concerns, addressed as outlined below.
+Addressing Identified Issues
+To address the identified diagnostic concerns, we applied heteroskedasticity-robust covariance matrices using White's adjustment within the Seemingly Unrelated Regression (SUR) framework. This approach provides robust standard errors that account for both heteroskedasticity and contemporaneous correlation across equations.
+Results After Adjustments
+Using the heteroskedasticity-robust SUR method, the following results were obtained for each revenue subcategory:
+Property Tax Revenue:
+Farm Relative Share had a significant positive effect on property tax revenue (estimate = 1.070, p-value = 0.030).
+Population and household income were also significant predictors, with positive impacts on property tax revenue.
+Revenue from Other Municipalities:
+Farm Relative Share had a negative but marginally significant impact (estimate = -2.121, p-value = 0.061).
+Population had a significant positive relationship (estimate = 0.979, p-value < 0.01).
+Total User Fees:
+Farm Relative Share had a significant positive effect (estimate = 1.811, p-value = 0.025).
+Population and household income were also significant positive predictors.
+Other Revenue:
+Farm Relative Share was not significant (p-value = 0.404), indicating minimal direct impact.
+Population and household income were significant positive predictors.
+Total Grants:
+Farm Relative Share had a marginally significant positive effect (estimate = 0.966, p-value = 0.090).
+Population had a significant positive effect on grant revenues (estimate = 0.693, p-value < 0.001).
+The application of robust standard errors provides more reliable inference, particularly for equations with heteroskedasticity or autocorrelation concerns. The results indicate that farm relative share positively influences property tax revenue and other revenue subcategories but has varying effects on user fees and grants. Population and household income consistently play significant roles in determining municipal revenues across subcategories.
+This approach ensures the robustness of our findings and highlights the nuanced relationship between farm relative share and municipal revenue streams.
+Diagnostic Testing—Expense Subcategories
+Multicollinearity (Variance Inflation Factor - VIF): VIF values for the expense subcategory equations were all below 1.3, indicating no significant multicollinearity.
+Heteroskedasticity (Breusch-Pagan Test): The Breusch-Pagan test revealed no significant heteroskedasticity for the general government, transportation services, or social services equations (p-values > 0.1).
+Autocorrelation (Durbin-Watson Test): Positive autocorrelation was identified in all models except for the Social Services equation, where the Durbin-Watson statistic was approximately 1.45 (p-value = 0.01).
+Addressing Identified Issues
+To address these concerns, we applied robust standard errors in the SUR model, which accounted for heteroskedasticity and autocorrelation. This adjustment ensures reliable inference.
+Results After Adjustments
+General Government:
+Farm Relative Share was not significant (p-value = 0.299).
+Population and household income were significant positive predictors.
+Protection Services:
+Farm Relative Share had a positive but non-significant impact (estimate = 2.065, p-value = 0.189).
+Household income had a significant positive effect (p-value = 0.002).
+Transportation Services:
+Farm Relative Share had a significant positive effect (estimate = 1.213, p-value = 0.020).
+Environmental Services:
+Farm Relative Share had a positive but non-significant effect (p-value = 0.155).
+Household income was highly significant (p-value < 0.001).
+Planning and Development:
+Farm Relative Share was not significant (p-value = 0.164).
+Population had a significant positive effect (p-value = 0.002).
+Social Services:
+Farm Relative Share had a marginally significant positive effect (estimate = 0.765, p-value = 0.074).
+Population had a highly significant positive effect (p-value < 0.001).
+The diagnostic tests highlighted heteroskedasticity and autocorrelation issues, particularly in the Protection Services and Environmental Services equations. By employing a robust SUR model, the analysis achieved more reliable standard errors, ensuring valid hypothesis tests and confidence intervals. Critically, the robust standard errors confirmed the significance of our coefficients in the expense subcategory SUR model. These adjustments allow for confident interpretation of our results..

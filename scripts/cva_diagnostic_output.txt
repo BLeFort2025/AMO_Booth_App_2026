@@ -1,0 +1,122 @@
+C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\scripts\diagnose_cva_gaps.py:18: DtypeWarning: Columns (99,131) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(FIR_CSV)
+================================================================================
+FIR INDICATORS ù CVA DATA GAP ANALYSIS
+================================================================================
+
+Total rows: 6,556
+Unique municipalities (fir_code): 444
+Year range: 2010û2024
+Tier distribution:
+  lower: 6,108
+  upper: 448
+
+================================================================================
+CVA NULL RATES (all rows)
+================================================================================
+  farmland_cva: 13 null (0.2%)
+  residential_cva: 13 null (0.2%)
+  commercial_cva: 13 null (0.2%)
+  industrial_cva: 13 null (0.2%)
+  total_taxable_cva: 13 null (0.2%)
+
+================================================================================
+TAX RATIO NULL RATES (all rows)
+================================================================================
+  farmland_tax_ratio: 793 null (12.1%)
+  commercial_tax_ratio: 48 null (0.7%)
+  industrial_tax_ratio: 381 null (5.8%)
+
+================================================================================
+MUNICIPALITIES WITH TAXES BUT NO CVA (most likely data extraction issue)
+================================================================================
+
+Rows with farmland_muni_taxes > 0 but farmland_cva is null: 0
+
+Rows with residential_muni_taxes > 0 but residential_cva is null: 0
+
+================================================================================
+YEAR-BY-YEAR FARMLAND CVA COVERAGE
+================================================================================
+  2010: 437/437 have CVA (100.0%), 381 have farm tax, gap=-56
+  2011: 444/444 have CVA (100.0%), 389 have farm tax, gap=-55
+  2012: 444/444 have CVA (100.0%), 390 have farm tax, gap=-54
+  2013: 444/444 have CVA (100.0%), 390 have farm tax, gap=-54
+  2014: 444/444 have CVA (100.0%), 391 have farm tax, gap=-53
+  2015: 440/440 have CVA (100.0%), 387 have farm tax, gap=-53
+  2016: 442/442 have CVA (100.0%), 389 have farm tax, gap=-53
+  2017: 444/444 have CVA (100.0%), 389 have farm tax, gap=-55
+  2018: 440/441 have CVA ( 99.8%), 388 have farm tax, gap=-52
+  2019: 444/444 have CVA (100.0%), 392 have farm tax, gap=-52
+  2020: 436/443 have CVA ( 98.4%), 386 have farm tax, gap=-50
+  2021: 439/443 have CVA ( 99.1%), 385 have farm tax, gap=-54
+  2022: 441/442 have CVA ( 99.8%), 392 have farm tax, gap=-49
+  2023: 430/430 have CVA (100.0%), 381 have farm tax, gap=-49
+  2024: 374/374 have CVA (100.0%), 333 have farm tax, gap=-41
+
+================================================================================
+CVA EXTRACTION SOURCE (from fir_indicators.yaml)
+================================================================================
+  residential_cva: schedule=26A, line=0010, col=16, match=?, col_type=?
+  multi_residential_cva: schedule=26A, line=0050, col=16, match=?, col_type=?
+  farmland_cva: schedule=26A, line=0110, col=16, match=?, col_type=?
+  commercial_cva: schedule=26A, line=9120, col=16, match=?, col_type=?
+  industrial_cva: schedule=26A, line=9130, col=16, match=?, col_type=?
+  managed_forest_cva: schedule=26A, line=0150, col=16, match=?, col_type=?
+  landfill_cva: schedule=26A, line=0250, col=16, match=?, col_type=?
+  pipeline_cva: schedule=26A, line=0810, col=16, match=?, col_type=?
+  total_taxable_cva: schedule=26A, line=9199, col=16, match=?, col_type=?
+
+================================================================================
+UPPER-TIER MUNICIPALITY CVA ANALYSIS
+================================================================================
+Upper-tier rows: 448
+  FIR 100 | Stormont, Dundas and Glengarry UCo  | CVA in 15/15 yrs | latest CVA=3734754917.0 | latest tax=5951407.0
+  FIR 200 | Prescott and Russell UCo            | CVA in 15/15 yrs | latest CVA=2273250000.0 | latest tax=2629264.0
+  FIR 700 | Leeds and Grenville UCo             | CVA in 15/15 yrs | latest CVA=605471990.0 | latest tax=649556.0
+  FIR 900 | Lanark Co                           | CVA in 15/15 yrs | latest CVA=322757175.0 | latest tax=321437.0
+  FIR 1000 | Frontenac Co                        | CVA in 15/15 yrs | latest CVA=203177553.0 | latest tax=107708.0
+  FIR 1100 | Lennox and Addington Co             | CVA in 13/14 yrs | latest CVA=338086051.0 | latest tax=476069.0
+  FIR 1200 | Hastings Co                         | CVA in 14/15 yrs | latest CVA=383998810.0 | latest tax=323162.0
+  FIR 1400 | Northumberland Co                   | CVA in 15/15 yrs | latest CVA=1109830436.0 | latest tax=1557148.0
+  FIR 1500 | Peterborough Co                     | CVA in 15/15 yrs | latest CVA=890191453.0 | latest tax=900776.0
+  FIR 1800 | Durham R                            | CVA in 15/15 yrs | latest CVA=2447220384.0 | latest tax=3393995.0
+  FIR 2000 | York R                              | CVA in 15/15 yrs | latest CVA=1765141126.0 | latest tax=1596800.0
+  FIR 2100 | Peel R                              | CVA in 15/15 yrs | latest CVA=1088309122.0 | latest tax=650262.0
+  FIR 2200 | Dufferin Co                         | CVA in 15/15 yrs | latest CVA=1345103644.0 | latest tax=1183758.0
+  FIR 2300 | Wellington Co                       | CVA in 15/15 yrs | latest CVA=5158306846.0 | latest tax=8889517.0
+  FIR 2400 | Halton R                            | CVA in 15/15 yrs | latest CVA=976944773.0 | latest tax=583144.0
+  FIR 2600 | Niagara R                           | CVA in 15/15 yrs | latest CVA=2536550950.0 | latest tax=4773470.0
+  FIR 3000 | Waterloo R                          | CVA in 14/15 yrs | latest CVA=2893714120.0 | latest tax=4533814.0
+  FIR 3100 | Perth Co                            | CVA in 14/14 yrs | latest CVA=7569158465.0 | latest tax=5503611.0
+  FIR 3200 | Oxford Co                           | CVA in 15/15 yrs | latest CVA=6606275367.0 | latest tax=7043275.0
+  FIR 3400 | Elgin Co                            | CVA in 15/15 yrs | latest CVA=3385680198.0 | latest tax=5329061.0
+  FIR 3700 | Essex Co                            | CVA in 15/15 yrs | latest CVA=3238533234.0 | latest tax=4376007.0
+  FIR 3800 | Lambton Co                          | CVA in 15/15 yrs | latest CVA=5465141799.0 | latest tax=6188617.0
+  FIR 3900 | Middlesex Co                        | CVA in 15/15 yrs | latest CVA=6762592524.0 | latest tax=7504246.0
+  FIR 4000 | Huron Co                            | CVA in 15/15 yrs | latest CVA=8150591187.0 | latest tax=10668961.0
+  FIR 4100 | Bruce Co                            | CVA in 15/15 yrs | latest CVA=3648499246.0 | latest tax=4572518.0
+  FIR 4200 | Grey Co                             | CVA in 15/15 yrs | latest CVA=3054844654.0 | latest tax=2691929.0
+  FIR 4300 | Simcoe Co                           | CVA in 15/15 yrs | latest CVA=3819303481.0 | latest tax=2859703.0
+  FIR 4400 | Muskoka D                           | CVA in 15/15 yrs | latest CVA=25302649.0 | latest tax=24698.0
+  FIR 4600 | Haliburton Co                       | CVA in 15/15 yrs | latest CVA=6767900.0 | latest tax=4276.0
+  FIR 4700 | Renfrew Co                          | CVA in 15/15 yrs | latest CVA=637756599.0 | latest tax=657470.0
+
+================================================================================
+SIMCOE COUNTY RAW DATA SAMPLE
+================================================================================
+  2010 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=0.0          | res_cva=0.0             | farm_tax=1134106.0   
+  2011 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=1963377619.0 | res_cva=35119627541.0   | farm_tax=1189977.0   
+  2012 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=1968186347.0 | res_cva=35851902212.0   | farm_tax=1266469.0   
+  2013 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=2453270904.0 | res_cva=39953418369.0   | farm_tax=1603603.0   
+  2014 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=2453261254.0 | res_cva=40685089630.0   | farm_tax=1686210.0   
+  2015 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=2439882959.0 | res_cva=41475116957.0   | farm_tax=1742147.0   
+  2016 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=2424930526.0 | res_cva=42274367817.0   | farm_tax=1812320.0   
+  2017 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3835910700.0 | res_cva=51362970645.0   | farm_tax=2043846.0   
+  2018 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3804999540.0 | res_cva=53164794984.0   | farm_tax=2211629.0   
+  2019 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3786618868.0 | res_cva=55173270953.0   | farm_tax=2397823.0   
+  2020 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3755799610.0 | res_cva=56731837733.0   | farm_tax=2568704.0   
+  2021 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3782196739.0 | res_cva=57831862945.0   | farm_tax=2586682.0   
+  2022 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3747973769.0 | res_cva=59010289442.0   | farm_tax=2614549.0   
+  2023 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3723641531.0 | res_cva=60198288818.0   | farm_tax=2688469.0   
+  2024 | FIR 4300 | Simcoe Co                      | tier=upper    | farm_cva=3819303481.0 | res_cva=61621080292.0   | farm_tax=2859703.0   

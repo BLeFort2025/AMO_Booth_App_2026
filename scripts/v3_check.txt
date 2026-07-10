@@ -1,0 +1,39 @@
+Paragraphs: 121, Tables: 17
+  [  2] Heading 2: Agricultural Profile of Perth County
+  [  4] Heading 3: Size and Scale
+  [  7] Heading 3: How Perth County Farming Has Changed Over Time
+  [ 10] Heading 3: What Perth County Farms Produce
+  [ 14] Heading 3: Livestock Inventory
+  [ 17] Heading 3: The People Behind the Farms
+  [ 20] Heading 3: How Farms Are Organized
+  [ 22] Heading 3: Farm Revenue Distribution
+  [ 24] Heading 3: Farm Employment
+  [ 26] Heading 3: Farm Cash Receipts Growth, 2011ΓÇô2024
+  [ 29] Heading 2: Agricultural Profile of Wellington County
+  [ 31] Heading 3: Size and Scale
+  [ 34] Heading 3: How Wellington County Farming Has Changed Over Time
+  [ 37] Heading 3: What Wellington County Farms Produce
+  [ 41] Heading 3: Livestock Inventory
+  [ 43] Heading 3: The People Behind the Farms
+  [ 46] Heading 3: How Farms Are Organized
+  [ 48] Heading 3: Farm Revenue Distribution
+  [ 50] Heading 3: Farm Employment
+  [ 52] Heading 3: Technology Adoption
+  [ 55] Heading 3: Farm Cash Receipts Growth, 2011ΓÇô2024
+  [ 57] Heading 2: Perth and Wellington: Side-by-Side Comparison
+  [ 61] Heading 2: Economic Impact of the Agri-Food Sector in Perth County
+  [ 63] Heading 3: What is the Agri-Food Value Chain?
+  [ 67] Heading 3: Perth County: A Provincial Agri-Food Powerhouse
+  [ 70] Heading 3: Agri-Food Employment in Perth County
+  [ 73] Heading 3: How Agri-Food Compares to Other Industries
+  [ 77] Heading 3: Provincial Agri-Food GDP Rankings
+  [ 79] Heading 2: Economic Impact of the Agri-Food Sector in Wellington County
+  [ 81] Heading 3: Agri-Food GDP Growth
+  [ 83] Heading 3: Agri-Food Employment in Wellington County
+  [ 86] Heading 3: How Agri-Food Compares to Other Industries
+  [ 89] Heading 3: Perth and Wellington: Combined Agri-Food Economic Impact
+  [ 92] Heading 2: Fiscal Impact of Agriculture on Ontario Municipalities
+  [ 94] Heading 2: Property Tax Shift to Farm Properties in Perth County 2010-2024
+  [ 96] Heading 2: Property Tax Shift to Farm Properties in Wellington County 2010-2024
+  [ 99] Heading 2: References
+  [116] Heading 3: Notes on Data Sources

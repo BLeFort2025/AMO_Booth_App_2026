@@ -1,0 +1,290 @@
+ONTARIO PROVINCIAL TOTALS (2021 Census of Agriculture):
+
+================================================================================
+  WELLINGTON COUNTY - KEY STATISTICS
+================================================================================
+
+--- FARM STRUCTURE ---
+  Total farms: 2617
+  Total farm area: 523,903 acres
+  Land in crops: 436,390 acres
+
+  Farm size distribution:
+    1,120 to 1,599 acres: 19 farms
+    1,600 to 2,239 acres: 16 farms
+    10 to 69 acres: 604 farms
+    130 to 179 acres: 300 farms
+    180 to 239 acres: 276 farms
+    2,240 to 2,879 acres: 3 farms
+    2,880 to 3,519 acres: 5 farms
+    240 to 399 acres: 255 farms
+    3,520 acres and over: 13 farms
+    400 to 559 acres: 91 farms
+    560 to 759 acres: 56 farms
+    70 to 129 acres: 742 farms
+    760 to 1,119 acres: 33 farms
+    Under 10 acres: 204 farms
+
+--- OPERATOR DEMOGRAPHICS ---
+  Total operators: 3800
+  Average age: 52.7
+  Under 35: 555
+  35-54: 1325
+  55+: 1915
+  Male: 2550
+  Female: 1250
+  Succession plan: 0.0
+  Off-farm income: 0.5013157894736842
+
+--- FARM OPERATING ARRANGEMENT ---
+  Sole proprietorship: 1014
+  Partnership: 1096
+  Family corporation: 462
+  Non-family corporation: 41
+
+--- FINANCIAL ---
+  Total farm capital: $10,637,599,146
+  Land & buildings value: $9,737,073,146
+  Machinery & equipment: $586,496,624
+  Livestock & poultry value: $314,029,376
+  Gross farm receipts: $1,173,464,610
+  Operating expenses: $977,716,290
+
+  Farm capital distribution:
+    $1,000,000 to $1,499,999: 385 farms
+    $1,500,000 to $1,999,999: 312 farms
+    $100,000 to $199,999: 35 farms
+    $2,000,000 to $3,499,999: 692 farms
+    $200,000 to $349,999: 25 farms
+    $3,500,000 and over: 829 farms
+    $350,000 to $499,999: 35 farms
+    $500,000 to $999,999: 267 farms
+    Under $100,000: 37 farms
+
+  Revenue distribution:
+    $1,000,000 to $1,999,999: 177 farms
+    $10,000 to $24,999: 294 farms
+    $100,000 to $249,999: 358 farms
+    $2,000,000 and over: 88 farms
+    $25,000 to $49,999: 295 farms
+    $250,000 to $499,999: 351 farms
+    $50,000 to $99,999: 290 farms
+    $500,000 to $999,999: 370 farms
+    Under $0: 97 farms
+    Under $10,000: 297 farms
+
+--- LIVESTOCK ---
+  Total cattle & calves: 150,093
+  Total cows: 40,114
+  Dairy cows: 30,716
+  Beef cows: 9,398
+  Total pigs: 255,297
+  Total hens & chickens: 6,953,181
+  Total sheep & lambs: 28,879
+  Turkeys: 176,261
+
+--- CROP ACREAGE ---
+  Total corn: 121,818 acres
+  Soybeans: 116,923 acres
+  Wheat: 86,371 acres
+  Barley: 5,710 acres
+  Oats: 4,365 acres
+  Alfalfa: 67,775 acres
+  Dry white beans: 1,010 acres
+
+--- EMPLOYMENT ---
+  Total paid employees: 1,567
+  Full-time year-round: 718
+  Part-time year-round: 468
+  Seasonal/temporary: 381
+
+--- FARM TYPE BREAKDOWN ---
+    Cattle ranching and farming: 877 farms
+    Oilseed and grain farming: 703 farms
+    Beef cattle ranching and farming, including feedlots: 503 farms
+    Dairy cattle and milk production: 374 farms
+    Soybean farming: 261 farms
+    Other grain farming: 218 farms
+    Poultry and egg production: 205 farms
+    Horse and other equine production: 167 farms
+    Broiler and other meat-type chicken production: 143 farms
+    Hay farming: 132 farms
+    Corn farming : 131 farms
+    Hog and pig farming: 101 farms
+    Sheep and goat farming: 93 farms
+    Wheat farming : 88 farms
+    Sheep farming: 73 farms
+
+--- TECHNOLOGY ADOPTION ---
+  Auto-steer: 680.0
+  GIS mapping: 421.0
+  Drones: 82.0
+  Robotic milking: 73.0
+  Variable rate input: 432.0
+  Soil sample testing: 1001.0
+  Renewable energy: 491.0
+
+--- FARM CASH RECEIPTS - COMMODITY MIX (2024) ---
+  Total FCR: $1,364.4M
+    Steers and Slaughter Heifers        $315.5M  (23.1%)
+    Dairy Products                      $274.5M  (20.1%)
+    Chickens                            $213.0M  (15.6%)
+    Hogs                                $112.4M  (8.2%)
+    Other Crops and Livestock           $110.4M  (8.1%)
+    Soybeans                            $76.8M  (5.6%)
+    Corn                                $58.4M  (4.3%)
+    Wheat                               $44.2M  (3.2%)
+    Eggs                                $40.3M  (3.0%)
+    Program Payment                     $35.7M  (2.6%)
+
+--- FCR GROWTH TREND ---
+  2011: $680.6M
+  2024: $1,364.4M
+  Total growth: +100.5%
+  CAGR: 5.5%
+
+================================================================================
+  PERTH COUNTY - KEY STATISTICS
+================================================================================
+
+--- FARM STRUCTURE ---
+  Total farms: 2420
+  Total farm area: 533,244 acres
+  Land in crops: 468,573 acres
+
+  Farm size distribution:
+    1,120 to 1,599 acres: 21 farms
+    1,600 to 2,239 acres: 24 farms
+    10 to 69 acres: 551 farms
+    130 to 179 acres: 260 farms
+    180 to 239 acres: 204 farms
+    2,240 to 2,879 acres: 5 farms
+    2,880 to 3,519 acres: 4 farms
+    240 to 399 acres: 264 farms
+    3,520 acres and over: 5 farms
+    400 to 559 acres: 123 farms
+    560 to 759 acres: 81 farms
+    70 to 129 acres: 676 farms
+    760 to 1,119 acres: 58 farms
+    Under 10 acres: 144 farms
+
+--- OPERATOR DEMOGRAPHICS ---
+  Total operators: 3430
+  Average age: 54.1
+  Under 35: 350
+  35-54: 1220
+  55+: 1860
+  Male: 2350
+  Female: 1085
+  Succession plan: 0.0
+  Off-farm income: 0.4912536443148688
+
+--- FARM OPERATING ARRANGEMENT ---
+  Sole proprietorship: 887
+  Partnership: 797
+  Family corporation: 680
+  Non-family corporation: 56
+
+--- FINANCIAL ---
+  Total farm capital: $12,714,809,717
+  Land & buildings value: $11,718,012,503
+  Machinery & equipment: $681,787,458
+  Livestock & poultry value: $315,009,756
+  Gross farm receipts: $1,292,638,741
+  Operating expenses: $1,051,571,848
+
+  Farm capital distribution:
+    $1,000,000 to $1,499,999: 226 farms
+    $1,500,000 to $1,999,999: 256 farms
+    $100,000 to $199,999: 14 farms
+    $2,000,000 to $3,499,999: 715 farms
+    $200,000 to $349,999: 23 farms
+    $3,500,000 and over: 968 farms
+    $350,000 to $499,999: 22 farms
+    $500,000 to $999,999: 177 farms
+    Under $100,000: 19 farms
+
+  Revenue distribution:
+    $1,000,000 to $1,999,999: 189 farms
+    $10,000 to $24,999: 206 farms
+    $100,000 to $249,999: 405 farms
+    $2,000,000 and over: 135 farms
+    $25,000 to $49,999: 309 farms
+    $250,000 to $499,999: 301 farms
+    $50,000 to $99,999: 395 farms
+    $500,000 to $999,999: 290 farms
+    Under $0: 64 farms
+    Under $10,000: 126 farms
+
+--- LIVESTOCK ---
+  Total cattle & calves: 123,605
+  Total cows: 43,871
+  Dairy cows: 37,621
+  Beef cows: 6,250
+  Total pigs: 661,067
+  Total hens & chickens: 5,043,758
+  Total sheep & lambs: 11,010
+  Turkeys: 209,820
+
+--- CROP ACREAGE ---
+  Total corn: 158,149 acres
+  Soybeans: 122,612 acres
+  Wheat: 89,749 acres
+  Barley: 1,851 acres
+  Oats: 2,070 acres
+  Alfalfa: 51,038 acres
+  Dry white beans: 9,709 acres
+
+--- EMPLOYMENT ---
+  Total paid employees: 2,234
+  Full-time year-round: 1,164
+  Part-time year-round: 819
+  Seasonal/temporary: 251
+
+--- FARM TYPE BREAKDOWN ---
+    Oilseed and grain farming: 1086 farms
+    Cattle ranching and farming: 597 farms
+    Other grain farming: 363 farms
+    Soybean farming: 359 farms
+    Dairy cattle and milk production: 321 farms
+    Beef cattle ranching and farming, including feedlots: 276 farms
+    Hog and pig farming: 230 farms
+    Corn farming : 222 farms
+    Poultry and egg production: 161 farms
+    Wheat farming : 119 farms
+    Broiler and other meat-type chicken production: 99 farms
+    Horse and other equine production: 77 farms
+    Sheep and goat farming: 59 farms
+    Chicken egg production: 47 farms
+    Hay farming: 45 farms
+
+--- TECHNOLOGY ADOPTION ---
+  Auto-steer: 828.0
+  GIS mapping: 570.0
+  Drones: 104.0
+  Robotic milking: 64.0
+  Variable rate input: 504.0
+  Soil sample testing: 1129.0
+  Renewable energy: 494.0
+
+--- FARM CASH RECEIPTS - COMMODITY MIX (2024) ---
+  Total FCR: $1,512.3M
+    Dairy Products                      $339.5M  (22.4%)
+    Hogs                                $329.0M  (21.8%)
+    Steers and Slaughter Heifers        $148.3M  (9.8%)
+    Corn                                $132.4M  (8.8%)
+    Chickens                            $124.4M  (8.2%)
+    Other Crops and Livestock           $122.4M  (8.1%)
+    Soybeans                            $95.0M  (6.3%)
+    Wheat                               $49.1M  (3.2%)
+    Eggs                                $45.0M  (3.0%)
+    Program Payment                     $39.6M  (2.6%)
+
+--- FCR GROWTH TREND ---
+  2011: $740.2M
+  2024: $1,512.3M
+  Total growth: +104.3%
+  CAGR: 5.6%
+
+
+DONE

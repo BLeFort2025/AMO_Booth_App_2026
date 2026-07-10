@@ -1,0 +1,291 @@
+[10:41:22] =======================================================
+[10:41:22]   Farm Finance Dashboard - Monthly Data Pipeline
+[10:41:22]   Started: 2026-05-22 10:41:22
+[10:41:22]   Project: C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter
+[10:41:22]   Python:  C:\Users\ben.lefort\AppData\Local\Programs\Python\Python311\python.exe
+[10:41:22] =======================================================
+[10:41:22] 
+[10:41:22] >> Running data pipeline (scripts/run_pipeline.py)...
+[10:41:22]   This may take 10-30 minutes depending on network speed.
+[10:41:22] 
+[10:56:30]   Skipping OMAFRA table omafra-average-weekly-corn-prices: missing download_url
+[10:56:30]   Skipping OMAFRA table omafra-average-weekly-soybean-prices: missing download_url
+[10:56:30]   Skipping OMAFRA table omafra-average-weekly-wheat-prices: missing download_url
+[10:56:30]   Skipping OMAFRA table omafra-average-weekly-hog-prices: missing download_url
+[10:56:30]   Skipping OMAFRA table omafra-average-weekly-cattle-prices: missing download_url
+[11:05:08]   [INFO] Downloading 32-10-0234-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100234-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0236-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100236-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0422-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100422-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0359-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100359-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0130-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100130-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0160-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100160-eng.zip
+[11:05:08]   [INFO] Downloading 38-10-0097-01 from https://www150.statcan.gc.ca/n1/tbl/csv/38100097-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0381-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100381-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0230-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100230-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0379-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100379-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0113-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100113-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0114-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100114-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0117-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100117-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0121-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100121-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0123-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100123-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0133-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100133-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0107-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100107-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0005-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100005-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0129-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100129-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0125-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100125-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0139-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100139-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0141-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100141-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0137-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100137-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0002-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100002-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0151-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100151-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0202-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100202-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0007-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100007-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0408-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100408-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0309-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100309-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0315-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100315-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0355-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100355-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0360-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100360-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0374-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100374-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0375-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100375-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0376-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100376-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0371-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100371-eng.zip
+[11:05:08]   [INFO] Downloading 16-10-0048-01 from https://www150.statcan.gc.ca/n1/tbl/csv/16100048-eng.zip
+[11:05:08]   [INFO] Downloading 32-10-0049-01 from https://www150.statcan.gc.ca/n1/tbl/csv/32100049-eng.zip
+[11:05:08]   [INFO] Downloading 18-10-0258-01 from https://www150.statcan.gc.ca/n1/tbl/csv/18100258-eng.zip
+[11:05:08]   [INFO] Downloading 16-10-0047-01 from https://www150.statcan.gc.ca/n1/tbl/csv/16100047-eng.zip
+[11:05:08]   [INFO] Downloading 23-10-0216-02 from https://www150.statcan.gc.ca/n1/tbl/csv/23100216-eng.zip
+[11:05:08]   [INFO] Downloading 17-10-0155-01 from https://www150.statcan.gc.ca/n1/tbl/csv/17100155-eng.zip
+[11:05:08]   [INFO] Downloading 14-10-0203-01 from https://www150.statcan.gc.ca/n1/tbl/csv/14100203-eng.zip
+[11:05:08]   [INFO] Downloading 34-10-0143-01 from https://www150.statcan.gc.ca/n1/tbl/csv/34100143-eng.zip
+[11:05:08]   [INFO] Downloading 36-10-0096-01 from https://www150.statcan.gc.ca/n1/tbl/csv/36100096-eng.zip
+[11:05:08]   [INFO] Downloading 36-10-0488-01 from https://www150.statcan.gc.ca/n1/tbl/csv/36100488-eng.zip
+[11:05:08]   [INFO] Downloading 36-10-0434-03 from https://www150.statcan.gc.ca/n1/tbl/csv/36100434-eng.zip
+[11:05:08]   [INFO] Downloading 36-10-0217-01 from https://www150.statcan.gc.ca/n1/tbl/csv/36100217-eng.zip
+[11:05:08]   Updated: ['32-10-0136-01', '18-10-0004-01', '18-10-0004-03', '38-10-0246-01', '32-10-0359-01', '32-10-0130-01', '32-10-0160-01', '32-10-0200-01', '32-10-0126-01', '32-10-0364-01', '32-10-0365-01', '32-10-0456-01', '18-10-0258-02', '32-10-0098-01', '32-10-0013-01', '12-10-0175-01', '12-10-0163-01', '32-10-0215-01', '32-10-0216-01', '32-10-0217-01', '32-10-0218-01', '34-10-0035-01', '32-10-0220-01', '32-10-0221-01', '32-10-0036-01', '18-10-0281-01', '23-10-0216-02', '32-10-0113-01', '32-10-0114-01', '32-10-0117-01', '32-10-0121-01', '32-10-0123-01', '32-10-0133-01', '32-10-0107-01', '32-10-0005-01', '32-10-0129-01', '32-10-0125-01', '32-10-0139-01', '32-10-0141-01', '32-10-0137-01', '32-10-0002-01', '32-10-0151-01', '32-10-0202-01', '32-10-0007-01', '32-10-0408-01', '32-10-0309-01', '32-10-0315-01', '32-10-0355-01', '32-10-0360-01', '32-10-0374-01', '32-10-0375-01', '32-10-0376-01', '32-10-0371-01', '16-10-0048-01', '16-10-0047-01', '14-10-0203-01', '34-10-0143-01', '36-10-0096-01', '36-10-0488-01', '36-10-0434-03', '36-10-0217-01']
+[11:05:08]   Running CapEx Processor (Table 34-10-0035-01)...
+[11:05:08]   --- Processing CapEx Data (Table 34-10-0035-01) ---
+[11:05:08]      Using Data Year: 2026
+[11:05:08]   
+[11:05:08]      Primary Agriculture CapEx by Geography:
+[11:05:08]        Canada                              $   9,436.6M
+[11:05:08]        Ontario                             $   2,690.0M
+[11:05:08]        Alberta                             $   2,209.5M
+[11:05:08]        Saskatchewan                        $   1,625.1M
+[11:05:08]        Quebec                              $   1,354.6M
+[11:05:08]        Manitoba                            $     703.9M
+[11:05:08]        British Columbia                    $     518.5M
+[11:05:08]        Atlantic provinces                  $     330.4M
+[11:05:08]        Nova Scotia                         $      97.7M
+[11:05:08]        New Brunswick                       $      95.5M
+[11:05:08]        Prince Edward Island                $      92.4M
+[11:05:08]        Newfoundland and Labrador           $      44.8M
+[11:05:08]        Northwest Territories               $       0.0M
+[11:05:08]        Nunavut                             $       0.0M
+[11:05:08]        Yukon                               $       0.0M
+[11:05:08]   
+[11:05:08]      Saved 45 records (15 geos + 3 baskets) to data\derived\basket_capex.csv
+[11:05:08]   
+[11:05:08]   Running Output Processor...
+[11:05:08]   [WARNING] Output processing failed: 'charmap' codec can't encode characters in position 4-5: character maps to <undefined>
+[11:05:08]   
+[11:05:08]   Checking 2011 NHS Profile download...
+[11:05:08]   [SKIP] 99-004-XWE2011001-301_CSV.zip already exists (38.0 MB)
+[11:05:08]          Delete the file to re-download.
+[11:05:08]   
+[11:05:08]   Running Census Profile Processor...
+[11:05:08]   ============================================================
+[11:05:08]   Multi-Year Census Profile Processor
+[11:05:08]   Rural Ontario Wellbeing Dashboard
+[11:05:08]   ============================================================
+[11:05:08]   
+[11:05:08]   Found 5 Census file(s):
+[11:05:08]   
+[11:05:08]     - 98-401-X2021021_eng_CSV.zip
+[11:05:08]     - 98-401-X2016066_eng_CSV.zip
+[11:05:08]     - 98-316-XWE2011001-301_CSV.zip
+[11:05:08]     - 99-004-XWE2011001-301_CSV.zip
+[11:05:08]     - 92-591-XE-301_CSV.zip
+[11:05:08]   
+[11:05:08]   --------------------------------------------------
+[11:05:08]     Loading 2021 from 98-401-X2021021_eng_CSV.zip...
+[11:05:08]       Matched 69,817 rows -> 95 indicators x 577 geographies
+[11:05:08]       [INCOME] 2021: extracted 577 total-household rows for denominator
+[11:05:08]       [INCOME] 2021: extracted 8,078 rows -> 13 bands x 577 communities
+[11:05:08]   
+[11:05:08]   --------------------------------------------------
+[11:05:08]     Loading 2016 from 98-401-X2016066_eng_CSV.zip...
+[11:05:08]       Matched 66,125 rows -> 92 indicators x 575 geographies
+[11:05:08]       [INCOME] 2016: extracted 575 total-household rows for denominator
+[11:05:08]       [INCOME] 2016: extracted 8,050 rows -> 13 bands x 575 communities
+[11:05:08]   
+[11:05:08]   --------------------------------------------------
+[11:05:08]     Loading 2011 from 98-316-XWE2011001-301_CSV.zip...
+[11:05:08]       Filtered 2,479,416 -> 270,928 rows (Ontario only)
+[11:05:08]       Matched 27,552 rows -> 42 indicators x 574 geographies
+[11:05:08]       [INCOME] No household after-tax income section found for 2011
+[11:05:08]   
+[11:05:08]   --------------------------------------------------
+[11:05:08]     Loading 2011 NHS from 99-004-XWE2011001-301_CSV.zip...
+[11:05:08]       Reading: 99-004-XWE2011001-301-ONT.csv
+[11:05:08]       Read 411,840 rows, 15 columns
+[11:05:08]       Matched 25,740 rows -> 47 indicators x 429 geographies
+[11:05:08]       [INCOME] 2011: extracted 429 total-household rows for denominator
+[11:05:08]       [INCOME] 2011: extracted 3,432 rows -> 7 bands x 429 communities
+[11:05:08]   
+[11:05:08]   --------------------------------------------------
+[11:05:08]     Loading 2006 from 92-591-XE-301_CSV.zip...
+[11:05:08]       Loaded 163,215 rows (Ontario CSDs)
+[11:05:08]       Matched 53,235 rows -> 71 indicators x 585 geographies
+[11:05:08]       [INCOME] No household after-tax income section found for 2006
+[11:05:08]   
+[11:05:08]   --------------------------------------------------
+[11:05:08]   Combining all years...
+[11:05:08]     [SYNTH] Created 1,581 synthetic commute_walk_bike rows for 2011+
+[11:05:08]     [SYNTH] Created 3,682 synthetic Housing Stock count rows for 2006
+[11:05:08]     [SYNTH] Created 526 synthetic major_repairs_needed rows for 2006
+[11:05:08]     [SYNTH] Created 517 synthetic hh_size_5_plus rows for 2011
+[11:05:08]     [SYNTH] Created 526 synthetic crowding_above_1ppr rows for 2006
+[11:05:08]     [SYNTH] Created 6,360 synthetic age-band rows (pop_0_14 / pop_15_64 / pop_65_plus)
+[11:05:08]     Years: [np.int64(2006), np.int64(2011), np.int64(2016), np.int64(2021)]
+[11:05:08]     Geographies: 598
+[11:05:08]     Indicators: 114
+[11:05:08]     Total rows: 220,016
+[11:05:08]   
+[11:05:08]     Per-year indicator coverage:
+[11:05:08]       2006: 75 indicators x 585 communities
+[11:05:08]       2011: 99 indicators x 574 communities
+[11:05:08]       2016: 110 indicators x 575 communities
+[11:05:08]       2021: 113 indicators x 577 communities
+[11:05:08]   
+[11:05:08]   [OK] Saved: C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\data\latest\wellbeing\census_indicators.csv
+[11:05:08]   [OK] Saved: C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\data\latest\wellbeing\dim_geography.csv
+[11:05:08]   
+[11:05:08]   Done! 4 Census years x 598 communities x 114 indicators
+[11:05:08]   
+[11:05:08]   Running Population Estimates Processor (Table 17-10-0155-01)...
+[11:05:08]   [pop_estimates] Fetching Table 17-10-0155-01...
+[11:05:08]   [WARNING] Population Estimates processing skipped: fetch_table() missing 1 required positional argument: 'session'
+[11:05:08]   
+[11:05:08]   Running CSD Boundary Processor...
+[11:05:08]   ============================================================
+[11:05:08]   CSD Boundary File Processor
+[11:05:08]   ============================================================
+[11:05:08]   
+[11:05:08]   Boundary file already exists: data\latest\wellbeing\ontario_csd_boundaries.geojson (10.8 MB)
+[11:05:08]   Delete it to re-download and re-process.
+[11:05:08]   
+[11:05:08]   Running Climate Normals Processor (ECCC Geomet API)...
+[11:05:08]   ============================================================
+[11:05:08]   Climate Normals Processor (ECCC Geomet API)
+[11:05:08]   ============================================================
+[11:05:08]   
+[11:05:08]   Step 1: Computing CSD centroids from GeoJSON (shapely)...
+[11:05:08]     Computed centroids for 577 Ontario CSDs
+[11:05:08]   
+[11:05:08]   Step 2: Fetching Ontario climate station locations...
+[11:05:08]     Unique stations: 124
+[11:05:08]   
+[11:05:08]   Step 3: Mapping CSDs to nearest weather stations...
+[11:05:08]     Mapped 577 CSDs to stations
+[11:05:08]     Median distance: 23.3 km
+[11:05:08]     Max distance: 488.7 km
+[11:05:08]   [WARNING] Climate normals processing skipped: 'charmap' codec can't encode character '\u26a0' in position 2: character maps to <undefined>
+[11:05:08]   
+[11:05:08]   Running Broadband Coverage Processor ...
+[11:05:08]   [fetch_broadband] Processing ISED PHH broadband data (terrestrial-only) ...
+[11:05:08]     Loading PHH Speeds (Ontario) ...
+[11:05:08]       3,467,338 PHH speed records loaded
+[11:05:08]     Loading PHH Demographics (Ontario) ...
+[11:05:08]       3,467,338 PHH demographic records loaded
+[11:05:08]     Loading DGRF crosswalk ...
+[11:05:08]   [WARNING] Broadband processing skipped: 'charmap' codec can't encode character '\u2192' in position 22: character maps to <undefined>
+[11:05:08]   
+[11:05:08]   Running Health Facilities Processor ...
+[11:05:08]   [fetch_health_facilities] Loading ODHF from ZIP ...
+[11:05:08]     Reading ODHF_v1.1/odhf_v1.1.csv from ZIP ...
+[11:05:08]     Loaded 7,033 facility records
+[11:05:08]     Ontario facilities: 2,695
+[11:05:08]     312 CSDs with health facilities
+[11:05:08]   [WARNING] Health facilities processing skipped: 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+[11:05:08]   
+[11:05:08]   Running Rural Labour & Housing Fetcher (SEPH 14-10-0203-01 + CMHC 34-10-0143-01)...
+[11:05:08]   
+[11:05:08]   --- Rural Labour & Housing Data Fetcher ---
+[11:05:08]   
+[11:05:08]   [1/2] Fetching SEPH Table 14-10-0203-01...
+[11:05:08]   [INFO] Downloading 14-10-0203-01 from https://www150.statcan.gc.ca/n1/tbl/csv/14100203-eng.zip
+[11:05:09]     Processing SEPH data...
+[11:05:09]     SEPH: 440 rows retained (2001û2026)
+[11:05:09]     [OK] Saved -> C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\data\derived\rural_labour_seph.parquet
+[11:05:09]   
+[11:05:09]   [2/2] Fetching CMHC Housing Starts Table 34-10-0143-01...
+[11:05:09]   [INFO] Downloading 34-10-0143-01 from https://www150.statcan.gc.ca/n1/tbl/csv/34100143-eng.zip
+[11:05:09]     Processing CMHC housing starts data...
+[11:05:09]     CMHC: 6,854 rows retained (1948û2026)
+[11:05:09]     [OK] Saved -> C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\data\derived\rural_housing_starts.parquet
+[11:05:09]   
+[11:05:09]   --- Rural Labour & Housing Fetcher Complete ---
+[11:05:09]   Running Basket Update...
+[11:05:09]   --- Calculating Rail Transport Share ---
+[11:05:09]   DEBUG: Matched 15 categories.
+[11:05:09]   [RESULT] Ag Share of Rail (2026): 24.5%
+[11:05:09]   [ERROR] Could not find 'agri_transport_logistics' in 'baskets'. Check io_baskets.yml
+[11:05:09]   Derived CEAG metrics written.
+[11:05:09]   --- Starting IO Multipliers Transform (Matrix Fix) ---
+[11:05:09]   Processing Multipliers...
+[11:05:09]   [CRITICAL ERROR] 'charmap' codec can't encode character '\U0001f9f9' in position 5: character maps to <undefined>
+[11:05:09]   Derived IO multipliers assets written.
+[11:05:09]   --- Pipeline Complete ---
+[11:05:09] 
+[11:05:09] >> Checking for data changes to commit...
+[11:05:58]   Changes detected:
+[11:05:58]      data/latest/12-10-0177-01_dashboard.csv          |     Bin 31639492 -> 1534292512 bytes
+[11:05:58]      data/latest/18-10-0004-01_dashboard.csv          |    9280 +
+[11:05:58]      data/latest/32-10-0213-01_dashboard.csv          |  465698 +++---
+[11:05:58]      data/latest/36-10-0096-01.csv                    |     Bin 23058896 -> 1407546811 bytes
+[11:05:58]      data/latest/36-10-0217-01.csv                    |   75959 +-
+[11:05:58]      data/latest/36-10-0434-03.csv                    |  301238 +++-
+[11:05:58]      data/latest/36-10-0488-01.csv                    |  149996 +-
+[11:05:58]      data/latest/36-10-0489-01_dashboard.csv          | 1555093 +++++++++++++++++++
+[11:05:58]      data/latest/wellbeing/amenities_vintage.json     |      16 +
+[11:05:58]      data/latest/wellbeing/climate_normals.csv        |     578 +
+[11:05:58]      data/latest/wellbeing/health_facility_counts.csv |     286 +
+[11:05:58]      data/manifest.json                               |     374 +-
+[11:05:58]      data/pipeline_status.json                        |      80 +-
+[11:05:58]      13 files changed, 2265220 insertions(+), 293378 deletions(-)
+[11:06:00]   [main bffbc55] data: monthly pipeline refresh 2026-05-22
+[11:06:00]    Committer: Ben Lefort <ben.lefort@ofa.on.ca>
+[11:06:00]   Your name and email address were configured automatically based
+[11:06:00]   on your username and hostname. Please check that they are accurate.
+[11:06:00]   You can suppress this message by setting them explicitly. Run the
+[11:06:00]   following command and follow the instructions in your editor to edit
+[11:06:00]   your configuration file:
+[11:06:00]   
+[11:06:00]       git config --global --edit
+[11:06:00]   
+[11:06:00]   After doing this, you may fix the identity used for this commit with:
+[11:06:00]   
+[11:06:00]       git commit --amend --reset-author
+[11:06:00]   
+[11:06:00]    13 files changed, 2265220 insertions(+), 293378 deletions(-)
+[11:06:00]    create mode 100644 data/latest/18-10-0004-01_dashboard.csv
+[11:06:00]    create mode 100644 data/latest/36-10-0489-01_dashboard.csv
+[11:06:00]    create mode 100644 data/latest/wellbeing/amenities_vintage.json
+[11:06:00]    create mode 100644 data/latest/wellbeing/climate_normals.csv
+[11:06:00]   Pushing to remote...
+[11:07:51]   error: RPC failed; HTTP 408 curl 22 The requested URL returned error: 408
+[11:07:51]   send-pack: unexpected disconnect while reading sideband packet
+[11:07:51]   fatal: the remote end hung up unexpectedly
+[11:07:51]   Everything up-to-date
+[11:07:51]   [OK] Changes pushed - Streamlit Cloud will auto-redeploy.
+[11:07:51] 
+[11:07:51] =======================================================
+[11:07:51]   Pipeline complete: 2026-05-22 11:07:51
+[11:07:51]   Duration: 26 min 29 sec
+[11:07:51]   Tables updated: 61
+[11:07:51]   Tables failed:  0
+[11:07:51]   Warnings:       5
+[11:07:51]   Data pushed:    True
+[11:07:51]   Log:            C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\scripts\logs\pipeline_2026-05-22_1041.log
+[11:07:51] =======================================================
+[11:07:51]   [NOTIFY] Toast notification sent via WinRT.

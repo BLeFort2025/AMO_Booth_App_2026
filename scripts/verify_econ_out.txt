@@ -1,0 +1,9 @@
+=== PERTH COUNTY ECONOMIC DATA ===
+  INFO: Perth 2020 dip = -7.3% (report says -7.3%)
+
+=== WELLINGTON COUNTY ECONOMIC DATA ===
+  INFO: Wellington 2020 dip = 0.9% (report says -3.5% ... but was from 2019)
+  CRITICAL: Wellington 2019=2205.1, 2020=2225.0 - this is +0.9% NOT a 3.5% decline!
+  Perth 2019=2798.4, 2020=2593.1 = -7.3%
+
+Verified: 28, Errors: 0

@@ -1,0 +1,19 @@
+Remaining 18 N/A cases (municipalities with historical but not latest CVA):
+  Orangeville T (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=641,047
+  Mattawa T (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=16,786,200
+  Carleton Place T (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=97,791
+  Thames Centre M (Farmland): latest_yr=2023, latest_val=0.0, historical_peak=1,163,444,700
+  Thames Centre M (Residential): latest_yr=2023, latest_val=0.0, historical_peak=1,790,731,374
+  Thames Centre M (Commercial): latest_yr=2023, latest_val=0.0, historical_peak=120,709,065
+  Thames Centre M (Industrial): latest_yr=2023, latest_val=0.0, historical_peak=66,934,362
+  Smooth Rock Falls T (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=78,700
+  Brockville C (Farmland): latest_yr=2022, latest_val=0.0, historical_peak=185,700
+  Tudor and Cashel Tp (Industrial): latest_yr=2024, latest_val=0.0, historical_peak=129,601
+  Renfrew T (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=527,300
+  Renfrew T (Residential): latest_yr=2024, latest_val=0.0, historical_peak=598,753,461
+  Renfrew T (Commercial): latest_yr=2024, latest_val=0.0, historical_peak=111,097,330
+  Renfrew T (Industrial): latest_yr=2024, latest_val=0.0, historical_peak=16,791,000
+  Thornloe V (Industrial): latest_yr=2024, latest_val=0.0, historical_peak=98,000
+  Limerick Tp (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=7,800
+  Shuniah M (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=58,900
+  Deep River T (Farmland): latest_yr=2024, latest_val=0.0, historical_peak=41,400

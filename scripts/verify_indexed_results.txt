@@ -1,0 +1,103 @@
+C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\scripts\verify_indexed_charts.py:31: DtypeWarning: Columns (99,131) have mixed types. Specify dtype option on import or set low_memory=False.
+  fir = pd.read_csv("data/derived/fir_indicators.csv")
+======================================================================
+INDEXED CHART ACCURACY VERIFICATION
+======================================================================
+
+Loaded 444 municipalities, years 2010-2024
+Base year: 2010
+
+======================================================================
+TEST 1: Index Math Accuracy ΓÇö All Municipalities
+======================================================================
+  Tested 444 municipalities, 76,446 indexed values
+  Γ£à ALL MATH CORRECT ΓÇö zero discrepancies
+
+======================================================================
+TEST 2: Base Year Fallback Logic
+======================================================================
+  Municipalities using 2010 base: 60
+  Municipalities using fallback year: 333
+  Series with no valid data: 51
+  Γ£à All fallback logic correct
+
+======================================================================
+TEST 3: Cross-Check ΓÇö Indexed CVA vs Cumulative Growth %
+======================================================================
+
+  Zorra Tp (3532027):
+    Farmland       : base=    635,847,803  latest=  1,894,852,459  idx=  298.0  manual=  298.0  Γ£à
+    Residential    : base=    598,173,855  latest=  1,084,458,718  idx=  181.3  manual=  181.3  Γ£à
+    Commercial     : base=     23,070,490  latest=     38,984,469  idx=  169.0  manual=  169.0  Γ£à
+    Industrial     : base=     38,962,065  latest=     53,776,563  idx=  138.0  manual=  138.0  Γ£à
+
+  Ottawa C (3506008):
+    Farmland       : base=    688,542,460  latest=  1,846,485,400  idx=  268.2  manual=  268.2  Γ£à
+    Residential    : base= 80,875,279,029  latest=140,197,878,070  idx=  173.4  manual=  173.4  Γ£à
+    Commercial     : base= 17,478,261,727  latest= 25,286,018,451  idx=  144.7  manual=  144.7  Γ£à
+    Industrial     : base=  1,493,952,873  latest=  1,706,925,839  idx=  114.3  manual=  114.3  Γ£à
+
+  Hamilton Tp (3514019):
+    Farmland       : base=     92,771,500  latest=    218,445,398  idx=  235.5  manual=  235.5  Γ£à
+    Residential    : base=  1,160,599,885  latest=  1,574,681,105  idx=  135.7  manual=  135.7  Γ£à
+    Commercial     : base=     22,488,745  latest=     31,064,797  idx=  138.1  manual=  138.1  Γ£à
+    Industrial     : base=      4,670,342  latest=      7,960,500  idx=  170.4  manual=  170.4  Γ£à
+
+  Simcoe Co (3543000):
+    Farmland       : base=  1,963,377,619  latest=  3,819,303,481  idx=  194.5  manual=  194.5  Γ£à
+    Residential    : base= 35,119,627,541  latest= 61,621,080,292  idx=  175.5  manual=  175.5  Γ£à
+    Commercial     : base=  2,374,909,636  latest=  3,701,375,103  idx=  155.9  manual=  155.9  Γ£à
+    Industrial     : base=    566,448,098  latest=    925,139,981  idx=  163.3  manual=  163.3  Γ£à
+
+  Thunder Bay C (3558004):
+    Farmland       : base=      3,205,000  latest=      3,795,100  idx=  118.4  manual=  118.4  Γ£à
+    Residential    : base=  5,240,901,660  latest=  9,281,985,847  idx=  177.1  manual=  177.1  Γ£à
+    Commercial     : base=    981,623,913  latest=  1,559,538,516  idx=  158.9  manual=  158.9  Γ£à
+    Industrial     : base=    216,269,995  latest=    117,574,139  idx=   54.4  manual=   54.4  Γ£à
+
+  Γ£à All cross-checks match
+
+======================================================================
+TEST 4: Edge Cases
+======================================================================
+  4a. All-zero series: Γ£à handled correctly (no crash, base_val=0)
+  4b. NaN handling: Γ£à NaN filled with 0, index computed correctly
+  4c. Missing 2010 fallback: Γ£à correctly falls back to 2012, idx=200
+  4d. Single data point: Γ£à returns index=100
+  4e. Missing column: Γ£à gracefully skipped
+
+======================================================================
+TEST 5: Report Chart Builders
+======================================================================
+  CVA indexed chart: Γ£à 95,753 bytes
+  Tax indexed chart: Γ£à 100,556 bytes
+  Expected farm tax idx: 240, res tax idx: 167
+
+======================================================================
+TEST 6: Full Word + PPTX Report Generation
+======================================================================
+  Zero-sum check: Γ£à (diff=0.000000)
+  Word report: Γ£à 218,321 bytes
+  PPTX report: Γ£à 431,206 bytes, 13 slides
+
+======================================================================
+TEST 7: Provincial Aggregate Indexed Check
+======================================================================
+  Provincial CVA indexed (2010ΓåÆ2024):
+    Farmland       : 292.1
+    Residential    : 202.2
+    Commercial     : 171.4
+    Industrial     : 122.2
+
+  Γ£à Provincial indexed math verified
+
+======================================================================
+VERIFICATION SUMMARY
+======================================================================
+  Tests passed: 7/7
+  Municipalities tested: 444
+  Individual values verified: 76,446
+  Errors: 0
+
+  Γ£à ALL 76,446 INDEXED VALUES VERIFIED ΓÇö 100% ACCURATE
+======================================================================

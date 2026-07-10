@@ -1,0 +1,128 @@
+================================================================================
+PERTH COUNTY - AGRI-FOOD VALUE CHAIN
+================================================================================
+
+GDP (millions of chained 2017 dollars):
+  2012: $2,204.6M
+  2013: $2,273.7M
+  2014: $2,439.8M
+  2015: $2,341.7M
+  2016: $2,522.9M
+  2017: $2,666.0M
+  2018: $2,650.7M
+  2019: $2,798.4M
+  2020: $2,593.1M
+  2021: $2,660.9M
+  2022: $2,907.3M
+  2023: $2,970.2M
+  2024: $2,983.8M
+
+  2012-2024 growth: 35.3%
+  CAGR: 2.6%
+
+  Provincial GDP: $51,430.2M
+  Perth share: 5.8%
+
+Employment (jobs):
+  2012: 39,957
+  2013: 40,304
+  2014: 42,779
+  2015: 40,046
+  2016: 43,742
+  2017: 45,273
+  2018: 45,106
+  2019: 47,070
+  2020: 39,572
+  2021: 40,427
+  2022: 45,490
+  2023: 47,487
+  2023: 47,487
+
+  Provincial employment: 867,454
+  Perth share: 5.5%
+
+================================================================================
+WELLINGTON COUNTY - AGRI-FOOD VALUE CHAIN
+================================================================================
+
+GDP (millions of chained 2017 dollars):
+  2012: $2,037.0M
+  2013: $2,124.6M
+  2014: $2,401.0M
+  2015: $2,267.9M
+  2016: $2,244.2M
+  2017: $2,339.0M
+  2018: $2,344.7M
+  2019: $2,205.1M
+  2020: $2,225.0M
+  2021: $2,377.8M
+  2022: $2,624.3M
+  2023: $2,681.1M
+  2024: $2,692.1M
+
+  2012-2024 growth: 32.2%
+  CAGR: 2.4%
+
+  Provincial GDP: $51,430.2M
+  Wellington share: 5.2%
+
+Employment (jobs):
+  2012: 36,920
+  2013: 37,661
+  2014: 42,099
+  2015: 38,784
+  2016: 38,910
+  2017: 39,719
+  2018: 39,899
+  2019: 37,090
+  2020: 33,955
+  2021: 36,125
+  2022: 41,062
+  2023: 42,845
+  2023: 42,845
+
+  Provincial employment: 867,454
+  Wellington share: 4.9%
+
+================================================================================
+COUNTY RANKINGS (2024 GDP)
+================================================================================
+  # 1: Essex County                                  $4,058.9M
+  # 2: Huron County                                  $3,576.3M
+  # 3: Perth County                                  $2,983.8M <---
+  # 4: Middlesex County                              $2,888.0M
+  # 5: Wellington County                             $2,692.1M <---
+  # 6: Oxford County                                 $2,681.7M
+  # 7: Chatham-Kent Division                         $2,585.6M
+  # 8: Bruce County                                  $1,814.7M
+  # 9: Lambton County                                $1,682.8M
+  #10: Elgin County                                  $1,424.0M
+  #11: Simcoe County                                 $1,225.9M
+  #12: Grey County                                   $1,222.9M
+  #13: Stormont, Dundas and Glengarry Counties       $1,195.7M
+  #14: Prescott and Russell United Counties          $1,040.2M
+  #15: Hamilton Division                             $661.2M
+
+================================================================================
+COUNTY RANKINGS (2023 Employment)
+================================================================================
+  # 1: Essex County                                  64,598 jobs
+  # 2: Huron County                                  56,917 jobs
+  # 3: Perth County                                  47,487 jobs <---
+  # 4: Middlesex County                              45,962 jobs
+  # 5: Wellington County                             42,845 jobs <---
+  # 6: Oxford County                                 42,680 jobs
+  # 7: Chatham-Kent Division                         41,149 jobs
+  # 8: Bruce County                                  28,880 jobs
+  # 9: Lambton County                                26,782 jobs
+  #10: Elgin County                                  22,663 jobs
+  #11: Simcoe County                                 19,511 jobs
+  #12: Grey County                                   19,462 jobs
+  #13: Stormont, Dundas and Glengarry Counties       19,030 jobs
+  #14: Prescott and Russell United Counties          16,555 jobs
+  #15: Hamilton Division                             10,524 jobs
+
+--- Employment data note ---
+Perth 2023 emp col = 47,487
+Wellington 2023 emp col = 42,845
+Employment years header: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2023]

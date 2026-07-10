@@ -1,0 +1,5 @@
+Line 829: '    \'13. Ontario Ministry of Agriculture, Food and Agribusiness (OMAFA). 2025. \\"Ontario Agri-Food Value Chain by County: Gross Domestic Product and Employment, 2012\\u20132024.\\" Ontario Data Catalogue. Toronto: King\\\\\'s Printer for Ontario. Available at: https://data.ontario.ca/dataset/ontario-agri-food-value-chain-by-county\',\n'
+Line 830: '    \'14. Statistics Canada. 2022. Census of Population, 2021. Catalogue no. 98-316-X. \\"Census Profile: Perth, County (Census Division), Ontario.\\" Labour force by industry (NAICS 2017). Available at: https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm\',\n'
+Line 831: '    \'15. Statistics Canada. 2022. Census of Population, 2021. Catalogue no. 98-316-X. \\"Census Profile: Wellington, County (Census Division), Ontario.\\"\',\n'
+Line 832: ']\n'
+Line 833: '\n'

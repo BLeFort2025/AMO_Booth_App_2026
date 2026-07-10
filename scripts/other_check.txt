@@ -1,0 +1,2 @@
+Perth All Other = 224.9M (report says 225.0M, diff=-0.1)
+Wellington All Other = 219.8M (report says 219.8M, diff=0.0)

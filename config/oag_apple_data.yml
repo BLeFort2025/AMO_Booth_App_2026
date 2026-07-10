@@ -1,0 +1,77 @@
+# =============================================================================
+# OAG Apple & Tender Fruit Ground Truth Data (2024)
+# =============================================================================
+# Sources:
+#   - OAG/OTFG Employment Data: Larissa Osborne (OAG), confirmed June 2, 2026
+#   - Farm Gate Value: StatCan 32-10-0364
+#   - Production Insurance: Agricorp OACC Program Delivery Update, Sept 2025
+#   - SDRM: Estimated via FGV-share of total edible horticulture SDRM
+#           (Agricorp OACC PDF, Table 10; denominator from Deep Research)
+#
+# IMPORTANT: When OMAFA (John Cumming) provides actual commodity-level SDRM
+# data, update the sdrm values below and change sdrm_source to "actual".
+# =============================================================================
+
+# --- OAG-Confirmed Employment & Wages (2024) ---
+oag_employment_2024:
+  growing:
+    ftes: 1651
+    wages_M: 67.40
+    source: "OMAFRA Cost of Production (COP) derived estimates, locked June 19, 2026"
+  # Packing and processing do not suffer from the same aggregation bias as growing.
+  # Their HLRF overrides are omitted, so the IO engine will fall back to using 
+  # the uncalibrated (but highly accurate) StatCan multipliers for NAICS 4111 & 3114.
+
+# --- Farm Gate Values (2024, StatCan 32-10-0364) ---
+fgv_2024:
+  apples_M: 133.9
+  tender_fruit_M: 69.6
+  grapes_M: 113.0  # Includes table + wine grapes (Deep Research verified)
+  source: "StatCan 32-10-0364; grape figure cross-referenced with Grape Growers of Ontario"
+
+# --- Non-Growing Value Chain Margins (2024) ---
+value_chain_2024:
+  packing_margin_M: 110.8      # Shipments ($221.4M) - Apple Costs ($110.6M)
+  processing_margin_M: 125.6   # Shipments ($146.3M) - Apple Costs ($20.7M)
+  source: "Larissa Osborne, OAG/OTFG, 'Ontario Apples - 2024 Economic Impact Volume and Value Data.pdf', June 2, 2026"
+
+# --- Government Transfers (2024) ---
+# Production Insurance: Actual commodity-level data from Agricorp
+# SDRM: Estimated (see methodology below)
+government_transfers_2024:
+  sdrm_source: "estimated"  # Change to "actual" when John provides data
+  sdrm_methodology: |
+    SDRM: Edible Horticulture matched government contribution ($32.14M total,
+    2024) is reported by Agricorp as a single aggregate for ALL eligible edible
+    horticulture commodities (vegetables, greenhouse, berries, herbs, honey,
+    maple, etc. -- not just tree fruit). Commodity allocation estimated using
+    each commodity's share of total Ontario edible horticulture Farm Gate Value
+    ($3,734.90M, Gemini Deep Research verified July 2026).
+    Source: Agricorp OACC Program Delivery Update, September 2025, Table 10.
+  sdrm_total_edible_hort_M: 32.14
+  sdrm_denominator_total_edible_hort_fgv_M: 3734.90
+
+  apples:
+    production_insurance_M: 6.34
+    sdrm_M: 1.15  # = 133.9 / 3734.90 * 32.14
+    total_govt_transfers_M: 7.49
+  tender_fruit:
+    production_insurance_M: 0.90
+    sdrm_M: 0.60  # = 69.6 / 3734.90 * 32.14
+    total_govt_transfers_M: 1.50
+  grapes:
+    production_insurance_M: 2.90
+    sdrm_M: 0.97  # = 113.0 / 3734.90 * 32.14
+    total_govt_transfers_M: 3.87
+
+# --- Report Disclosure Language ---
+# Include this verbatim in any published report:
+report_disclosure: |
+  The SDRM: Edible Horticulture matched government contribution ($32.14M total,
+  2024) is reported by Agricorp as a single aggregate for all eligible edible
+  horticulture commodities. Commodity-specific SDRM data was not available at
+  time of publication. The allocation to specific commodities is estimated using
+  each commodity's share of total Ontario edible horticulture Farm Gate Value
+  (StatCan 32-10-0364). This estimate is statistically immaterial to headline
+  economic impact figures (<0.2% of GDP) and will be updated when
+  commodity-specific data becomes available from OMAFA.

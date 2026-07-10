@@ -1,0 +1,167 @@
+=== Zorra Records Across Years ===
+Years: [np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023), np.int64(2024)]
+
+
+--- Zorra 2020 ---
+  total_expenses                :          9,186,512
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,861,623,091
+  farmland_total_taxes          :          4,479,884
+  farmland_muni_taxes           :          3,767,813
+  residential_cva               :        994,195,186
+  total_taxable_cva             :      3,012,684,109
+  total_revenue                 :         14,607,670
+  own_purpose_tax_rev           :          8,714,501
+  farmland_lt_rate              :           0.001139
+  farmland_ut_rate              :           0.000804
+  residential_lt_rate           :           0.005231
+
+--- Zorra 2020 ---
+  total_expenses                :          6,796,638
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,147,223,600
+  farmland_total_taxes          :          2,660,481
+  farmland_muni_taxes           :          2,221,668
+  residential_cva               :        831,119,200
+  total_taxable_cva             :      2,092,785,600
+  total_revenue                 :         10,741,477
+  own_purpose_tax_rev           :          6,177,501
+  farmland_lt_rate              :           0.001051
+  farmland_ut_rate              :           0.000885
+  residential_lt_rate           :           0.004830
+
+--- Zorra 2021 ---
+  total_expenses                :          9,693,892
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,850,594,159
+  farmland_total_taxes          :          4,294,137
+  farmland_muni_taxes           :          3,586,285
+  residential_cva               :      1,032,056,418
+  total_taxable_cva             :      3,042,550,709
+  total_revenue                 :         14,191,117
+  own_purpose_tax_rev           :          8,966,631
+  farmland_lt_rate              :           0.001139
+  farmland_ut_rate              :           0.000799
+  residential_lt_rate           :           0.005231
+
+--- Zorra 2021 ---
+  total_expenses                :          7,857,161
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,157,914,850
+  farmland_total_taxes          :          2,689,882
+  farmland_muni_taxes           :          2,246,980
+  residential_cva               :        843,167,350
+  total_taxable_cva             :      2,123,968,700
+  total_revenue                 :          9,515,388
+  own_purpose_tax_rev           :          6,388,906
+  farmland_lt_rate              :           0.001061
+  farmland_ut_rate              :           0.000880
+  residential_lt_rate           :           0.004872
+
+--- Zorra 2022 ---
+  total_expenses                :         10,537,483
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,866,132,759
+  farmland_total_taxes          :          4,627,991
+  farmland_muni_taxes           :          3,914,195
+  residential_cva               :      1,040,401,118
+  total_taxable_cva             :      3,075,036,609
+  total_revenue                 :         17,618,091
+  own_purpose_tax_rev           :          9,651,832
+  farmland_lt_rate              :           0.001200
+  farmland_ut_rate              :           0.000898
+  residential_lt_rate           :           0.005510
+
+--- Zorra 2022 ---
+  total_expenses                :          9,214,861
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,156,021,850
+  farmland_total_taxes          :          2,725,971
+  farmland_muni_taxes           :          2,283,793
+  residential_cva               :        867,343,150
+  total_taxable_cva             :      2,146,916,600
+  total_revenue                 :         11,549,758
+  own_purpose_tax_rev           :          6,899,074
+  farmland_lt_rate              :           0.001078
+  farmland_ut_rate              :           0.000898
+  residential_lt_rate           :           0.004950
+
+--- Zorra 2023 ---
+  total_expenses                :         12,221,813
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,860,792,559
+  farmland_total_taxes          :          4,820,253
+  farmland_muni_taxes           :          4,108,500
+  residential_cva               :      1,071,051,018
+  total_taxable_cva             :      3,098,486,209
+  total_revenue                 :         17,537,916
+  own_purpose_tax_rev           :         10,433,771
+  farmland_lt_rate              :           0.001280
+  farmland_ut_rate              :           0.000928
+  residential_lt_rate           :           0.005880
+
+--- Zorra 2023 ---
+  total_expenses                :          9,835,528
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,164,515,050
+  farmland_total_taxes          :          2,837,056
+  farmland_muni_taxes           :          2,391,629
+  residential_cva               :        914,676,750
+  total_taxable_cva             :      2,202,826,100
+  total_revenue                 :         11,356,918
+  own_purpose_tax_rev           :          7,168,190
+  farmland_lt_rate              :           0.001126
+  farmland_ut_rate              :           0.000928
+  residential_lt_rate           :           0.005172
+
+--- Zorra 2024 ---
+  total_expenses                :         13,272,330
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,894,852,459
+  farmland_total_taxes          :          5,183,823
+  farmland_muni_taxes           :          4,459,042
+  residential_cva               :      1,084,458,718
+  total_taxable_cva             :      3,164,048,309
+  total_revenue                 :         20,270,319
+  own_purpose_tax_rev           :         11,954,535
+  farmland_lt_rate              :           0.001384
+  farmland_ut_rate              :           0.000969
+  residential_lt_rate           :           0.006359
+
+--- Zorra 2024 ---
+  total_expenses                :         10,437,142
+  farmland_tax_ratio            :           0.217700
+  farmland_cva                  :      1,176,417,350
+  farmland_total_taxes          :          3,115,836
+  farmland_muni_taxes           :          2,665,856
+  residential_cva               :        931,987,350
+  total_taxable_cva             :      2,235,030,800
+  total_revenue                 :         11,178,323
+  own_purpose_tax_rev           :          7,817,109
+  farmland_lt_rate              :           0.001199
+  farmland_ut_rate              :           0.001067
+  residential_lt_rate           :           0.005509
+
+
+=== RAW ZORRA 2021 VALIDATION ===
+File: data/FIR Data/2021\FI213227 Zorra Tp.zip
+
+S26A col_map: {2: 8, 3: 12, 4: 14, 5: 15, 6: 16, 7: 18, 8: 19, 9: 20, 10: 21, 11: 22, 16: 7, 17: 10, 18: 9}
+  Residential  (0010): c3(total_tax)=10766165.0, c4(lt_tax)=5399090.0, c5(ut_tax)=3788029.0, c16(cva)=1032056418.0
+  Multi-Res    (0050): c3(total_tax)=69581.0, c4(lt_tax)=37656.0, c5(ut_tax)=26419.0, c16(cva)=3599000.0
+  Farmland     (0110): c3(total_tax)=4294137.0, c4(lt_tax)=2107586.0, c5(ut_tax)=1478699.0, c16(cva)=1850594159.0
+  Commercial   (0210): c3(total_tax)=715064.0, c4(lt_tax)=274673.0, c5(ut_tax)=192711.0, c16(cva)=27951569.0
+  Industrial   (0510): c3(total_tax)=665875.0, c4(lt_tax)=281495.0, c5(ut_tax)=197498.0, c16(cva)=20976097.0
+  Total        (9199): c3(total_tax)=19299190.0, c4(lt_tax)=9118462.0, c5(ut_tax)=6405434.0, c16(cva)=3042550709.0
+
+S40 col_map: {1: 7, 2: 8, 3: 9, 4: 10, 5: 11, 6: 12, 7: 14, 11: 18, 12: 16, 13: 17, 16: 13}
+  S40 Line 9910 Col  2 = 197340.0
+  S40 Line 9910 Col  4 = 1787345.0
+  S40 Line 9910 Col 11 = 9693892.0
+
+S22A col_map: {1: 4, 2: 5, 3: 6, 4: 7, 5: 8, 6: 9, 7: 10, 8: 12, 9: 13, 10: 14, 11: 15, 12: 17, 13: 18, 14: 19, 15: 21, 16: 11}
+  RTC=RT: ratio(c5)=1.0, lt_rate(c8)=0.00523139, ut_rate(c9)=0.00367037
+  RTC=MT: ratio(c5)=2.0, lt_rate(c8)=0.01046279, ut_rate(c9)=0.00734074
+  RTC=FT: ratio(c5)=0.2177, lt_rate(c8)=0.00113887, ut_rate(c9)=0.00079904
+  RTC=CT: ratio(c5)=1.9018, lt_rate(c8)=0.00994907, ut_rate(c9)=0.00698031
+  RTC=IT: ratio(c5)=2.63, lt_rate(c8)=0.01375857, ut_rate(c9)=0.00965307

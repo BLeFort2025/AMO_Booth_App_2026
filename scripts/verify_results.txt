@@ -1,0 +1,75 @@
+================================================================================
+PERTH COUNTY - DATA VERIFICATION
+================================================================================
+
+--- Introduction ---
+  INFO: Provincial total 2024 = $22,663.3M, Perth share = 6.7%
+  INFO: Perth FCR rank = #3
+
+--- Size and Scale ---
+  INFO: 533,244 acres ├╖ 1.32 acres/field = 403,973 football fields
+
+--- Historical Trend Table ---
+
+--- Commodity Mix ---
+  INFO: Dairy + Hog = 44.2%
+
+--- Livestock ---
+
+--- Crop Acreage ---
+  INFO: Perth dry beans total = 25,113 acres
+
+--- Demographics ---
+
+--- Business Structure ---
+
+--- Revenue Distribution ---
+
+--- Employment ---
+
+--- FCR Growth ---
+
+================================================================================
+WELLINGTON COUNTY - DATA VERIFICATION
+================================================================================
+
+--- Introduction ---
+
+--- Size and Scale ---
+
+--- Historical Trend Table ---
+
+--- Commodity Mix ---
+
+--- Livestock ---
+
+--- Demographics ---
+
+--- Business Structure ---
+
+--- Crop Acreage ---
+
+--- Employment ---
+
+--- Technology ---
+
+--- FCR Growth ---
+
+================================================================================
+COMPARISON TABLE VERIFICATION
+================================================================================
+
+--- Revenue Distribution Cross-Check ---
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+
+  Γ£à VERIFIED: 170
+  Γ¥î ERRORS:   0
+  ΓÜá∩╕Å  WARNINGS: 1
+
+  --- WARNINGS ---
+  ΓÜá∩╕Å Perth dry beans ~9700 acres: Cannot compare types <class 'bool'> vs <class 'numpy.bool'>
+
+DONE

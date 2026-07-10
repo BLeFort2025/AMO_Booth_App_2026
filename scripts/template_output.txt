@@ -1,0 +1,12 @@
+=== FULL DOCUMENT STRUCTURE ===
+
+[  0] Style='Title' | Text='The Economic and Fiscal Impacts of Farming in Perth & Wellington '
+[  2] Style='Heading 2' | Text='Agricultural Profile of Perth County'
+[  5] Style='Heading 2' | Text='Agricultural Profile of Wellington County'
+[  8] Style='Heading 2' | Text='Economic Impact of Farming in Perth County'
+[ 11] Style='Heading 2' | Text='Economic Impact of Farming in Wellington County'
+[ 14] Style='Heading 2' | Text='Fiscal Impact of Agriculture on Ontario Municipalities '
+[ 17] Style='Heading 2' | Text='Property Tax Shift to Farm Properties in Perth County 2010-2024'
+[ 20] Style='Heading 2' | Text='Property Tax Shift to Farm Properties in Wellington County 2010-2024'
+
+=== TABLES ===

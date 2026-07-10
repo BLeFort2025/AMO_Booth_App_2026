@@ -1,0 +1,180 @@
+=== S26A Column Mapping ===
+  Row  0: [(2, 'Province of Ontario  -  Ministry of Municipal Affairs'), (5, 'x'), (6, 'x'), (7, 'F'), (8, 'x'), (9, 'x'), (11, 'F')]
+  Row  1: [(2, '2011-V01')]
+  Row  2: [(2, 'FIR2011:   Zorra Tp')]
+  Row  3: [(2, 'Asmt Code:   3227')]
+  Row  4: [(2, 'MAH Code:   37605')]
+  Row  5: [(2, 'RIF2011:   Le Canton de Zorra')]
+  Row  6: [(2, 'Code mun.   3227')]
+  Row  7: [(2, 'AML   37605')]
+  Row 10: [(4, '1.   Municipal and School Board Taxation'), (21, 'TOTAL')]
+  Row 11: [(0, 'F')]
+  Row 12: [(2, '9010'), (4, 'Legislated Percentage of Education Taxes distributed to each School Board (Applic. to Com, Ind, Pipelines) .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . '), (21, 1.0)]
+  Row 14: [(13, 'Taxable Asmt.\n(CVA)'), (14, 'Taxable Asmt.\n(Wtd & Disc CVA)'), (15, 'Phase-In\nTaxable Asmt.\n(Wtd & Disc CVA)'), (17, 'TOTAL Taxes'), (19, 'Municipal Taxes'), (21, 'Education Taxes')]
+  Row 15: [(19, 'LT / ST'), (20, 'UT')]
+  Row 16: [(0, 'F')]
+  Row 17: [(0, 'F')]
+  Row 18: [(4, 'Property Class Group'), (13, 16.0), (14, 2.0), (15, 17.0), (17, 3.0), (19, 4.0), (20, 5.0), (21, 6.0)]
+  Row 19: [(13, '$'), (14, '$'), (15, '$'), (17, '$'), (19, '$'), (20, '$'), (21, '$')]
+
+=== Line 0110 (Farmland Taxable) ===
+  Found at row 22
+    Col[ 0] = ''
+    Col[ 1] = ''
+    Col[ 2] = '0110'
+    Col[ 3] = ''
+    Col[ 4] = 'Farmland .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . '
+    Col[ 5] = ''
+    Col[ 6] = ''
+    Col[ 7] = ''
+    Col[ 8] = ''
+    Col[ 9] = ''
+    Col[10] = ''
+    Col[11] = ''
+    Col[12] = ' '
+    Col[13] = 651413458.0
+    Col[14] = 162853364.5
+    Col[15] = 162853364.5
+    Col[16] = ''
+    Col[17] = 1966506.0
+    Col[18] = ''
+    Col[19] = 728280.0
+    Col[20] = 862035.0
+    Col[21] = 376191.0
+
+=== Line 1110 (Farmland PIL) ===
+  Found at row 61
+    Col[ 0] = ''
+    Col[ 1] = ''
+    Col[ 2] = '1110'
+    Col[ 3] = ''
+    Col[ 4] = 'Farmland .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . '
+    Col[ 5] = ''
+    Col[ 6] = ''
+    Col[ 7] = ''
+    Col[ 8] = ''
+    Col[ 9] = ''
+    Col[10] = ''
+    Col[11] = ''
+    Col[12] = ' '
+    Col[13] = 0.0
+    Col[14] = 0.0
+    Col[15] = 0.0
+    Col[16] = ''
+    Col[17] = 0.0
+    Col[18] = ''
+    Col[19] = 0.0
+    Col[20] = 0.0
+    Col[21] = 0.0
+
+=== Line 9199 (Total Taxable) ===
+  Found at row 49
+    Col[ 0] = ''
+    Col[ 1] = ''
+    Col[ 2] = '9199'
+    Col[ 3] = ''
+    Col[ 4] = ''
+    Col[ 5] = ''
+    Col[ 6] = ''
+    Col[ 7] = ''
+    Col[ 8] = ''
+    Col[ 9] = ''
+    Col[10] = 'TOTAL before Adj.'
+    Col[11] = ''
+    Col[12] = ' '
+    Col[13] = 1410725081.0
+    Col[14] = 1023912799.6227801
+    Col[15] = 1023912799.6227801
+    Col[16] = ''
+    Col[17] = 13844103.0
+    Col[18] = ''
+    Col[19] = 4646080.0
+    Col[20] = 5471033.0
+    Col[21] = 3726990.0
+
+=== S22A - Farmland (FT) row ===
+Sheet: 22A (232 rows)
+  HdrRow  0: [(2, 'Province of Ontario  -  Ministry of Municipal Affairs')]
+  HdrRow  1: [(2, '2011-V01')]
+  HdrRow  2: [(2, 'FIR2011:   Zorra Tp')]
+  HdrRow  3: [(2, 'Asmt Code:   3227')]
+  HdrRow  4: [(2, 'MAH Code:   37605')]
+  HdrRow  5: [(2, 'RIF2011:   Le Canton de Zorra')]
+  HdrRow  6: [(2, 'Code mun.   3227')]
+  HdrRow  7: [(2, 'AML   37605')]
+  HdrRow 10: [(4, '1.  GENERAL PURPOSE LEVY INFORMATION')]
+  HdrRow 11: [(0, 'F')]
+  HdrRow 13: [(11, 'Phase-In Taxable Assessment')]
+  HdrRow 14: [(0, 'F')]
+
+  FT row at row 35:
+    Col[ 0] = ''
+    Col[ 1] = ''
+    Col[ 2] = '0110'
+    Col[ 3] = ''
+    Col[ 4] = 'FT'
+    Col[ 5] = 0.0
+    Col[ 6] = 'Farmland'
+    Col[ 7] = 'Full Occupied'
+    Col[ 8] = 0.25
+    Col[ 9] = 1.0
+    Col[10] = 651413458.0
+    Col[11] = 651413458.0
+    Col[12] = 0.001118
+    Col[13] = 0.00120635
+    Col[14] = 0.0005775
+Sheet: 22B (46 rows)
+  HdrRow  0: [(2, 'Province of Ontario  -  Ministry of Municipal Affairs')]
+  HdrRow  1: [(2, '2011-V01')]
+  HdrRow  2: [(2, 'FIR2011:   Zorra Tp')]
+  HdrRow  3: [(2, 'Asmt Code:   3227')]
+  HdrRow  4: [(2, 'MAH Code:   37605')]
+  HdrRow  5: [(2, 'RIF2011:   Le Canton de Zorra')]
+  HdrRow  6: [(2, 'Code mun.   3227')]
+  HdrRow  7: [(2, 'AML   37605')]
+  HdrRow 10: [(4, '2.  LOWER-TIER / SINGLE-TIER SPECIAL AREA LEVY INFORMATION')]
+  HdrRow 11: [(0, 'F')]
+  HdrRow 14: [(0, 'F')]
+Sheet: 22C (46 rows)
+  HdrRow  0: [(2, 'Province of Ontario  -  Ministry of Municipal Affairs')]
+  HdrRow  1: [(2, '2011-V01')]
+  HdrRow  2: [(2, 'FIR2011:   Zorra Tp')]
+  HdrRow  3: [(2, 'Asmt Code:   3227')]
+  HdrRow  4: [(2, 'MAH Code:   37605')]
+  HdrRow  5: [(2, 'RIF2011:   Le Canton de Zorra')]
+  HdrRow  6: [(2, 'Code mun.   3227')]
+  HdrRow  7: [(2, 'AML   37605')]
+  HdrRow 10: [(4, '3.  UPPER-TIER SPECIAL AREA LEVY INFORMATION')]
+  HdrRow 11: [(0, 'F')]
+  HdrRow 14: [(0, 'F')]
+
+  FT row at row 35:
+    Col[ 0] = ''
+    Col[ 1] = ''
+    Col[ 2] = '0110'
+    Col[ 3] = ''
+    Col[ 4] = 'FT'
+    Col[ 5] = 0.0
+    Col[ 6] = 'Farmland'
+    Col[ 7] = 'Full Occupied'
+    Col[ 8] = 0.25
+    Col[ 9] = 1.0
+    Col[10] = 651413458.0
+    Col[11] = 651413458.0
+    Col[12] = ''
+    Col[13] = 0.00011698
+    Col[14] = ''
+Sheet: 22D (47 rows)
+  HdrRow  0: [(2, 'Province of Ontario  -  Ministry of Municipal Affairs'), (5, 'F'), (14, 'F')]
+  HdrRow  1: [(2, '2011-V01')]
+  HdrRow  2: [(2, 'FIR2011:   Zorra Tp')]
+  HdrRow  3: [(2, 'Asmt Code:   3227')]
+  HdrRow  4: [(2, 'MAH Code:   37605')]
+  HdrRow  5: [(2, 'RIF2011:   Le Canton de Zorra')]
+  HdrRow  6: [(2, 'Code mun.   3227')]
+  HdrRow  7: [(2, 'AML   37605')]
+  HdrRow 12: [(0, 'F')]
+  HdrRow 13: [(0, 'F')]
+  HdrRow 14: [(4, '4.   ADJUSTMENTS TO TAXATION  ')]
+
+=== Searching for user's values ===

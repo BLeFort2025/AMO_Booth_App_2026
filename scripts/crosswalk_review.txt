@@ -1,0 +1,15 @@
+=== UNMATCHED (1) ===
+  1516 = Selwyn Tp (best_score=0.0)
+
+=== WEAK MATCHES (<0.8, 4) ===
+  1509 'Cavan Monaghan Tp' -> 3515013.0 'Cavan-Millbrook-North Monaghan' (score=0.636)
+  1542 'Trent Lakes M' -> 3560070.0 'Deer Lake' (score=0.6)
+  4624 'Dysart et al Tp' -> 3546024.0 'Dysart and Others' (score=0.552)
+  5751 'Macdonald Meredith et al Tp' -> 3557051.0 'Macdonald, Meredith and Aberdeen Additional' (score=0.667)
+
+=== SUMMARY ===
+  Total: 444
+  Auto-matched: 413
+  Strong (>=0.8): 409
+  Weak (0.5-0.8): 4
+  Unmatched: 1

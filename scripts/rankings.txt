@@ -1,0 +1,47 @@
+=== TOP HOG COUNTIES (2021 Census, Total pigs) ===
+  huron                             821,281
+  perth                             661,067
+  oxford                            540,029
+  middlesex                         445,061
+  lambton                           280,709
+  wellington                        255,297
+  chatham_kent                      160,142
+  waterloo                          131,040
+  bruce                             125,660
+  elgin                             122,651
+
+=== TOP DAIRY COW COUNTIES (2021 Census) ===
+  oxford                             39,208
+  perth                              37,621
+  wellington                         30,716
+  stormont                           24,739
+  prescott_and_russell               19,334
+  huron                              16,288
+  waterloo                           14,575
+  bruce                              13,728
+  middlesex                          13,132
+  elgin                               9,549
+
+=== TOP CATTLE & CALVES COUNTIES (2021 Census) ===
+  wellington                        150,093
+  bruce                             129,150
+  perth                             123,605
+  oxford                            112,496
+  huron                             110,046
+  grey                              107,167
+  waterloo                           86,333
+  middlesex                          78,508
+  stormont                           55,985
+  kawartha_lakes                     43,861
+
+=== TOP POULTRY COUNTIES (2021 Census, Hens & chickens) ===
+  wellington                      6,953,181
+  huron                           5,925,262
+  perth                           5,043,758
+  middlesex                       4,430,756
+  oxford                          4,261,584
+  niagara                         3,928,518
+  waterloo                        3,079,736
+  haldimand_norfolk               2,680,974
+  lambton                         2,587,066
+  bruce                           1,904,934

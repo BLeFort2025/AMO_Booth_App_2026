@@ -1,0 +1,42 @@
+       commodity  value_millions
+24353  Dry Beans       24.697754
+24377   Soybeans       94.967384
+
+                          commodity  value_millions
+24380                         Total     1512.271277
+24352                Dairy Products      339.459831
+24364                          Hogs      328.956965
+24378  Steers and Slaughter Heifers      148.340686
+24351                          Corn      132.356464
+24349                      Chickens      124.386388
+24370     Other Crops and Livestock      122.409320
+24377                      Soybeans       94.967384
+24382                         Wheat       49.134058
+24354                          Eggs       44.953612
+24373               Program Payment       39.554220
+24353                     Dry Beans       24.697754
+24381                       Turkeys       17.728494
+24371                        Other*        8.282330
+24355                     Field Veg        8.240623
+24363                Hay and Clover        8.122786
+24347                        Calves        5.737144
+24372                      Potatoes        3.863129
+24375               Sheep and Lambs        3.628949
+24361                       Ginseng        3.195071
+24358               Forest Products        1.520789
+24346                        Barley        0.835945
+24348                        Canola        0.658064
+24366                Maple Products        0.625695
+24369                          Oats        0.337164
+24374                           Rye        0.278397
+24362                Greenhouse Veg        0.000013
+24350               Christmas Trees        0.000000
+24356                  Floriculture        0.000000
+24365                         Honey        0.000000
+24359                         Fruit        0.000000
+24360                          Furs        0.000000
+24357         Forage and Grass Seed        0.000000
+24368                       Nursery        0.000000
+24367                     Mushrooms        0.000000
+24376                           Sod        0.000000
+24379                       Tobacco        0.000000

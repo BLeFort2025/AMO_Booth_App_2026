@@ -1,0 +1,85 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\ben.lefort\AppData\Local\Programs\Python\Python311\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter
+plugins: anyio-4.12.1, typeguard-4.4.4
+collecting ... collected 42 items
+
+tests/test_process_fir.py::TestMatchLineCode::test_string_match PASSED   [  2%]
+tests/test_process_fir.py::TestMatchLineCode::test_string_no_match PASSED [  4%]
+tests/test_process_fir.py::TestMatchLineCode::test_float_match PASSED    [  7%]
+tests/test_process_fir.py::TestMatchLineCode::test_int_match PASSED      [  9%]
+tests/test_process_fir.py::TestMatchLineCode::test_float_large_code PASSED [ 11%]
+tests/test_process_fir.py::TestMatchLineCode::test_none PASSED           [ 14%]
+tests/test_process_fir.py::TestMatchLineCode::test_empty PASSED          [ 16%]
+tests/test_process_fir.py::TestBuildFirColMap::test_basic_header PASSED  [ 19%]
+tests/test_process_fir.py::TestBuildFirColMap::test_float_headers PASSED [ 21%]
+tests/test_process_fir.py::TestBuildFirColMap::test_no_headers PASSED    [ 23%]
+tests/test_process_fir.py::TestBuildFirColMap::test_single_column_header PASSED [ 26%]
+tests/test_process_fir.py::TestExtractFromSheetData::test_basic_extraction PASSED [ 28%]
+tests/test_process_fir.py::TestExtractFromSheetData::test_total_revenue PASSED [ 30%]
+tests/test_process_fir.py::TestExtractFromSheetData::test_missing_line_code PASSED [ 33%]
+tests/test_process_fir.py::TestExtractFromSheetData::test_out_of_bounds_col PASSED [ 35%]
+tests/test_process_fir.py::TestExtractFirValue::test_26a_residential_cva PASSED [ 38%]
+tests/test_process_fir.py::TestExtractFirValue::test_26a_residential_taxes PASSED [ 40%]
+tests/test_process_fir.py::TestExtractFirValue::test_26a_total_taxable PASSED [ 42%]
+tests/test_process_fir.py::TestExtractFirValue::test_missing_code PASSED [ 45%]
+tests/test_process_fir.py::TestExtractFirValue::test_missing_col PASSED  [ 47%]
+tests/test_process_fir.py::TestSafeArithmetic::test_safe_div_normal PASSED [ 50%]
+tests/test_process_fir.py::TestSafeArithmetic::test_safe_div_zero_denom PASSED [ 52%]
+tests/test_process_fir.py::TestSafeArithmetic::test_safe_div_none_inputs PASSED [ 54%]
+tests/test_process_fir.py::TestSafeArithmetic::test_safe_add_normal PASSED [ 57%]
+tests/test_process_fir.py::TestSafeArithmetic::test_safe_add_with_nones PASSED [ 59%]
+tests/test_process_fir.py::TestSafeArithmetic::test_safe_add_all_nones PASSED [ 61%]
+tests/test_process_fir.py::TestComputeDerived::test_core_computed PASSED [ 64%]
+tests/test_process_fir.py::TestComputeDerived::test_missing_values PASSED [ 66%]
+tests/test_process_fir.py::TestComputeDerived::test_zero_debt_coalescing FAILED [ 69%]
+tests/test_process_fir.py::TestIndicatorConfig::test_config_loads PASSED [ 71%]
+tests/test_process_fir.py::TestIndicatorConfig::test_computed_section_exists PASSED [ 73%]
+tests/test_process_fir.py::TestIndicatorConfig::test_each_indicator_has_required_fields PASSED [ 76%]
+tests/test_process_fir.py::TestCrosswalk::test_crosswalk_file_exists PASSED [ 78%]
+tests/test_process_fir.py::TestCrosswalk::test_crosswalk_has_required_columns PASSED [ 80%]
+tests/test_process_fir.py::TestCrosswalk::test_crosswalk_match_rate PASSED [ 83%]
+tests/test_process_fir.py::TestCrosswalk::test_sgc_codes_are_7_digits PASSED [ 85%]
+tests/test_process_fir.py::TestOutputCSV::test_expected_columns FAILED   [ 88%]
+tests/test_process_fir.py::TestOutputCSV::test_row_count PASSED          [ 90%]
+tests/test_process_fir.py::TestOutputCSV::test_year_range PASSED         [ 92%]
+tests/test_process_fir.py::TestOutputCSV::test_municipality_count PASSED [ 95%]
+tests/test_process_fir.py::TestOutputCSV::test_no_all_null_rows PASSED   [ 97%]
+tests/test_process_fir.py::TestOutputCSV::test_sgc_code_coverage PASSED  [100%]
+
+================================== FAILURES ===================================
+________________ TestComputeDerived.test_zero_debt_coalescing _________________
+tests\test_process_fir.py:385: in test_zero_debt_coalescing
+    assert record["debt_to_revenue"] == pytest.approx(0.0)
+E   assert None == 0.0 ▒ 1.0e-12
+E     
+E     comparison failed
+E     Obtained: None
+E     Expected: 0.0 ▒ 1.0e-12
+_____________________ TestOutputCSV.test_expected_columns _____________________
+tests\test_process_fir.py:464: in test_expected_columns
+    assert col in self.df.columns, f"Missing column: {col}"
+E   AssertionError: Missing column: farmland_tax_rate
+E   assert 'farmland_tax_rate' in Index(['fir_code', 'municipality_name', 'year', 'sgc_code', 'tier',\n       'accumulated_surplus', 'ag_land_hectares', 'asset_consumption_ratio',\n       'avg_tax_per_household', 'capital_additions',\n       ...\n       'unpaved_road_km', 'user_fee_reliance', 'user_fees_charges',\n       'waste_diversion_rate', 'waste_diverted_tonnes', 'wastewater_km',\n       'wastewater_ml_treated', 'water_km', 'water_ml_treated',\n       'winter_road_km'],\n      dtype='object', length=137)
+E    +  where Index(['fir_code', 'municipality_name', 'year', 'sgc_code', 'tier',\n       'accumulated_surplus', 'ag_land_hectares', 'asset_consumption_ratio',\n       'avg_tax_per_household', 'capital_additions',\n       ...\n       'unpaved_road_km', 'user_fee_reliance', 'user_fees_charges',\n       'waste_diversion_rate', 'waste_diverted_tonnes', 'wastewater_km',\n       'wastewater_ml_treated', 'water_km', 'water_ml_treated',\n       'winter_road_km'],\n      dtype='object', length=137) =       fir_code  ... winter_road_km\n0          100  ...            NaN\n1          101  ...            NaN\n2          111  ...            NaN\n3          200  ...            NaN\n4          201  ...            NaN\n...        ...  ...            ...\n6551      6008  ...            NaN\n6552      6016  ...            NaN\n6553      6026  ...            NaN\n6554      6041  ...            NaN\n6555      6049  ...            NaN\n\n[6556 rows x 137 columns].columns
+E    +    where       fir_code  ... winter_road_km\n0          100  ...            NaN\n1          101  ...            NaN\n2          111  ...            NaN\n3          200  ...            NaN\n4          201  ...            NaN\n...        ...  ...            ...\n6551      6008  ...            NaN\n6552      6016  ...            NaN\n6553      6026  ...            NaN\n6554      6041  ...            NaN\n6555      6049  ...            NaN\n\n[6556 rows x 137 columns] = <test_process_fir.TestOutputCSV object at 0x0000022BDF09EB10>.df
+============================== warnings summary ===============================
+tests\test_farm_tax_story.py:9
+  C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\tests\test_farm_tax_story.py:9: DtypeWarning: Columns (99,131) have mixed types. Specify dtype option on import or set low_memory=False.
+    fir = pd.read_csv("data/derived/fir_indicators.csv")
+
+tests/test_process_fir.py::TestOutputCSV::test_expected_columns
+tests/test_process_fir.py::TestOutputCSV::test_row_count
+tests/test_process_fir.py::TestOutputCSV::test_year_range
+tests/test_process_fir.py::TestOutputCSV::test_municipality_count
+tests/test_process_fir.py::TestOutputCSV::test_no_all_null_rows
+tests/test_process_fir.py::TestOutputCSV::test_sgc_code_coverage
+  C:\Projects\Farm Finance Stats Dashboard\Database\farm_finance_dashboard_starter\tests\test_process_fir.py:456: DtypeWarning: Columns (99,131) have mixed types. Specify dtype option on import or set low_memory=False.
+    self.df = pd.read_csv(out_path)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_process_fir.py::TestComputeDerived::test_zero_debt_coalescing
+FAILED tests/test_process_fir.py::TestOutputCSV::test_expected_columns - Asse...
+================== 2 failed, 40 passed, 7 warnings in 2.29s ===================
