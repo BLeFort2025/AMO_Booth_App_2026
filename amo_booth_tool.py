@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+import base64
 
 # Add project root to sys.path so 'app' imports work
 project_root = str(Path(__file__).parent.absolute())
@@ -135,11 +136,25 @@ for _, row in latest_ompf_df.iterrows():
 
 # Create municipality lookups
 community_lookup = {}
+csd_type_lookup = {}
+county_lookup = {}
 for _, row in geo_df.iterrows():
-    name = row.get("geo_name", "")
-    county = row.get("county", "")
-    label = f"{name} ({county})" if pd.notna(county) and county else name
-    community_lookup[row["sgc_code"]] = label
+    name = str(row.get("geo_name", "")).strip()
+    county = str(row.get("county", "")).strip() if pd.notna(row.get("county")) else ""
+    csd_type = str(row.get("csd_type", "")).strip() if pd.notna(row.get("csd_type")) else ""
+    code = row["sgc_code"]
+    
+    csd_type_lookup[code] = csd_type
+    county_lookup[code] = county
+    
+    # Disambiguate when municipality name matches county name (e.g. Town of Essex vs Essex County)
+    if county and name.lower() == county.lower() and csd_type:
+        label = f"{name} ({csd_type})"
+    elif county:
+        label = f"{name} ({county})"
+    else:
+        label = name
+    community_lookup[code] = label
 
 reverse_lookup = {v: k for k, v in community_lookup.items()}
 available_sgcs = sorted(fir_df["sgc_code"].unique())
@@ -148,7 +163,17 @@ available_names = sorted([community_lookup.get(c, c) for c in available_sgcs if 
 with st.sidebar:
     logo_path = Path(__file__).parent / "app" / "data" / "OFA_logo.png"
     if logo_path.exists():
-        st.image(str(logo_path), width=150)
+        try:
+            with open(logo_path, "rb") as f:
+                b64_logo = base64.b64encode(f.read()).decode("utf-8")
+            st.markdown(
+                f'<div style="text-align: center; margin-bottom: 1rem;">'
+                f'<img src="data:image/png;base64,{b64_logo}" width="150" alt="OFA Logo">'
+                f'</div>',
+                unsafe_allow_html=True
+            )
+        except Exception:
+            st.markdown("### 🌾 OFA")
     else:
         st.markdown("### 🌾 OFA")
     st.markdown("## 🏛️ AMO 2026")
@@ -162,14 +187,21 @@ with st.sidebar:
     st.metric("Municipalities Tracked", len(available_names))
     st.caption("Data source: Ontario Financial Information Return (FIR) 2010-2024")
 
-st.markdown(f"## Fair Farm Taxes & Fully Funded Municipalities")
-st.markdown(f"### Key Fiscal Metrics for **{selected_name}**")
-
 # Get data for selected municipality
 muni_df = fir_df[fir_df["sgc_code"] == selected_sgc].sort_values("year")
 latest_year = muni_df["year"].max()
 latest_row = muni_df[muni_df["year"] == latest_year].iloc[0]
 fir_code = latest_row["fir_code"]
+
+muni_type = csd_type_lookup.get(selected_sgc, "")
+muni_county = county_lookup.get(selected_sgc, "")
+tier_val = latest_row.get("tier", "")
+tier_name = "Single-Tier Municipality" if tier_val == "single" else "Lower-Tier Municipality"
+type_desc = f"{muni_type} ({tier_name})" if muni_type else tier_name
+
+st.markdown(f"## Fair Farm Taxes & Fully Funded Municipalities")
+st.markdown(f"### Key Fiscal Metrics for **{selected_name}**")
+st.caption(f"🏛️ **Classification:** {type_desc} · **County/Region:** {muni_county or 'N/A'} · **SGC Code:** `{selected_sgc}` · **FIR Code:** `{fir_code}`")
 
 # --- Eligibility Banner ---
 muni_rscm = rscm_lookup.get(fir_code, 0.0)
@@ -192,12 +224,25 @@ else:
 # --- Section 1: Map ---
 if HAS_PYDECK and boundaries is not None:
     with st.container():
+        col_m1, col_m2 = st.columns([3, 2])
+        with col_m1:
+            st.markdown("#### Geographic Distribution & Rural Eligibility")
+        with col_m2:
+            map_view = st.radio(
+                "Map Focus",
+                options=["Local / County Focus", "Province-Wide Overview"],
+                horizontal=True,
+                label_visibility="collapsed"
+            )
+
         # Copy to avoid warnings
         map_df = latest_ompf_df.copy()
         
         # Merge with boundaries
         map_geo = boundaries.merge(map_df[["sgc_code", "farmland_tax_ratio", "fir_code"]], on="sgc_code", how="left")
         map_geo["display_name"] = map_geo["sgc_code"].map(lambda c: community_lookup.get(c, c))
+        map_geo["county_name"] = map_geo["sgc_code"].map(lambda c: county_lookup.get(c, ""))
+        map_geo["muni_type"] = map_geo["sgc_code"].map(lambda c: csd_type_lookup.get(c, ""))
         
         # Colors: Green for eligible, red for filtered, dark green for selected
         def get_color(row):
@@ -215,21 +260,33 @@ if HAS_PYDECK and boundaries is not None:
                 return [255, 165, 0, 255]  # Orange highlight
             return [255, 255, 255, 100]
 
+        def get_status_label(row):
+            if row["sgc_code"] == selected_sgc:
+                return "Selected Municipality"
+            elif pd.notna(row.get("fir_code")) and is_eligible(row.get("fir_code", 0)):
+                return "Eligible (Rural/Northern)"
+            elif pd.notna(row.get("farmland_tax_ratio")) and row.get("farmland_tax_ratio", 0) > 0:
+                return "Filtered Out (Urban)"
+            else:
+                return "No Data"
+
         map_geo["fill_color"] = map_geo.apply(get_color, axis=1)
         map_geo["line_color"] = map_geo.apply(get_line_color, axis=1)
+        map_geo["status_label"] = map_geo.apply(get_status_label, axis=1)
         
         # Remove geometry from tooltip variables
-        export_geo = map_geo[["geometry", "fill_color", "line_color", "display_name", "sgc_code"]].copy()
+        export_geo = map_geo[["geometry", "fill_color", "line_color", "display_name", "status_label", "county_name", "muni_type", "sgc_code"]].copy()
         
-        # Check if selected feature has centroid
         selected_feature = export_geo[export_geo["sgc_code"] == selected_sgc]
-        if not selected_feature.empty:
+        if map_view == "Local / County Focus" and not selected_feature.empty:
             centroid = selected_feature.geometry.centroid.iloc[0]
             lat, lon = centroid.y, centroid.x
+            zoom_val = 8.8
         else:
-            lat, lon = 44.0, -80.0
+            lat, lon = 44.5, -79.5
+            zoom_val = 6.2
             
-        view_state = pdk.ViewState(latitude=lat, longitude=lon, zoom=7.5, pitch=0)
+        view_state = pdk.ViewState(latitude=lat, longitude=lon, zoom=zoom_val, pitch=0)
         layer = pdk.Layer(
             "GeoJsonLayer",
             data=export_geo.__geo_interface__,
@@ -238,18 +295,20 @@ if HAS_PYDECK and boundaries is not None:
             filled=True,
             get_fill_color="properties.fill_color",
             get_line_color="properties.line_color",
-            get_line_width=200,
+            get_line_width=300,
             line_width_min_pixels=1,
             auto_highlight=True,
             highlight_color=[255, 200, 0, 150]
         )
         tooltip = {
-            "html": "<b>{display_name}</b>",
-            "style": {"backgroundColor": "#1b5e20", "color": "white", "font-family": "sans-serif"}
+            "html": "<b>{display_name}</b><br/>Classification: {muni_type}<br/>County: {county_name}<br/>Status: <b>{status_label}</b>",
+            "style": {"backgroundColor": "#1b5e20", "color": "white", "font-family": "sans-serif", "font-size": "12px"}
         }
         deck = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip=tooltip, map_style="mapbox://styles/mapbox/light-v11")
-        st.pydeck_chart(deck, height=350)
+        st.pydeck_chart(deck, height=360)
         st.caption("🟢 Selected Municipality  ·  🟩 Eligible (Rural/Northern)  ·  🟥 Filtered Out (Urban)  ·  ⬜ No Data")
+        if map_view == "Local / County Focus":
+            st.caption(f"📍 Showing municipal boundary for **{selected_name}** and neighboring municipalities in **{muni_county}**.")
 
 # --- Calculations ---
 TARGET_RATIO = 0.15
@@ -314,23 +373,23 @@ with col1:
         st.markdown(f"Under OFA's proposed **{TARGET_RATIO:.2f}** maximum ratio, the revenue-neutral shift across all property classes:")
         st.metric("Farm Tax Relief", f"${redistribution_amount:,.0f}")
         if res and res.res_increase_per_household_month:
-            st.caption(f"Impact to average household: **${res.res_increase_per_household_month:,.2f}/month** · Current ratio: {current_ratio:.4f}")
+            st.caption(f"Impact to average household: **\\${res.res_increase_per_household_month:,.2f}/month** · Current ratio: {current_ratio:.4f}")
         else:
             st.caption(f"Current farm tax ratio: **{current_ratio:.4f}** ({latest_year} data).")
 
 with col2:
     st.markdown("### 📊 Restored Provincial Funding")
-    st.markdown(f"If the OMPF is restored to **$1 Billion** under the **current formula**:")
+    st.markdown(f"If the OMPF is restored to **\\$1 Billion** under the **current formula**:")
     st.metric("Additional Annual OMPF", f"${additional_ompf_unfettered:,.0f}")
-    st.caption(f"Current ({latest_year}): **${ompf_grant:,.0f}** → Scenario: **${scenario_grant_unfettered:,.0f}**")
+    st.caption(f"Current ({latest_year}): **\\${ompf_grant:,.0f}** → Scenario: **\\${scenario_grant_unfettered:,.0f}**")
 
 with col3:
     st.markdown("### 🛡️ Rural-Targeted Funding")
     if muni_eligible:
         bonus = additional_ompf_gated - additional_ompf_unfettered
-        st.markdown(f"If the OMPF is restored to **$1 Billion** with **rural-only eligibility**:")
+        st.markdown(f"If the OMPF is restored to **\\$1 Billion** with **rural-only eligibility**:")
         st.metric("Additional Annual OMPF (Gated)", f"${additional_ompf_gated:,.0f}", delta=f"+${bonus:,.0f} vs current formula")
-        st.caption(f"Gated Scenario: **${scenario_grant_gated:,.0f}**. Rural gate redirects ${URBAN_LEAKAGE_OMPF:,.0f} from urban centres.")
+        st.caption(f"Gated Scenario: **\\${scenario_grant_gated:,.0f}**. Rural gate redirects \\${URBAN_LEAKAGE_OMPF:,.0f} from urban centres.")
     else:
         st.metric("OMPF Under Gated Model", "$0", delta=f"-${ompf_grant:,.0f}")
         st.caption("This municipality does not meet the RSCM, FAM, or Northern eligibility gates.")
@@ -339,13 +398,13 @@ with col3:
 if muni_eligible and redistribution_amount > 0:
     net_position = additional_ompf_gated - redistribution_amount
     if net_position >= 0:
-        st.success(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **${additional_ompf_gated:,.0f}** in new annual OMPF funding — more than covering the **${redistribution_amount:,.0f}** farm tax shift. **Net gain: ${net_position:,.0f}/year.**")
+        st.success(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **\\${additional_ompf_gated:,.0f}** in new annual OMPF funding — more than covering the **\\${redistribution_amount:,.0f}** farm tax shift. **Net gain: \\${net_position:,.0f}/year.**")
     else:
         gap = abs(net_position)
         coverage_pct = (additional_ompf_gated / redistribution_amount) * 100 if redistribution_amount > 0 else 0
-        st.info(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **${additional_ompf_gated:,.0f}** in new OMPF funding, covering **{coverage_pct:.0f}%** of the **${redistribution_amount:,.0f}** farm tax shift. Remaining gap: **${gap:,.0f}/year.**")
+        st.info(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **\\${additional_ompf_gated:,.0f}** in new OMPF funding, covering **{coverage_pct:.0f}%** of the **\\${redistribution_amount:,.0f}** farm tax shift. Remaining gap: **\\${gap:,.0f}/year.**")
 elif muni_eligible and is_below_or_equal:
-    st.success(f"💡 **{selected_name}** already meets OFA's farm tax target and would receive **${additional_ompf_gated:,.0f}** in additional annual OMPF funding under the rural-only model.")
+    st.success(f"💡 **{selected_name}** already meets OFA's farm tax target and would receive **\\${additional_ompf_gated:,.0f}** in additional annual OMPF funding under the rural-only model.")
 
 # --- Section 3: Fair Farm Taxes Details ---
 with st.expander("📈 Fair Farm Taxes — Details", expanded=True):
@@ -439,7 +498,7 @@ with st.expander("📉 OMPF Funding Details", expanded=True):
         st.plotly_chart(fig5, use_container_width=True)
 
         st.markdown(f"""
-        **Key Insight:** Under OFA's proposed gated model, the **${URBAN_LEAKAGE_OMPF:,.0f}** currently flowing to 73 urban centres
+        **Key Insight:** Under OFA's proposed gated model, the **\\${URBAN_LEAKAGE_OMPF:,.0f}** currently flowing to 73 urban centres
         would be redirected to qualifying rural and northern municipalities. {'This municipality benefits from that redistribution.' if muni_eligible else 'This municipality would no longer qualify for core OMPF grants.'}
         """)
 
