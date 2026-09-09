@@ -407,6 +407,21 @@ elif muni_eligible and is_below_or_equal:
     st.success(f"💡 **{selected_name}** already meets OFA's farm tax target and would receive **\\${additional_ompf_gated:,.0f}** in additional annual OMPF funding under the rural-only model.")
 
 # --- Section 3: Fair Farm Taxes Details ---
+def make_chart_config(chart_title: str):
+    clean_muni = "".join(c for c in selected_name if c.isalnum() or c in (" ", "_", "-")).strip().replace(" ", "_")
+    clean_title = "".join(c for c in chart_title if c.isalnum() or c in (" ", "_", "-")).strip().replace(" ", "_")
+    return {
+        "toImageButtonOptions": {
+            "format": "png",
+            "filename": f"{clean_muni}_{clean_title}",
+            "height": 600,
+            "width": 1000,
+            "scale": 2.5,  # High-DPI crystal-clear presentation resolution
+        },
+        "displayModeBar": True,
+        "displaylogo": False,
+    }
+
 with st.expander("📈 Fair Farm Taxes — Details", expanded=True):
     if not muni_df.empty:
         c1, c2 = st.columns(2)
@@ -423,9 +438,14 @@ with st.expander("📈 Fair Farm Taxes — Details", expanded=True):
                 fig = px.line(cva_df, x="year", y=["Farm CVA Growth", "Res CVA Growth"], 
                               title=f"Assessment Growth Since {base_year} (Index=100)",
                               color_discrete_map={"Farm CVA Growth": "#2E7D32", "Res CVA Growth": "#1565C0"})
-                fig.update_layout(yaxis_title="Index Value", xaxis_title="Year", legend_title=None, 
-                                  legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1))
-                st.plotly_chart(fig, use_container_width=True)
+                fig.update_layout(
+                    yaxis_title="Index Value", 
+                    xaxis_title="Year", 
+                    legend_title=None, 
+                    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1.0),
+                    margin=dict(l=65, r=65, t=75, b=55),
+                )
+                st.plotly_chart(fig, use_container_width=True, config=make_chart_config("Assessment_Growth"))
                 
         with c2:
             # Tax share over time
@@ -435,8 +455,12 @@ with st.expander("📈 Fair Farm Taxes — Details", expanded=True):
                 fig2 = px.area(share_df, x="year", y="Farm Tax Share (%)", 
                                title="Farmland Share of Total Municipal Taxes",
                                color_discrete_sequence=["#2E7D32"])
-                fig2.update_layout(yaxis_title="Share of Tax Levy (%)", xaxis_title="Year")
-                st.plotly_chart(fig2, use_container_width=True)
+                fig2.update_layout(
+                    yaxis_title="Share of Tax Levy (%)", 
+                    xaxis_title="Year",
+                    margin=dict(l=65, r=65, t=75, b=55),
+                )
+                st.plotly_chart(fig2, use_container_width=True, config=make_chart_config("Farmland_Tax_Share"))
                 
         if res:
             st.markdown("#### Revenue-Neutral Redistribution Breakdown")
@@ -457,8 +481,13 @@ with st.expander("📉 OMPF Funding Details", expanded=True):
             if not ompf_df.empty:
                 fig3 = px.bar(ompf_df, x="year", y="ompf_grant", title="OMPF Grant Allocation Over Time",
                               color_discrete_sequence=["#D32F2F"])
-                fig3.update_layout(yaxis_title="Grant Amount ($)", xaxis_title="Year")
-                st.plotly_chart(fig3, use_container_width=True)
+                fig3.update_layout(
+                    yaxis_title="Grant Amount ($)", 
+                    xaxis_title="Year",
+                    yaxis_tickformat="$,.0f",
+                    margin=dict(l=85, r=65, t=75, b=55),
+                )
+                st.plotly_chart(fig3, use_container_width=True, config=make_chart_config("OMPF_Grant_History"))
                 
         with c2:
             dep_df = muni_df[["year", "ompf_dependency"]].dropna()
@@ -467,8 +496,12 @@ with st.expander("📉 OMPF Funding Details", expanded=True):
                 fig4 = px.line(dep_df, x="year", y="OMPF Share (%)", 
                                title="OMPF Share of Total Revenue",
                                color_discrete_sequence=["#D32F2F"])
-                fig4.update_layout(yaxis_title="OMPF Share of Total Revenue (%)", xaxis_title="Year")
-                st.plotly_chart(fig4, use_container_width=True)
+                fig4.update_layout(
+                    yaxis_title="OMPF Share of Total Revenue (%)", 
+                    xaxis_title="Year",
+                    margin=dict(l=65, r=65, t=75, b=55),
+                )
+                st.plotly_chart(fig4, use_container_width=True, config=make_chart_config("OMPF_Revenue_Share"))
 
         # Comparison bar chart: Current vs $1B Unfettered vs $1B Gated
         st.markdown("#### 💰 OMPF Scenario Comparison")
@@ -493,9 +526,10 @@ with st.expander("📉 OMPF Funding Details", expanded=True):
             yaxis_title="OMPF Grant Amount ($)",
             yaxis_tickformat="$,.0f",
             showlegend=False,
-            height=400
+            height=420,
+            margin=dict(l=85, r=65, t=75, b=55),
         )
-        st.plotly_chart(fig5, use_container_width=True)
+        st.plotly_chart(fig5, use_container_width=True, config=make_chart_config("OMPF_Scenario_Comparison"))
 
         st.markdown(f"""
         **Key Insight:** Under OFA's proposed gated model, the **\\${URBAN_LEAKAGE_OMPF:,.0f}** currently flowing to 73 urban centres
