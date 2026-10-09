@@ -8,3 +8,4 @@ pydeck>=0.8
 pyyaml>=6.0
 requests>=2.31
 starlette<1.4.0
+fpdf2>=2.8.0

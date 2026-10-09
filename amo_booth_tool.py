@@ -15,9 +15,17 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+import os
 from app.smart_read import smart_read
 from app.utils import inject_theme_css, global_footer
 from app.farm_tax.farm_tax_report import calculate_ratio_direct
+from app.roma_report import (
+    generate_roma_pdf,
+    save_booth_lead,
+    get_booth_leads_df,
+    send_roma_report_email,
+    generate_mailto_url,
+)
 
 try:
     import pydeck as pdk
@@ -26,7 +34,7 @@ except ImportError:
     HAS_PYDECK = False
 
 st.set_page_config(
-    page_title="AMO 2026 Interactive Tool",
+    page_title="ROMA 2027 Interactive Tool",
     page_icon="🏛️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -176,8 +184,9 @@ with st.sidebar:
             st.markdown("### 🌾 OFA")
     else:
         st.markdown("### 🌾 OFA")
-    st.markdown("## 🏛️ AMO 2026")
-    st.markdown("**Interactive Analysis Tool**")
+    st.markdown("## 🏛️ ROMA 2027")
+    st.markdown("**Rural Ontario Municipal Association**")
+    st.caption("OFA Fair Farm Taxes & OMPF Briefing Tool")
     
     default_idx = available_names.index("Zorra (Oxford)") if "Zorra (Oxford)" in available_names else 0
     selected_name = st.selectbox("Select Municipality", options=available_names, index=default_idx)
@@ -186,6 +195,38 @@ with st.sidebar:
     st.markdown("---")
     st.metric("Municipalities Tracked", len(available_names))
     st.caption("Data source: Ontario Financial Information Return (FIR) 2010-2024")
+
+    # Booth Leads Counter & Export
+    leads_df = get_booth_leads_df()
+    if not leads_df.empty:
+        st.markdown("---")
+        st.metric("📋 ROMA Leads Captured", len(leads_df))
+        leads_csv = leads_df.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            "📥 Export Booth Leads (CSV)",
+            data=leads_csv,
+            file_name="ROMA_2027_Booth_Leads.csv",
+            mime="text/csv",
+            use_container_width=True,
+        )
+
+    with st.expander("⚙️ Laptop Email Setup (Optional)", expanded=False):
+        st.caption("Configure SMTP to send emails directly from this laptop.")
+        smtp_h = st.text_input("SMTP Host", value=os.environ.get("SMTP_HOST", ""), placeholder="smtp.office365.com")
+        smtp_p = st.number_input("SMTP Port", value=int(os.environ.get("SMTP_PORT", 587)), min_value=25, max_value=65535)
+        smtp_u = st.text_input("Username / Email", value=os.environ.get("SMTP_USER", ""), placeholder="ben.lefort@ofa.on.ca")
+        smtp_pwd = st.text_input("Password / App Password", type="password", value=os.environ.get("SMTP_PASS", ""))
+        if smtp_h and smtp_u and smtp_pwd:
+            st.session_state["smtp_config"] = {
+                "host": smtp_h,
+                "port": smtp_p,
+                "user": smtp_u,
+                "password": smtp_pwd,
+                "sender": smtp_u,
+            }
+            st.success("✅ SMTP active for live dispatch.")
+        else:
+            st.info("When unconfigured, leads are saved locally with 1-click Outlook draft.")
 
 # Get data for selected municipality
 muni_df = fir_df[fir_df["sgc_code"] == selected_sgc].sort_values("year")
@@ -395,6 +436,7 @@ with col3:
         st.caption("This municipality does not meet the RSCM, FAM, or Northern eligibility gates.")
 
 # --- Bottom Line Callout ---
+net_position = 0.0
 if muni_eligible and redistribution_amount > 0:
     net_position = additional_ompf_gated - redistribution_amount
     if net_position >= 0:
@@ -404,7 +446,151 @@ if muni_eligible and redistribution_amount > 0:
         coverage_pct = (additional_ompf_gated / redistribution_amount) * 100 if redistribution_amount > 0 else 0
         st.info(f"💡 **Bottom Line for {selected_name}:** Your municipality gains **\\${additional_ompf_gated:,.0f}** in new OMPF funding, covering **{coverage_pct:.0f}%** of the **\\${redistribution_amount:,.0f}** farm tax shift. Remaining gap: **\\${gap:,.0f}/year.**")
 elif muni_eligible and is_below_or_equal:
+    net_position = additional_ompf_gated
     st.success(f"💡 **{selected_name}** already meets OFA's farm tax target and would receive **\\${additional_ompf_gated:,.0f}** in additional annual OMPF funding under the rural-only model.")
+
+# --- Section 2.5: ROMA 2027 Conference Action Center ---
+historical_records = []
+if not muni_df.empty:
+    for _, h_row in muni_df.iterrows():
+        historical_records.append({
+            "year": int(h_row.get("year", 0)),
+            "farmland_cva": safe_val(h_row.get("farmland_cva")),
+            "residential_cva": safe_val(h_row.get("residential_cva")),
+            "farmland_tax_ratio": safe_val(h_row.get("farmland_tax_ratio")),
+            "farmland_share_of_taxes": safe_val(h_row.get("farmland_share_of_taxes")),
+            "ompf_grant": safe_val(h_row.get("ompf_grant")),
+            "ompf_dependency": safe_val(h_row.get("ompf_dependency")),
+        })
+
+class_breakdown_dict = {}
+if res:
+    class_breakdown_dict = {
+        "Residential": res.res_increase_total,
+        "Commercial": res.com_increase_total,
+        "Industrial": res.ind_increase_total,
+        "Other": res.other_increase_total,
+    }
+
+report_payload = {
+    "municipality_name": selected_name,
+    "county": muni_county,
+    "type_desc": type_desc,
+    "sgc_code": selected_sgc,
+    "fir_code": fir_code,
+    "latest_year": latest_year,
+    "muni_rscm": muni_rscm,
+    "muni_fam": muni_fam,
+    "muni_region": muni_region,
+    "muni_eligible": muni_eligible,
+    "current_ratio": current_ratio,
+    "target_ratio": TARGET_RATIO,
+    "is_below_or_equal": is_below_or_equal,
+    "redistribution_amount": redistribution_amount,
+    "res_increase_month": res.res_increase_per_household_month if res else 0.0,
+    "res_increase_year": res.res_increase_per_household if res else 0.0,
+    "ompf_grant": ompf_grant,
+    "scenario_grant_unfettered": scenario_grant_unfettered,
+    "additional_ompf_unfettered": additional_ompf_unfettered,
+    "scenario_grant_gated": scenario_grant_gated,
+    "additional_ompf_gated": additional_ompf_gated,
+    "bonus_gated": additional_ompf_gated - additional_ompf_unfettered if muni_eligible else 0.0,
+    "urban_leakage": URBAN_LEAKAGE_OMPF,
+    "net_position": net_position,
+    "class_breakdown": class_breakdown_dict,
+    "historical_trends": historical_records,
+}
+
+pdf_bytes = generate_roma_pdf(report_payload)
+clean_name = "".join(c for c in selected_name if c.isalnum() or c in (" ", "_", "-")).strip().replace(" ", "_")
+
+st.markdown("---")
+st.markdown("### 🏛️ ROMA 2027 Delegate Action Center")
+
+action_col1, action_col2 = st.columns([1, 2])
+
+with action_col1:
+    st.markdown("#### 📄 Executive Briefing")
+    st.markdown("Customized 2-page OFA briefing document summarizing all fiscal, assessment, and OMPF metrics for council.")
+    st.download_button(
+        label=f"📥 Download 2-Page PDF Report",
+        data=pdf_bytes,
+        file_name=f"OFA_ROMA2027_Briefing_{clean_name}.pdf",
+        mime="application/pdf",
+        use_container_width=True,
+    )
+    st.caption("Includes OFA branding, 3-gate eligibility audit, revenue-neutral shift table, and longitudinal FIR trends.")
+
+with action_col2:
+    st.markdown("#### 📬 Auto-Populate & Email Report to Delegate")
+    st.markdown("Enter delegate contact details below to dispatch this municipal briefing and record the booth conversation.")
+
+    with st.form(key=f"roma_email_form_{selected_sgc}"):
+        em_c1, em_c2 = st.columns(2)
+        with em_c1:
+            recip_email = st.text_input("Councilor / Staff Email *", placeholder="councillor@municipality.ca")
+        with em_c2:
+            recip_name = st.text_input("Name & Title (Optional)", placeholder="e.g. Mayor Jane Smith")
+
+        em_c3, em_c4 = st.columns([1.5, 2.5])
+        with em_c3:
+            recip_role = st.selectbox(
+                "Role",
+                ["Councillor / Mayor", "Municipal Staff / CAO", "OFA Member / Farmer", "Other Delegate"],
+            )
+        with em_c4:
+            notes = st.text_input("Booth Notes (Optional)", placeholder="Key priorities or comments...")
+
+        btn_submit = st.form_submit_button("✉️ Send PDF Report to Delegate", use_container_width=True)
+
+    if btn_submit:
+        if not recip_email or "@" not in recip_email or "." not in recip_email.split("@")[-1]:
+            st.error("Please enter a valid email address.")
+        else:
+            # 1. Log lead in local CSV
+            save_booth_lead(
+                municipality_name=selected_name,
+                sgc_code=selected_sgc,
+                recipient_name=recip_name,
+                recipient_email=recip_email,
+                recipient_role=recip_role,
+                net_position=net_position,
+                status="Captured",
+                notes=notes,
+            )
+
+            # 2. Try SMTP dispatch
+            smtp_config = st.session_state.get("smtp_config", {})
+            success, msg = send_roma_report_email(
+                to_email=recip_email,
+                recipient_name=recip_name,
+                municipality_name=selected_name,
+                pdf_bytes=pdf_bytes,
+                net_position=net_position,
+                smtp_config=smtp_config,
+            )
+
+            if success:
+                st.success(f"✅ {msg}")
+            else:
+                st.success(f"📋 **Lead Captured:** Contact recorded in ROMA 2027 booth log! ({recip_email})")
+                mailto_link = generate_mailto_url(
+                    to_email=recip_email,
+                    recipient_name=recip_name,
+                    municipality_name=selected_name,
+                    net_position=net_position,
+                )
+                st.info(f"ℹ️ {msg}")
+                st.markdown(
+                    f'''
+                    <div style="margin-top: 8px;">
+                        <a href="{mailto_link}" target="_blank" style="display: inline-block; padding: 7px 16px; background-color: #2E7D32; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 13px;">
+                            ✉️ Click to Open Pre-Filled Draft in Outlook / Mail Client
+                        </a>
+                    </div>
+                    ''',
+                    unsafe_allow_html=True,
+                )
 
 # --- Section 3: Fair Farm Taxes Details ---
 def make_chart_config(chart_title: str):
