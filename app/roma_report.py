@@ -25,7 +25,7 @@ import os
 from pathlib import Path
 import smtplib
 import urllib.parse
-from typing import Optional, Dict, Any, Tuple
+from typing import Optional, Dict, Any, Tuple, List
 
 from fpdf import FPDF
 import pandas as pd
@@ -38,7 +38,7 @@ OFA_LIGHT_BG   = (241, 248, 241)   # #f1f8f1 - Soft card backgrounds
 OFA_GOLD       = (230, 81, 0)      # #e65100 - Highlights
 TEXT_DARK      = (33, 33, 33)      # Charcoal
 TEXT_MUTED     = (117, 117, 117)   # Muted grey
-LINE_GREY      = (220, 224, 220)   # Borders
+LINE_GREY      = (218, 224, 218)   # Clean borders
 ROW_ALT_GREY   = (248, 249, 250)   # Alternating row bg
 BADGE_GREEN    = (46, 125, 50)
 BADGE_RED      = (198, 40, 40)
@@ -49,7 +49,6 @@ def _clean_str(text: Any) -> str:
     if text is None:
         return ""
     s = str(text)
-    # Replace common unicode typographic characters
     replacements = {
         "—": "-",
         "–": "-",
@@ -68,7 +67,6 @@ def _clean_str(text: Any) -> str:
     }
     for k, v in replacements.items():
         s = s.replace(k, v)
-    # Filter to latin-1 encodable characters
     clean = []
     for char in s:
         try:
@@ -86,7 +84,7 @@ class ROMABriefingPDF(FPDF):
         super().__init__(orientation="P", unit="mm", format="A4")
         self.muni_name = _clean_str(muni_name)
         self.county = _clean_str(county)
-        self.set_auto_page_break(auto=True, margin=14)
+        self.set_auto_page_break(auto=False)  # Precise manual 2-page control
         self.set_margins(12, 12, 12)
 
     def header(self):
@@ -99,10 +97,9 @@ class ROMABriefingPDF(FPDF):
         self.cell(90, 5, "ONTARIO FEDERATION OF AGRICULTURE  |  ROMA 2027 CONFERENCE BRIEFING")
         self.set_xy(108, 1.5)
         self.cell(90, 5, "FAIR FARM TAXES & FULLY FUNDED MUNICIPALITIES", align="R")
-        self.set_y(12)
 
     def footer(self):
-        self.set_y(-10)
+        self.set_y(-9)
         self.set_font("Helvetica", "", 7)
         self.set_text_color(*TEXT_MUTED)
         self.cell(
@@ -112,15 +109,29 @@ class ROMABriefingPDF(FPDF):
             align="C",
         )
 
-    def draw_badge(self, x: float, y: float, w: float, h: float, text: str, is_pass: bool):
-        """Draw an executive colored pill badge."""
-        fill = BADGE_GREEN if is_pass else BADGE_RED
-        self.set_fill_color(*fill)
-        self.rect(x, y, w, h, "F")
+    def draw_badge_cell(self, w: float, h: float, text: str, is_pass: bool):
+        """Draw an executive colored pill badge inside a table cell without corrupting cursor."""
+        x = self.get_x()
+        y = self.get_y()
+        # Cell border
+        self.cell(w, h, "", border=1, fill=True)
+
+        pill_w = w - 10
+        pill_h = h - 2.8
+        pill_x = x + 5
+        pill_y = y + 1.4
+
+        fill_color = BADGE_GREEN if is_pass else BADGE_RED
+        self.set_fill_color(*fill_color)
+        self.rect(pill_x, pill_y, pill_w, pill_h, "F")
+
         self.set_font("Helvetica", "B", 7)
         self.set_text_color(255, 255, 255)
-        self.set_xy(x, y + 0.5)
-        self.cell(w, h - 1, text, align="C")
+        self.set_xy(pill_x, pill_y + 0.5)
+        self.cell(pill_w, pill_h - 1.0, text, align="C")
+
+        # Reset cursor back to cell boundary
+        self.set_xy(x + w, y)
 
     def draw_kpi_card(
         self,
@@ -134,8 +145,8 @@ class ROMABriefingPDF(FPDF):
         caption: str = "",
         accent_color: tuple = OFA_MID_GREEN,
     ):
-        """Draw a structured KPI scorecard container."""
-        # Background card
+        """Draw a structured KPI scorecard container with balanced vertical rhythm."""
+        # Card background & border
         self.set_fill_color(255, 255, 255)
         self.set_draw_color(*LINE_GREY)
         self.set_line_width(0.3)
@@ -146,29 +157,29 @@ class ROMABriefingPDF(FPDF):
         self.rect(x, y, w, 2.5, "F")
 
         # Title
-        self.set_font("Helvetica", "B", 7.5)
+        self.set_font("Helvetica", "B", 7.2)
         self.set_text_color(*TEXT_MUTED)
-        self.set_xy(x + 2, y + 4)
-        self.cell(w - 4, 4, _clean_str(title.upper()), align="L")
+        self.set_xy(x + 2.5, y + 4.2)
+        self.cell(w - 5, 4, _clean_str(title.upper()), align="L")
 
         # Main Value
-        self.set_font("Helvetica", "B", 12.5)
+        self.set_font("Helvetica", "B", 13.5)
         self.set_text_color(*OFA_DARK_GREEN)
-        self.set_xy(x + 2, y + 8.5)
-        self.cell(w - 4, 6.5, _clean_str(main_value), align="L")
+        self.set_xy(x + 2.5, y + 9.2)
+        self.cell(w - 5, 7, _clean_str(main_value), align="L")
 
         # Subtitle
-        self.set_font("Helvetica", "B", 7.2)
+        self.set_font("Helvetica", "B", 7.5)
         self.set_text_color(*TEXT_DARK)
-        self.set_xy(x + 2, y + 15.5)
-        self.cell(w - 4, 4, _clean_str(subtitle), align="L")
+        self.set_xy(x + 2.5, y + 17.0)
+        self.cell(w - 5, 4, _clean_str(subtitle), align="L")
 
-        # Caption (if any)
+        # Caption
         if caption:
-            self.set_font("Helvetica", "", 6.5)
+            self.set_font("Helvetica", "", 6.8)
             self.set_text_color(*TEXT_MUTED)
-            self.set_xy(x + 2, y + 19.5)
-            self.cell(w - 4, 3.5, _clean_str(caption), align="L")
+            self.set_xy(x + 2.5, y + 21.6)
+            self.cell(w - 5, 3.5, _clean_str(caption), align="L")
 
 
 def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
@@ -187,56 +198,59 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     pdf.alias_nb_pages()
 
     # =========================================================================
-    # PAGE 1: EXECUTIVE BRIEFING & KEY METRICS
+    # PAGE 1: EXECUTIVE BRIEFING & KEY FISCAL METRICS
     # =========================================================================
     pdf.add_page()
 
-    # Header branding logo (if available)
+    # Logo
     logo_path = Path(__file__).resolve().parent / "data" / "OFA_logo.png"
     if not logo_path.exists():
-        # Fallback search path in project root
         root_logo = Path(__file__).resolve().parent.parent / "app" / "data" / "OFA_logo.png"
         if root_logo.exists():
             logo_path = root_logo
 
     if logo_path.exists():
         try:
-            pdf.image(str(logo_path), x=12, y=11, w=32)
+            pdf.image(str(logo_path), x=12, y=12, w=34)
         except Exception:
             pass
 
-    # Title block
-    pdf.set_xy(48, 11)
-    pdf.set_font("Helvetica", "B", 14)
+    # Title Header Block
+    pdf.set_xy(50, 12)
+    pdf.set_font("Helvetica", "B", 14.5)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(150, 6, "Fair Farm Taxes & Fully Funded Municipalities", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(148, 6.5, "Fair Farm Taxes & Fully Funded Municipalities")
 
-    pdf.set_x(48)
-    pdf.set_font("Helvetica", "B", 11)
+    pdf.set_xy(50, 19.5)
+    pdf.set_font("Helvetica", "B", 11.5)
     pdf.set_text_color(*TEXT_DARK)
-    pdf.cell(150, 5, f"Fiscal Briefing for {muni_name}", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(148, 5.5, f"Fiscal Briefing for {muni_name}")
 
-    pdf.set_x(48)
+    pdf.set_xy(50, 26)
     pdf.set_font("Helvetica", "", 7.5)
     pdf.set_text_color(*TEXT_MUTED)
-    meta_txt = f"{type_desc}  |  County: {county or 'N/A'}  |  SGC: {sgc_code}  |  FIR: {fir_code}  |  Year: {latest_year}"
-    pdf.cell(150, 4.5, _clean_str(meta_txt), new_x="LMARGIN", new_y="NEXT")
+    meta_txt = f"{type_desc}  |  County: {county or 'N/A'}  |  SGC: {sgc_code}  |  FIR: {fir_code}  |  Data Year: {latest_year}"
+    pdf.cell(148, 4.5, _clean_str(meta_txt))
 
-    pdf.ln(5)
+    # Divider bar
+    pdf.set_draw_color(*OFA_MID_GREEN)
+    pdf.set_line_width(0.4)
+    pdf.line(12, 33, 198, 33)
 
     # -------------------------------------------------------------------------
-    # Executive Callout Card (Bottom Line)
+    # Executive Summary Callout Box
     # -------------------------------------------------------------------------
+    callout_y = 36
+    callout_h = 22
     pdf.set_fill_color(*OFA_LIGHT_BG)
     pdf.set_draw_color(*OFA_MID_GREEN)
     pdf.set_line_width(0.5)
-    callout_y = pdf.get_y()
-    pdf.rect(12, callout_y, 186, 17, "DF")
+    pdf.rect(12, callout_y, 186, callout_h, "DF")
 
-    pdf.set_xy(15, callout_y + 2)
+    pdf.set_xy(16, callout_y + 2.5)
     pdf.set_font("Helvetica", "B", 8)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(180, 4, "EXECUTIVE SUMMARY - FISCAL BOTTOM LINE FOR COUNCIL", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(178, 4.2, "EXECUTIVE SUMMARY - FISCAL BOTTOM LINE FOR COUNCIL")
 
     net_pos = data.get("net_position", 0.0)
     add_gated = data.get("additional_ompf_gated", 0.0)
@@ -269,12 +283,10 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
             f"Farm tax relief modeled at ${redist:,.0f} under a 0.15 target ratio."
         )
 
-    pdf.set_x(15)
-    pdf.set_font("Helvetica", "", 7.5)
+    pdf.set_xy(16, callout_y + 7.5)
+    pdf.set_font("Helvetica", "", 7.8)
     pdf.set_text_color(*TEXT_DARK)
-    pdf.multi_cell(180, 4.2, _clean_str(summary_body))
-
-    pdf.set_y(callout_y + 19)
+    pdf.multi_cell(178, 4.4, _clean_str(summary_body))
 
     # -------------------------------------------------------------------------
     # 3-Column KPI Scorecard
@@ -284,9 +296,9 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     unfettered_add = data.get("additional_ompf_unfettered", 0.0)
     bonus = data.get("bonus_gated", 0.0)
 
-    card_y = pdf.get_y()
-    card_w = 60
-    card_h = 24
+    card_y = 62
+    card_w = 58
+    card_h = 28
 
     # Card 1: Farm Tax Relief
     val_c1 = f"${redist:,.0f}" if redist > 0 else "Target Met"
@@ -304,7 +316,7 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     sub_c2 = f"Current Grant: ${data.get('ompf_grant', 0.0):,.0f}"
     cap_c2 = "Proportional $1B scale-up"
     pdf.draw_kpi_card(
-        75, card_y, card_w, card_h,
+        76, card_y, card_w, card_h,
         "2. Restored OMPF ($1B)",
         val_c2, sub_c2, cap_c2,
         (21, 101, 192)  # Blue
@@ -315,33 +327,30 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     sub_c3 = f"Rural Bonus: +${bonus:,.0f}" if muni_eligible else "Urban Leakage Reform"
     cap_c3 = "Redirects $100M+ from urban"
     pdf.draw_kpi_card(
-        138, card_y, card_w, card_h,
+        140, card_y, card_w, card_h,
         "3. Rural-Gated Model",
         val_c3, sub_c3, cap_c3,
         OFA_GOLD
     )
 
-    pdf.set_y(card_y + card_h + 3)
-
     # -------------------------------------------------------------------------
     # Section: Rural OMPF 3-Gate Eligibility
     # -------------------------------------------------------------------------
-    pdf.set_font("Helvetica", "B", 9)
+    sec1_y = 95
+    pdf.set_xy(12, sec1_y)
+    pdf.set_font("Helvetica", "B", 9.5)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(0, 5, "RURAL OMPF 3-GATE ELIGIBILITY ASSESSMENT", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(186, 5, "RURAL OMPF 3-GATE ELIGIBILITY ASSESSMENT")
 
+    pdf.set_xy(12, sec1_y + 5.5)
     pdf.set_font("Helvetica", "", 7.2)
     pdf.set_text_color(*TEXT_MUTED)
     pdf.cell(
-        0,
-        3.5,
+        186,
+        4,
         "OFA proposes restricting core OMPF grants to rural and northern communities, ending the transfer of rural tax dollars to large urban centres.",
-        new_x="LMARGIN",
-        new_y="NEXT",
     )
-    pdf.ln(1)
 
-    # Eligibility Table
     rscm = data.get("muni_rscm", 0.0)
     fam = data.get("muni_fam", 0.0)
     region = data.get("muni_region", "")
@@ -349,59 +358,59 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     pass_rscm = rscm >= 0.25
     pass_fam = fam > 0.05
 
-    tbl_y = pdf.get_y()
-    col_w = [48, 48, 55, 35]
+    tbl1_y = sec1_y + 11
+    col_w1 = [48, 50, 52, 36]
+    row_h1 = 6.8
 
-    # Header
+    # Table Header
+    pdf.set_xy(12, tbl1_y)
     pdf.set_fill_color(*OFA_DARK_GREEN)
     pdf.set_text_color(255, 255, 255)
-    pdf.set_font("Helvetica", "B", 7)
-    headers = ["Eligibility Gate", "Threshold", f"{muni_name} Value", "Result"]
-    for w, h in zip(col_w, headers):
-        pdf.cell(w, 5, h, border=1, fill=True, align="C")
-    pdf.ln()
+    pdf.set_font("Helvetica", "B", 7.5)
+    headers1 = ["Eligibility Gate", "Threshold", f"{muni_name} Value", "Result"]
+    for w, h in zip(col_w1, headers1):
+        pdf.cell(w, 6.5, h, border=1, fill=True, align="C")
 
-    rows = [
+    # Table Rows
+    rows1 = [
         ("Northern Ontario", "Northeast or Northwest District", region or "Southern Ontario", "PASS" if is_northern else "NOT MET", is_northern),
         ("Rural & Small Community (RSCM)", "RSCM >= 25.0%", f"{rscm:.1%}", "PASS" if pass_rscm else "NOT MET", pass_rscm),
         ("Farm Area Measure (FAM)", "FAM > 5.0%", f"{fam:.1%}", "PASS" if pass_fam else "NOT MET", pass_fam),
     ]
 
-    pdf.set_font("Helvetica", "", 7)
-    pdf.set_text_color(*TEXT_DARK)
-    for i, (g_name, thresh, val, res_txt, is_p) in enumerate(rows):
-        pdf.set_fill_color(*(ROW_ALT_GREY if i % 2 == 1 else (255, 255, 255)))
-        pdf.cell(col_w[0], 5, _clean_str(g_name), border=1, fill=True, align="L")
-        pdf.cell(col_w[1], 5, _clean_str(thresh), border=1, fill=True, align="C")
-        pdf.cell(col_w[2], 5, _clean_str(val), border=1, fill=True, align="C")
+    curr_y = tbl1_y + 6.5
+    for i, (g_name, thresh, val, res_txt, is_p) in enumerate(rows1):
+        pdf.set_xy(12, curr_y)
+        bg = ROW_ALT_GREY if i % 2 == 1 else (255, 255, 255)
+        pdf.set_fill_color(*bg)
+        pdf.set_font("Helvetica", "", 7.5)
+        pdf.set_text_color(*TEXT_DARK)
 
-        # Result badge cell
-        cx = pdf.get_x()
-        cy = pdf.get_y()
-        pdf.cell(col_w[3], 5, "", border=1, fill=True)
-        pdf.draw_badge(cx + 6, cy + 0.8, col_w[3] - 12, 3.4, res_txt, is_p)
-        pdf.set_xy(cx + col_w[3], cy)
-        pdf.ln()
+        pdf.cell(col_w1[0], row_h1, _clean_str(g_name), border=1, fill=True, align="L")
+        pdf.cell(col_w1[1], row_h1, _clean_str(thresh), border=1, fill=True, align="C")
+        pdf.cell(col_w1[2], row_h1, _clean_str(val), border=1, fill=True, align="C")
 
-    pdf.ln(3)
+        # Pill badge cell
+        pdf.draw_badge_cell(col_w1[3], row_h1, res_txt, is_p)
+        curr_y += row_h1
 
     # -------------------------------------------------------------------------
     # Section: Revenue-Neutral Farm Tax Redistribution Table
     # -------------------------------------------------------------------------
-    pdf.set_font("Helvetica", "B", 9)
+    sec2_y = curr_y + 5
+    pdf.set_xy(12, sec2_y)
+    pdf.set_font("Helvetica", "B", 9.5)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(0, 5, "REVENUE-NEUTRAL TAX SHIFT BREAKDOWN (TARGET RATIO = 0.15)", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(186, 5, "REVENUE-NEUTRAL TAX SHIFT BREAKDOWN (TARGET RATIO = 0.15)")
 
+    pdf.set_xy(12, sec2_y + 5.5)
     pdf.set_font("Helvetica", "", 7.2)
     pdf.set_text_color(*TEXT_MUTED)
     pdf.cell(
-        0,
-        3.5,
-        "Municipal tax levy remains 100% constant. Lowering the farm ratio modestly redistributes levy across all classes:",
-        new_x="LMARGIN",
-        new_y="NEXT",
+        186,
+        4,
+        "Municipal tax levy remains 100% constant. Lowering the farm ratio modestly redistributes levy across all property classes:",
     )
-    pdf.ln(1)
 
     cb = data.get("class_breakdown", {})
     res_imp = cb.get("Residential", 0.0)
@@ -409,13 +418,18 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     ind_imp = cb.get("Industrial", 0.0)
     oth_imp = cb.get("Other", 0.0)
 
-    t2_cols = [50, 45, 50, 41]
+    tbl2_y = sec2_y + 11
+    col_w2 = [48, 44, 54, 40]
+    row_h2 = 6.2
+
+    # Table Header
+    pdf.set_xy(12, tbl2_y)
     pdf.set_fill_color(*OFA_DARK_GREEN)
     pdf.set_text_color(255, 255, 255)
-    pdf.set_font("Helvetica", "B", 7)
-    for w, h in zip(t2_cols, ["Property Class", "Annual Levy Impact", "Context / Household Impact", "Share of Shift"]):
-        pdf.cell(w, 5, h, border=1, fill=True, align="C")
-    pdf.ln()
+    pdf.set_font("Helvetica", "B", 7.5)
+    headers2 = ["Property Class", "Annual Levy Impact", "Context / Household Impact", "Share of Shift"]
+    for w, h in zip(col_w2, headers2):
+        pdf.cell(w, 6.5, h, border=1, fill=True, align="C")
 
     shift_rows = [
         ("Residential", f"+${res_imp:,.0f}", f"+${hh_month:,.2f}/month per home" if hh_month > 0 else "Minimal", f"{(res_imp/redist*100):.1f}%" if redist > 0 else "0%"),
@@ -425,52 +439,84 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
         ("Farmland Class (Relief)", f"-${redist:,.0f}", f"Ratio drops from {cur_ratio:.4f} to 0.1500", "100.0% Farm Relief"),
     ]
 
-    pdf.set_font("Helvetica", "", 7)
-    pdf.set_text_color(*TEXT_DARK)
+    curr_y2 = tbl2_y + 6.5
     for i, (c_name, imp_txt, ctx_txt, pct_txt) in enumerate(shift_rows):
+        pdf.set_xy(12, curr_y2)
         is_total = (i == len(shift_rows) - 1)
         bg = (232, 245, 233) if is_total else (ROW_ALT_GREY if i % 2 == 1 else (255, 255, 255))
         pdf.set_fill_color(*bg)
         f_style = "B" if is_total else ""
-        pdf.set_font("Helvetica", f_style, 7)
-        pdf.cell(t2_cols[0], 4.8, _clean_str(c_name), border=1, fill=True, align="L")
-        pdf.cell(t2_cols[1], 4.8, _clean_str(imp_txt), border=1, fill=True, align="R")
-        pdf.cell(t2_cols[2], 4.8, _clean_str(ctx_txt), border=1, fill=True, align="C")
-        pdf.cell(t2_cols[3], 4.8, _clean_str(pct_txt), border=1, fill=True, align="C")
-        pdf.ln()
+        pdf.set_font("Helvetica", f_style, 7.5)
+        pdf.set_text_color(*(OFA_DARK_GREEN if is_total else TEXT_DARK))
+
+        pdf.cell(col_w2[0], row_h2, _clean_str(c_name), border=1, fill=True, align="L")
+        pdf.cell(col_w2[1], row_h2, _clean_str(imp_txt), border=1, fill=True, align="R")
+        pdf.cell(col_w2[2], row_h2, _clean_str(ctx_txt), border=1, fill=True, align="C")
+        pdf.cell(col_w2[3], row_h2, _clean_str(pct_txt), border=1, fill=True, align="C")
+        curr_y2 += row_h2
+
+    # -------------------------------------------------------------------------
+    # Anchor Card at Bottom of Page 1: Local Discussion Takeaway
+    # -------------------------------------------------------------------------
+    bot1_y = curr_y2 + 6
+    bot1_h = 32
+    pdf.set_fill_color(255, 255, 255)
+    pdf.set_draw_color(*LINE_GREY)
+    pdf.set_line_width(0.3)
+    pdf.rect(12, bot1_y, 186, bot1_h, "DF")
+
+    # Left accent bar
+    pdf.set_fill_color(*OFA_MID_GREEN)
+    pdf.rect(12, bot1_y, 3, bot1_h, "F")
+
+    pdf.set_xy(18, bot1_y + 2.8)
+    pdf.set_font("Helvetica", "B", 8)
+    pdf.set_text_color(*OFA_DARK_GREEN)
+    pdf.cell(176, 4.5, "KEY TAKEAWAY FOR COUNCIL & STAFF DELIBERATIONS")
+
+    takeaway_p1 = (
+        f"Lowering the farm tax ratio to 0.15 provides critical fairness to agricultural producers following "
+        f"significant farmland assessment appreciation. For {muni_name}, the revenue-neutral redistribution "
+        f"amounts to ${hh_month:,.2f}/month per average household. When combined with restored provincial OMPF transfers "
+        f"(+${add_gated:,.0f}/year), council achieves a net fiscal improvement without compromising infrastructure investments."
+    )
+    pdf.set_xy(18, bot1_y + 8)
+    pdf.set_font("Helvetica", "", 7.5)
+    pdf.set_text_color(*TEXT_DARK)
+    pdf.multi_cell(176, 4.4, _clean_str(takeaway_p1))
 
     # =========================================================================
     # PAGE 2: OMPF SCENARIOS, HISTORICAL TRENDS & ACTION PLAN
     # =========================================================================
     pdf.add_page()
 
+    # Section 1: Provincial OMPF Scenario Comparison
+    p2_y1 = 12
+    pdf.set_xy(12, p2_y1)
     pdf.set_font("Helvetica", "B", 12)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(0, 6, "PROVINCIAL OMPF SCENARIO COMPARISON", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(186, 6, "PROVINCIAL OMPF SCENARIO COMPARISON")
 
+    pdf.set_xy(12, p2_y1 + 6.5)
     pdf.set_font("Helvetica", "", 7.5)
     pdf.set_text_color(*TEXT_MUTED)
-    pdf.cell(
-        0,
-        4,
-        "Evaluating municipal grant allocations under three provincial funding models:",
-        new_x="LMARGIN",
-        new_y="NEXT",
-    )
-    pdf.ln(1)
+    pdf.cell(186, 4, "Evaluating municipal grant revenues under three provincial funding models:")
 
     cur_ompf = data.get("ompf_grant", 0.0)
     unfet_grant = data.get("scenario_grant_unfettered", 0.0)
     gated_grant = data.get("scenario_grant_gated", 0.0)
     leakage = data.get("urban_leakage", 0.0)
 
-    p2_cols = [52, 42, 46, 46]
+    tbl_scen_y = p2_y1 + 12
+    p2_cols = [56, 42, 44, 44]
+    row_h_scen = 7.5
+
+    pdf.set_xy(12, tbl_scen_y)
     pdf.set_fill_color(*OFA_DARK_GREEN)
     pdf.set_text_color(255, 255, 255)
-    pdf.set_font("Helvetica", "B", 7)
+    pdf.set_font("Helvetica", "B", 7.5)
     for w, h in zip(p2_cols, ["Funding Model Scenario", "Province-Wide Pool", f"{muni_name} Grant", "Net Change vs Current"]):
-        pdf.cell(w, 5, h, border=1, fill=True, align="C")
-    pdf.ln()
+        pdf.cell(w, 6.8, h, border=1, fill=True, align="C")
 
     scen_rows = [
         ("Current Allocation (Status Quo)", "$497 Million", f"${cur_ompf:,.0f}", "$0 (Baseline)"),
@@ -478,134 +524,155 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
         ("Scenario B: $1B Restored (Rural-Only Gate)", "$1.0 Billion (Rural-Gated)", f"${gated_grant:,.0f}", f"+${add_gated:,.0f}/year"),
     ]
 
-    pdf.set_font("Helvetica", "", 7)
-    pdf.set_text_color(*TEXT_DARK)
+    curr_scen_y = tbl_scen_y + 6.8
     for i, (s_name, pool_txt, m_txt, chg_txt) in enumerate(scen_rows):
+        pdf.set_xy(12, curr_scen_y)
         is_highlight = (i == 2)
         bg = (232, 245, 233) if is_highlight else (ROW_ALT_GREY if i % 2 == 1 else (255, 255, 255))
         pdf.set_fill_color(*bg)
         f_style = "B" if is_highlight else ""
-        pdf.set_font("Helvetica", f_style, 7)
-        pdf.cell(p2_cols[0], 5, _clean_str(s_name), border=1, fill=True, align="L")
-        pdf.cell(p2_cols[1], 5, _clean_str(pool_txt), border=1, fill=True, align="C")
-        pdf.cell(p2_cols[2], 5, _clean_str(m_txt), border=1, fill=True, align="R")
-        pdf.cell(p2_cols[3], 5, _clean_str(chg_txt), border=1, fill=True, align="R")
-        pdf.ln()
+        pdf.set_font("Helvetica", f_style, 7.5)
+        pdf.set_text_color(*(OFA_DARK_GREEN if is_highlight else TEXT_DARK))
 
+        pdf.cell(p2_cols[0], row_h_scen, _clean_str(s_name), border=1, fill=True, align="L")
+        pdf.cell(p2_cols[1], row_h_scen, _clean_str(pool_txt), border=1, fill=True, align="C")
+        pdf.cell(p2_cols[2], row_h_scen, _clean_str(m_txt), border=1, fill=True, align="R")
+        pdf.cell(p2_cols[3], row_h_scen, _clean_str(chg_txt), border=1, fill=True, align="R")
+        curr_scen_y += row_h_scen
+
+    pdf.set_xy(12, curr_scen_y + 1)
     pdf.set_font("Helvetica", "I", 6.8)
     pdf.set_text_color(*TEXT_MUTED)
     pdf.cell(
-        0,
+        186,
         4.5,
         f"*Rural-Only Gate redirects approx. ${leakage:,.0f} from 73 urban centres into rural and northern municipal grants.",
-        new_x="LMARGIN",
-        new_y="NEXT",
     )
-    pdf.ln(3)
 
     # -------------------------------------------------------------------------
-    # Section: Historical Assessment & Revenue Trends (Table)
+    # Section: Historical Assessment & Revenue Profile (Table)
     # -------------------------------------------------------------------------
-    pdf.set_font("Helvetica", "B", 10)
+    sec_hist_y = curr_scen_y + 9
+    pdf.set_xy(12, sec_hist_y)
+    pdf.set_font("Helvetica", "B", 10.5)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(0, 5, f"HISTORICAL ASSESSMENT & REVENUE PROFILE ({muni_name})", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(186, 5, f"HISTORICAL ASSESSMENT & REVENUE PROFILE ({muni_name})")
 
+    pdf.set_xy(12, sec_hist_y + 5.5)
     pdf.set_font("Helvetica", "", 7.2)
     pdf.set_text_color(*TEXT_MUTED)
     pdf.cell(
-        0,
-        3.5,
+        186,
+        4,
         "Longitudinal data from Ontario Financial Information Returns (MMAH FIR Schedules 10 & 22):",
-        new_x="LMARGIN",
-        new_y="NEXT",
     )
-    pdf.ln(1)
 
     hist_data = data.get("historical_trends", [])
     h_cols = [20, 34, 34, 26, 26, 26, 20]
+    tbl_hist_y = sec_hist_y + 11
+
+    pdf.set_xy(12, tbl_hist_y)
     pdf.set_fill_color(*OFA_DARK_GREEN)
     pdf.set_text_color(255, 255, 255)
-    pdf.set_font("Helvetica", "B", 6.8)
+    pdf.set_font("Helvetica", "B", 7)
     h_headers = ["Year", "Farmland CVA", "Residential CVA", "Farm Ratio", "Farm Levy %", "OMPF Grant", "OMPF % Rev"]
     for w, h in zip(h_cols, h_headers):
-        pdf.cell(w, 5, h, border=1, fill=True, align="C")
-    pdf.ln()
+        pdf.cell(w, 6.2, h, border=1, fill=True, align="C")
 
-    pdf.set_font("Helvetica", "", 6.8)
+    curr_hist_y = tbl_hist_y + 6.2
+    pdf.set_font("Helvetica", "", 7.2)
     pdf.set_text_color(*TEXT_DARK)
+    row_h_hist = 5.8
+
     if hist_data:
-        for idx, row in enumerate(hist_data[-8:]):  # up to 8 years
+        for idx, row in enumerate(hist_data[-7:]):
+            pdf.set_xy(12, curr_hist_y)
             bg = ROW_ALT_GREY if idx % 2 == 1 else (255, 255, 255)
             pdf.set_fill_color(*bg)
-            pdf.cell(h_cols[0], 4.5, str(row.get("year", "")), border=1, fill=True, align="C")
-            pdf.cell(h_cols[1], 4.5, f"${row.get('farmland_cva', 0):,.0f}", border=1, fill=True, align="R")
-            pdf.cell(h_cols[2], 4.5, f"${row.get('residential_cva', 0):,.0f}", border=1, fill=True, align="R")
-            pdf.cell(h_cols[3], 4.5, f"{row.get('farmland_tax_ratio', 0):.4f}", border=1, fill=True, align="C")
-            pdf.cell(h_cols[4], 4.5, f"{row.get('farmland_share_of_taxes', 0)*100:.1f}%", border=1, fill=True, align="C")
-            pdf.cell(h_cols[5], 4.5, f"${row.get('ompf_grant', 0):,.0f}", border=1, fill=True, align="R")
+            pdf.cell(h_cols[0], row_h_hist, str(row.get("year", "")), border=1, fill=True, align="C")
+            pdf.cell(h_cols[1], row_h_hist, f"${row.get('farmland_cva', 0):,.0f}", border=1, fill=True, align="R")
+            pdf.cell(h_cols[2], row_h_hist, f"${row.get('residential_cva', 0):,.0f}", border=1, fill=True, align="R")
+            pdf.cell(h_cols[3], row_h_hist, f"{row.get('farmland_tax_ratio', 0):.4f}", border=1, fill=True, align="C")
+            pdf.cell(h_cols[4], row_h_hist, f"{row.get('farmland_share_of_taxes', 0)*100:.1f}%", border=1, fill=True, align="C")
+            pdf.cell(h_cols[5], row_h_hist, f"${row.get('ompf_grant', 0):,.0f}", border=1, fill=True, align="R")
             dep = row.get("ompf_dependency", 0)
-            pdf.cell(h_cols[6], 4.5, f"{dep*100:.1f}%" if dep else "N/A", border=1, fill=True, align="C")
-            pdf.ln()
+            pdf.cell(h_cols[6], row_h_hist, f"{dep*100:.1f}%" if dep else "N/A", border=1, fill=True, align="C")
+            curr_hist_y += row_h_hist
     else:
+        pdf.set_xy(12, curr_hist_y)
         pdf.cell(186, 6, "No longitudinal historical FIR data recorded for this SGC code.", border=1, align="C")
-        pdf.ln()
-
-    pdf.ln(3)
+        curr_hist_y += 6
 
     # -------------------------------------------------------------------------
-    # Section: Strategic Policy Briefing for ROMA 2027
+    # Policy Advocacy Takeaways Card
     # -------------------------------------------------------------------------
+    sec_pol_y = curr_hist_y + 7
+    pol_box_h = 58
     pdf.set_fill_color(255, 255, 255)
     pdf.set_draw_color(*LINE_GREY)
-    pdf.rect(12, pdf.get_y(), 186, 42, "DF")
+    pdf.set_line_width(0.3)
+    pdf.rect(12, sec_pol_y, 186, pol_box_h, "DF")
 
-    box_y = pdf.get_y()
-    pdf.set_xy(15, box_y + 2)
+    # Left accent bar
+    pdf.set_fill_color(*OFA_MID_GREEN)
+    pdf.rect(12, sec_pol_y, 3, pol_box_h, "F")
+
+    pdf.set_xy(18, sec_pol_y + 3)
     pdf.set_font("Helvetica", "B", 8.5)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(180, 4, "POLICY ADVOCACY TAKEAWAYS FOR MUNICIPAL COUNCILS", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(176, 4.5, "STRATEGIC POLICY ADVOCACY TAKEAWAYS FOR MUNICIPAL COUNCILS")
 
     points = [
         (
-            "1. Protect Agricultural Competitiveness:",
-            "Since the 2016 MPAC assessment freeze, farmland assessments have risen substantially faster than other property classes without consuming municipal services. Reducing the farm tax ratio to 0.15 levels the playing field for local farm businesses."
+            "1. Farm Tax Equity & Agricultural Viability:",
+            "Farmland assessments have risen dramatically since the 2016 base year without generating increased municipal service demands. Reducing the farmland tax ratio to 0.15 restores equity for agricultural businesses and protects family farm viability."
         ),
         (
-            "2. Restore & Protect the OMPF:",
-            "The Ontario Municipal Partnership Fund has lost significant purchasing power over the past decade. Restoring the fund to $1.0 Billion indexed to municipal inflation is essential for small, rural municipalities with extensive road networks."
+            "2. Restore & Protect the Provincial OMPF:",
+            "The Ontario Municipal Partnership Fund has eroded in real purchasing power over the last decade. Restoring the fund to $1.0 Billion and gating out large urban centers ensures rural municipalities with vast road networks receive the fiscal support they need."
         ),
         (
-            "3. The Win-Win Policy Synergy:",
-            "By pairing farm tax fairness with provincial OMPF restoration, rural councils do not have to choose between supporting local agriculture and maintaining municipal infrastructure. Provincial grant recovery more than covers the local farm tax shift."
+            "3. The Revenue-Positive Policy Synergy:",
+            f"By pairing farm tax fairness with provincial OMPF restoration, rural councils gain +${add_gated:,.0f}/year in provincial transfers. This more than covers the local farm tax shift, leaving {muni_name} in a net-positive fiscal position."
         )
     ]
 
+    p_curr_y = sec_pol_y + 8.5
     for title, desc in points:
-        pdf.set_x(15)
-        pdf.set_font("Helvetica", "B", 7)
+        pdf.set_xy(18, p_curr_y)
+        pdf.set_font("Helvetica", "B", 7.5)
         pdf.set_text_color(*OFA_MID_GREEN)
-        pdf.cell(50, 3.8, _clean_str(title), align="L")
-        pdf.set_font("Helvetica", "", 6.8)
+        pdf.cell(176, 4, _clean_str(title))
+
+        pdf.set_xy(18, p_curr_y + 4.2)
+        pdf.set_font("Helvetica", "", 7.2)
         pdf.set_text_color(*TEXT_DARK)
-        pdf.multi_cell(130, 3.8, _clean_str(desc))
-        pdf.ln(0.5)
+        pdf.multi_cell(176, 3.8, _clean_str(desc))
+        p_curr_y += 15.5
 
-    pdf.set_y(box_y + 45)
+    # -------------------------------------------------------------------------
+    # Official Sign-off & Contact Block (Anchored at Base of Page 2)
+    # -------------------------------------------------------------------------
+    sign_y = sec_pol_y + pol_box_h + 5
+    sign_h = 24
+    pdf.set_fill_color(*OFA_LIGHT_BG)
+    pdf.set_draw_color(*LINE_GREY)
+    pdf.set_line_width(0.3)
+    pdf.rect(12, sign_y, 186, sign_h, "DF")
 
-    # Contact Block
-    pdf.set_font("Helvetica", "B", 7.5)
+    pdf.set_xy(16, sign_y + 2.5)
+    pdf.set_font("Helvetica", "B", 7.8)
     pdf.set_text_color(*OFA_DARK_GREEN)
-    pdf.cell(0, 4, "ONTARIO FEDERATION OF AGRICULTURE (OFA)", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(178, 4, "ONTARIO FEDERATION OF AGRICULTURE (OFA)  |  POLICY & RESEARCH DIVISION")
 
-    pdf.set_font("Helvetica", "", 6.8)
-    pdf.set_text_color(*TEXT_MUTED)
-    pdf.cell(
-        0,
-        3.5,
-        "Contact: Ben Le Fort, Senior Policy & Farm Finance Analyst  |  Email: policy@ofa.on.ca  |  Web: ofa.on.ca  |  ROMA 2027 Booth",
-        new_x="LMARGIN",
-        new_y="NEXT",
+    pdf.set_xy(16, sign_y + 7)
+    pdf.set_font("Helvetica", "", 7.0)
+    pdf.set_text_color(*TEXT_DARK)
+    contact_txt = (
+        "Contact: Ben Le Fort, Senior Policy & Farm Finance Analyst  |  Email: policy@ofa.on.ca  |  Web: ofa.on.ca\n"
+        "ROMA 2027 Conference Booth  |  Data Sources: MMAH FIR Schedules 10 & 22 (2010-2024), MPAC, MOF OMPF Allocation Guidelines."
     )
+    pdf.multi_cell(178, 3.8, _clean_str(contact_txt))
 
     return bytes(pdf.output())
 
