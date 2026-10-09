@@ -25,6 +25,7 @@ from app.roma_report import (
     get_booth_leads_df,
     send_roma_report_email,
     generate_mailto_url,
+    make_download_button_html,
 )
 
 try:
@@ -202,12 +203,17 @@ with st.sidebar:
         st.markdown("---")
         st.metric("📋 ROMA Leads Captured", len(leads_df))
         leads_csv = leads_df.to_csv(index=False).encode("utf-8")
-        st.download_button(
-            "📥 Export Booth Leads (CSV)",
-            data=leads_csv,
-            file_name="ROMA_2027_Booth_Leads.csv",
-            mime="text/csv",
-            use_container_width=True,
+        st.markdown(
+            make_download_button_html(
+                data_bytes=leads_csv,
+                filename="ROMA_2027_Booth_Leads.csv",
+                mime_type="text/csv",
+                button_label="📥 Export Booth Leads (CSV)",
+                bg_color="#ffffff",
+                text_color="#2E7D32",
+                border_color="#2E7D32",
+            ),
+            unsafe_allow_html=True,
         )
 
     with st.expander("⚙️ Laptop Email Setup (Optional)", expanded=False):
@@ -512,12 +518,18 @@ action_col1, action_col2 = st.columns([1, 2])
 with action_col1:
     st.markdown("#### 📄 Executive Briefing")
     st.markdown("Customized 2-page OFA briefing document summarizing all fiscal, assessment, and OMPF metrics for council.")
-    st.download_button(
-        label=f"📥 Download 2-Page PDF Report",
-        data=pdf_bytes,
-        file_name=f"OFA_ROMA2027_Briefing_{clean_name}.pdf",
-        mime="application/pdf",
-        use_container_width=True,
+    pdf_filename = f"OFA_ROMA2027_Briefing_{clean_name}.pdf"
+    st.markdown(
+        make_download_button_html(
+            data_bytes=pdf_bytes,
+            filename=pdf_filename,
+            mime_type="application/pdf",
+            button_label="📥 Download 2-Page PDF Report",
+            bg_color="#2E7D32",
+            text_color="#ffffff",
+            border_color="#1b5e20",
+        ),
+        unsafe_allow_html=True,
     )
     st.caption("Includes OFA branding, 3-gate eligibility audit, revenue-neutral shift table, and longitudinal FIR trends.")
 
