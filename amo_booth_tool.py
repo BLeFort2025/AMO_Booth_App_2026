@@ -25,8 +25,45 @@ from app.roma_report import (
     get_booth_leads_df,
     send_roma_report_email,
     generate_mailto_url,
-    make_download_button_html,
 )
+
+
+def make_download_button_html(
+    data_bytes: bytes,
+    filename: str,
+    mime_type: str = "application/pdf",
+    button_label: str = "📥 Download 2-Page PDF Report",
+    bg_color: str = "#2E7D32",
+    text_color: str = "#ffffff",
+    border_color: str = "#1b5e20",
+) -> str:
+    """Generate a reliable, server-independent base64 download button to prevent requireServerUri errors."""
+    b64_data = base64.b64encode(data_bytes).decode("utf-8")
+    return f"""
+    <div style="margin: 0.6rem 0;">
+        <a href="data:{mime_type};base64,{b64_data}" download="{filename}" target="_blank" style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: {bg_color};
+            color: {text_color} !important;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid {border_color};
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            cursor: pointer;
+            transition: opacity 0.2s;
+        " onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1.0'">
+            {button_label}
+        </a>
+    </div>
+    """
 
 try:
     import pydeck as pdk

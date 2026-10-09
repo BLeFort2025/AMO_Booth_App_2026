@@ -27,7 +27,12 @@ import smtplib
 import urllib.parse
 from typing import Optional, Dict, Any, Tuple, List
 
-from fpdf import FPDF
+try:
+    from fpdf import FPDF
+    HAS_FPDF = True
+except ImportError:
+    HAS_FPDF = False
+    FPDF = object
 import pandas as pd
 
 
@@ -193,6 +198,9 @@ def generate_roma_pdf(data: Dict[str, Any]) -> bytes:
     sgc_code = _clean_str(data.get("sgc_code", ""))
     fir_code = _clean_str(data.get("fir_code", ""))
     latest_year = data.get("latest_year", 2024)
+
+    if not HAS_FPDF:
+        raise ImportError("fpdf2 is required for PDF generation. Please restart the app or install fpdf2.")
 
     pdf = ROMABriefingPDF(muni_name=muni_name, county=county)
     pdf.alias_nb_pages()
