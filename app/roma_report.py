@@ -767,8 +767,6 @@ def send_roma_report_email(
         msg["To"] = to_email
         msg["Subject"] = f"OFA ROMA 2027 Briefing — Fair Farm Taxes & OMPF for {municipality_name}"
 
-        # HTML Body
-        net_str = f"+${net_position:,.0f}" if net_position >= 0 else f"-${abs(net_position):,.0f}"
         body_html = f"""
         <html>
         <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #222;">
@@ -781,12 +779,7 @@ def send_roma_report_email(
             
             <p>Thank you for stopping by the <strong>Ontario Federation of Agriculture (OFA)</strong> booth at the <strong>ROMA 2027 Conference</strong>.</p>
             
-            <p>Attached is your customized 2-page briefing document analyzing <strong>{municipality_name}</strong>'s fiscal profile, including:</p>
-            <ul>
-                <li><strong>Farm Tax Fairness:</strong> Local impacts of a 0.15 farmland tax ratio target and minimal household impacts.</li>
-                <li><strong>Restored Provincial OMPF ($1 Billion):</strong> Grant recovery under OFA's 3-Gate Rural model.</li>
-                <li><strong>Net Fiscal Bottom Line:</strong> Modeled annual net position: <strong>{net_str}/year</strong>.</li>
-            </ul>
+            <p>Attached is your customized 2-page briefing document analyzing <strong>{municipality_name}</strong>'s fiscal profile and local farm taxation options.</p>
             
             <p>We look forward to continuing the conversation on how municipal leaders and agricultural producers can work together for strong rural communities.</p>
             
@@ -826,18 +819,16 @@ def generate_mailto_url(
     to_email: str,
     recipient_name: str,
     municipality_name: str,
-    net_position: float
+    net_position: float = 0.0
 ) -> str:
     """Generate a pre-filled mailto URL for local desktop email clients (Outlook, etc.)."""
     display_name = recipient_name.strip() if recipient_name else "Councilor / Staff"
-    net_str = f"+${net_position:,.0f}" if net_position >= 0 else f"-${abs(net_position):,.0f}"
     
     subject = f"OFA ROMA 2027 Briefing — Fair Farm Taxes & OMPF for {municipality_name}"
     body = (
         f"Dear {display_name},\n\n"
         f"Thank you for stopping by the Ontario Federation of Agriculture (OFA) booth at ROMA 2027.\n\n"
-        f"Attached is your customized briefing on Fair Farm Taxes & Restored OMPF for {municipality_name}.\n"
-        f"Modeled Annual Net Fiscal Position: {net_str}/year.\n\n"
+        f"Attached is your customized briefing on Fair Farm Taxes & Restored OMPF for {municipality_name}.\n\n"
         f"Sincerely,\n"
         f"Ben Le Fort\n"
         f"Ontario Federation of Agriculture (OFA)\n"
